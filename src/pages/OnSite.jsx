@@ -95,7 +95,7 @@ export default function OnSite() {
       </nav>
 
       {/* ── HERO ── */}
-      <section className="bg-[#1a2e5a] text-white py-16 md:py-24">
+      <section className="bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
           <div className="flex-1 text-center md:text-left">
             <p className="text-blue-200 uppercase tracking-widest text-sm font-semibold mb-3">House Calls for Technology Since 2010</p>
@@ -115,19 +115,35 @@ export default function OnSite() {
               </a>
             </div>
           </div>
-          {/* Doctor Mascot Logo */}
-          <div className="flex-shrink-0 w-full md:w-auto flex flex-col items-center">
-            <img
-              src="https://base44.app/api/apps/6a1bfb317e0ae432d5362aa4/files/mp/public/6a1bfb317e0ae432d5362aa4/30f7892de_logo_nobg.png"
-              alt="Your Computer's Doctor - On-Site Computer Service"
-              className="w-[340px] md:w-[420px] h-auto drop-shadow-2xl"
-            />
-          </div>
-        </div>
+          {/* Logo + Trust Card */}
+          <div className="flex-shrink-0 w-full md:w-auto">
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 md:p-8 shadow-2xl">
 
-        {/* ── GOOGLE REVIEWS SCROLL BAR ── */}
-        <div className="mt-10 border-t border-white/20 pt-6">
-          <div className="elfsight-app-59326f3f-41fd-4afb-959a-18438e9cd406" data-elfsight-app-lazy></div>
+              <img
+                src={ONSITE_LOGO}
+                alt="On-Site Computer Service"
+                className="w-[380px] md:w-[460px] h-auto mx-auto"
+              />
+
+              <div className="mt-6 grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <div className="text-2xl font-extrabold text-orange-400">26</div>
+                  <div className="text-xs text-blue-100">Years Experience</div>
+                </div>
+
+                <div>
+                  <div className="text-2xl font-extrabold text-orange-400">176+</div>
+                  <div className="text-xs text-blue-100">5-Star Reviews</div>
+                </div>
+
+                <div>
+                  <div className="text-2xl font-extrabold text-orange-400">16</div>
+                  <div className="text-xs text-blue-100">Years Downtown</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
       </section>
 
@@ -147,11 +163,6 @@ export default function OnSite() {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* ── GOOGLE REVIEWS SCROLL BAR ── */}
-        <div className="mt-10 border-t border-white/20 pt-6">
-          <div className="elfsight-app-59326f3f-41fd-4afb-959a-18438e9cd406" data-elfsight-app-lazy></div>
         </div>
       </section>
 
@@ -178,11 +189,6 @@ export default function OnSite() {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* ── GOOGLE REVIEWS SCROLL BAR ── */}
-        <div className="mt-10 border-t border-white/20 pt-6">
-          <div className="elfsight-app-59326f3f-41fd-4afb-959a-18438e9cd406" data-elfsight-app-lazy></div>
         </div>
       </section>
 
@@ -217,11 +223,6 @@ export default function OnSite() {
             </div>
           </div>
         </div>
-
-        {/* ── GOOGLE REVIEWS SCROLL BAR ── */}
-        <div className="mt-10 border-t border-white/20 pt-6">
-          <div className="elfsight-app-59326f3f-41fd-4afb-959a-18438e9cd406" data-elfsight-app-lazy></div>
-        </div>
       </section>
 
       {/* ── SERVICES ── */}
@@ -248,11 +249,6 @@ export default function OnSite() {
             </a>
           </div>
         </div>
-
-        {/* ── GOOGLE REVIEWS SCROLL BAR ── */}
-        <div className="mt-10 border-t border-white/20 pt-6">
-          <div className="elfsight-app-59326f3f-41fd-4afb-959a-18438e9cd406" data-elfsight-app-lazy></div>
-        </div>
       </section>
 
       {/* ── DIAGNOSTIC PROCESS ── */}
@@ -278,11 +274,6 @@ export default function OnSite() {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* ── GOOGLE REVIEWS SCROLL BAR ── */}
-        <div className="mt-10 border-t border-white/20 pt-6">
-          <div className="elfsight-app-59326f3f-41fd-4afb-959a-18438e9cd406" data-elfsight-app-lazy></div>
         </div>
       </section>
 
@@ -326,11 +317,6 @@ export default function OnSite() {
             </a>
           </div>
         </div>
-
-        {/* ── GOOGLE REVIEWS SCROLL BAR ── */}
-        <div className="mt-10 border-t border-white/20 pt-6">
-          <div className="elfsight-app-59326f3f-41fd-4afb-959a-18438e9cd406" data-elfsight-app-lazy></div>
-        </div>
       </section>
 
       {/* ── SERVICE AREAS ── */}
@@ -346,11 +332,6 @@ export default function OnSite() {
               </span>
             ))}
           </div>
-        </div>
-
-        {/* ── GOOGLE REVIEWS SCROLL BAR ── */}
-        <div className="mt-10 border-t border-white/20 pt-6">
-          <div className="elfsight-app-59326f3f-41fd-4afb-959a-18438e9cd406" data-elfsight-app-lazy></div>
         </div>
       </section>
 
@@ -376,11 +357,6 @@ export default function OnSite() {
             <MapPin className="w-5 h-5" />
             <span className="text-lg">{ADDRESS}</span>
           </div>
-        </div>
-
-        {/* ── GOOGLE REVIEWS SCROLL BAR ── */}
-        <div className="mt-10 border-t border-white/20 pt-6">
-          <div className="elfsight-app-59326f3f-41fd-4afb-959a-18438e9cd406" data-elfsight-app-lazy></div>
         </div>
       </section>
 
