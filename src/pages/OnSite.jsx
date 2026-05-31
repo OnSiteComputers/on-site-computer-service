@@ -115,30 +115,33 @@ export default function OnSite() {
               </a>
             </div>
           </div>
-          {/* Hero Right */}
-          <div className="flex-shrink-0 w-full md:w-auto flex flex-col items-center text-center">
-            <p className="text-blue-200 uppercase tracking-widest text-xs font-semibold mb-1">On-Site Computer Service</p>
-            <p className="text-orange-400 font-extrabold text-xl tracking-wide mb-4">⚕ Your Computer's Doctor</p>
-            <img
-              src="https://media.base44.com/images/public/6a1bc65b7f812ffe372bc401/168538cf9_Screenshot2026-05-31042310.png"
-              alt="Computer Doctor"
-              className="w-[300px] md:w-[380px] h-auto"
-            />
-            <div className="mt-4 flex items-center justify-center gap-6">
-              <div className="text-center">
-                <div className="text-5xl font-black text-orange-400 leading-none">26</div>
-                <div className="text-orange-300 font-bold text-sm uppercase tracking-widest">Years</div>
+          {/* Logo + Trust Card */}
+          <div className="flex-shrink-0 w-full md:w-auto">
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 md:p-8 shadow-2xl">
+
+              <img
+                src={ONSITE_LOGO}
+                alt="On-Site Computer Service"
+                className="w-[380px] md:w-[460px] h-auto mx-auto"
+              />
+
+              <div className="mt-6 grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <div className="text-2xl font-extrabold text-orange-400">26</div>
+                  <div className="text-xs text-blue-100">Years Experience</div>
+                </div>
+
+                <div>
+                  <div className="text-2xl font-extrabold text-orange-400">176+</div>
+                  <div className="text-xs text-blue-100">5-Star Reviews</div>
+                </div>
+
+                <div>
+                  <div className="text-2xl font-extrabold text-orange-400">16</div>
+                  <div className="text-xs text-blue-100">Years Downtown</div>
+                </div>
               </div>
-              <div className="w-px h-12 bg-white/20" />
-              <div className="text-center">
-                <div className="text-3xl font-extrabold text-white">176+</div>
-                <div className="text-blue-200 text-xs">5-Star Reviews</div>
-              </div>
-              <div className="w-px h-12 bg-white/20" />
-              <div className="text-center">
-                <div className="text-3xl font-extrabold text-white">16</div>
-                <div className="text-blue-200 text-xs">Years Downtown</div>
-              </div>
+
             </div>
           </div>
         </div>
