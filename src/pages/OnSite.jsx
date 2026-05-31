@@ -192,7 +192,7 @@ export default function OnSite() {
             ].map((stat, i) => (
               <div key={i} className="px-1">
                 <div
-                  className="text-3xl sm:text-4xl md:text-5xl font-black leading-none mb-0.5"
+                  className="glimmer-gold text-3xl sm:text-4xl md:text-5xl font-black leading-none mb-0.5"
                   style={{
                     color: "#f6c453",
                     textShadow: "0 0 14px rgba(246,196,83,0.5)",
