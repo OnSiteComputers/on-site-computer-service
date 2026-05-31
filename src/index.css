@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Smooth anchor scrolling with offset for the sticky header */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Sections that are jumped to via #anchor links land below the sticky nav
+   instead of being hidden underneath it. Nav is ~88px tall; 96px gives breathing room. */
+section[id],
+[id="top"] {
+  scroll-margin-top: 96px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
