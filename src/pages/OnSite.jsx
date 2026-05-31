@@ -8,7 +8,7 @@
 import { Phone, MapPin, Star, Shield, Clock, Monitor, Wifi, HardDrive, Lock, Users, Wrench, Laptop, CheckCircle, ChevronRight } from "lucide-react";
 
 // ── LOGO ── Replace src with your hosted logo URL if needed
-const ONSITE_LOGO = "https://media.base44.com/images/public/6a1bc65b7f812ffe372bc401/d9e412d93_LogonewNoBackgroundnobackgroundfinal3.png";
+const ONSITE_LOGO = "https://media.base44.com/images/public/6a1bc65b7f812ffe372bc401/3cfeb6ed9_On-Site-Computer-Service-Logo.png";
 
 // ── CONTACT INFO ── Easy to edit
 const PHONE = "(704) 555-0100"; // TODO: replace with real number
@@ -75,7 +75,7 @@ export default function OnSite() {
       {/* ── NAVIGATION ── */}
       <nav className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <img src={ONSITE_LOGO} alt="On-Site Computer Service Logo" className="h-16 w-auto" />
+          <img src={ONSITE_LOGO} alt="On-Site Computer Service Logo" className="h-14 w-auto" />
           <div className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
             <a href="#services" className="hover:text-blue-700 transition-colors">Services</a>
             <a href="#about" className="hover:text-blue-700 transition-colors">About Greg</a>
@@ -92,8 +92,8 @@ export default function OnSite() {
       </nav>
 
       {/* ── HERO ── */}
-      <section className="bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white pt-16 pb-0 md:pt-20 md:pb-0 overflow-hidden">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-12 md:gap-16">
+      <section className="bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white py-16 md:py-24">
+        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
           <div className="flex-1 text-center md:text-left">
             <p className="text-blue-200 uppercase tracking-widest text-sm font-semibold mb-3">House Calls for Technology Since 2010</p>
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
@@ -112,7 +112,10 @@ export default function OnSite() {
               </a>
             </div>
           </div>
-
+          {/* Logo — integrated into hero */}
+          <div className="flex-shrink-0 opacity-90">
+            <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="w-72 h-auto drop-shadow-xl" />
+          </div>
         </div>
       </section>
 
@@ -332,7 +335,7 @@ export default function OnSite() {
       {/* ── FOOTER ── */}
       <footer className="bg-[#111827] text-gray-400 py-8 text-center text-sm">
         <div className="max-w-6xl mx-auto px-4">
-          <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="h-16 mx-auto mb-4 opacity-80" />
+          <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="h-10 mx-auto mb-4 opacity-80" />
           <p className="mb-1">2025 On-Site Computer Service — Downtown Concord, NC</p>
           <p className="text-gray-500">Your Computer's Doctor | House Calls for Technology Since 2010</p>
         </div>
