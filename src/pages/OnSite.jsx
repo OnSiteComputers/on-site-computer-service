@@ -118,7 +118,7 @@ export default function OnSite() {
           </div>
           {/* Logo + Trust Card */}
           <div className="flex-shrink-0 w-full md:w-auto">
-            <div className="bg-white rounded-3xl p-6 md:p-8 shadow-2xl">
+            <div className="p-6 md:p-8">
 
               <img
                 src={HERO_IMAGE}
