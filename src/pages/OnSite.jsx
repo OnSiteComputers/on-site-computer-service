@@ -5,7 +5,8 @@
 // Colors: White background, navy (#1a2e5a) + blue (#2563eb) accents, orange CTA
 // ============================================================
 
-import { Phone, MapPin, Star, Shield, Clock, Monitor, Wifi, HardDrive, Lock, Users, Wrench, Laptop, CheckCircle, ChevronRight } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Phone, MapPin, Star, Shield, Clock, Monitor, Wifi, HardDrive, Lock, Users, Wrench, Laptop, CheckCircle, ChevronRight, Menu, X } from "lucide-react";
 
 // ── LOGO ── Replace src with your hosted logo URL if needed
 const ONSITE_LOGO = "https://media.base44.com/images/public/6a1bc65b7f812ffe372bc401/3cfeb6ed9_On-Site-Computer-Service-Logo.png";
@@ -71,11 +72,35 @@ const SERVICE_AREAS = [
 ];
 
 export default function OnSite() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // Smooth-scroll for in-page anchor links, offset by the REAL header height
+  // so each section lands just below the sticky nav instead of underneath it.
+  useEffect(() => {
+    const handleClick = (e) => {
+      const link = e.target.closest('a[href^="#"]');
+      if (!link) return;
+      const id = link.getAttribute("href").slice(1);
+      const target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      const nav = document.getElementById("site-nav");
+      const offset = nav ? nav.offsetHeight : 0;
+      const y = target.getBoundingClientRect().top + window.scrollY - offset - 12;
+      window.scrollTo({ top: Math.max(y, 0), behavior: "smooth" });
+      setMenuOpen(false);
+      // keep the URL hash in sync without an extra jump
+      if (history.replaceState) history.replaceState(null, "", `#${id}`);
+    };
+    document.addEventListener("click", handleClick);
+    return () => document.removeEventListener("click", handleClick);
+  }, []);
+
   return (
     <div className="font-sans text-gray-800 bg-white">
 
       {/* ── NAVIGATION ── */}
-      <nav className="bg-blue-50 border-b border-blue-100 sticky top-0 z-50 shadow-sm overflow-visible">
+      <nav id="site-nav" className="bg-blue-50 border-b border-blue-100 sticky top-0 z-50 shadow-sm overflow-visible">
         <div className="max-w-6xl mx-auto px-4 py-1 flex items-center justify-between">
           <a href="#top">
             <img src="https://media.base44.com/images/public/6a1bc65b7f812ffe372bc401/0feb55d71_On-Site-Computer-Service-with-tagline.png" alt="On-Site Computer Service" className="h-20 w-auto relative z-10" />
@@ -90,14 +115,35 @@ export default function OnSite() {
               Call Us
             </a>
           </div>
-          <a href={`tel:${PHONE}`} className="md:hidden bg-orange-500 text-white px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2">
-            <Phone className="w-4 h-4" /> Call
-          </a>
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="md:hidden text-[#1a2e5a] p-2 -mr-2"
+            aria-label="Toggle navigation menu"
+            aria-expanded={menuOpen}
+          >
+            {menuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+          </button>
         </div>
+
+        {/* ── MOBILE DROPDOWN MENU ── */}
+        {menuOpen && (
+          <div className="md:hidden bg-blue-50 border-t border-blue-100 px-4 pb-4">
+            <div className="flex flex-col text-base font-semibold text-gray-700">
+              <a href="#top" className="py-3 border-b border-blue-100 hover:text-blue-700">Home</a>
+              <a href="#services" className="py-3 border-b border-blue-100 hover:text-blue-700">Services</a>
+              <a href="#about" className="py-3 border-b border-blue-100 hover:text-blue-700">About Greg</a>
+              <a href="#reviews" className="py-3 border-b border-blue-100 hover:text-blue-700">Reviews</a>
+              <a href="#areas" className="py-3 border-b border-blue-100 hover:text-blue-700">Service Areas</a>
+              <a href={`tel:${PHONE}`} className="mt-4 bg-orange-500 hover:bg-orange-600 text-white px-5 py-3 rounded-lg text-center font-bold flex items-center justify-center gap-2">
+                <Phone className="w-4 h-4" /> Call Greg Now
+              </a>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* ── HERO ── */}
-      <section id="top" className="bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white py-16 md:py-24">
+      <section id="top" className="bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white pt-12 pb-8 md:pt-16 md:pb-10">
         <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
           <div className="flex-1 text-center md:text-left">
             <p className="text-blue-200 uppercase tracking-widest text-sm font-semibold mb-3">House Calls for Technology Since 2000</p>
@@ -133,18 +179,18 @@ export default function OnSite() {
       </section>
 
       {/* ── TRUST BAR ── */}
-      <section className="bg-[#1a2e5a] text-white py-8">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <section className="bg-[#1a2e5a] text-white py-3 md:py-4">
+        <div className="max-w-6xl mx-auto px-3">
+          <div className="grid grid-cols-4 gap-x-2 md:gap-x-4 text-center">
             {[
               { number: "26", label: "Years of Experience" },
               { number: "16", label: "Years in Downtown Concord" },
               { number: "176+", label: "Five-Star Google Reviews" },
               { number: "100%", label: "Locally Owned and Operated" },
             ].map((stat, i) => (
-              <div key={i} className="p-4">
-                <div className="text-6xl md:text-7xl font-black text-orange-400 mb-2 drop-shadow-lg" style={{textShadow: '0 0 30px rgba(251,146,60,0.5)'}}>{stat.number}</div>
-                <div className="text-blue-200 text-sm font-semibold uppercase tracking-widest">{stat.label}</div>
+              <div key={i} className="px-1">
+                <div className="glimmer-gold text-3xl sm:text-4xl md:text-5xl font-black leading-none mb-0.5">{stat.number}</div>
+                <div className="text-blue-200 text-[10px] sm:text-xs font-semibold uppercase tracking-wide leading-tight">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -222,7 +268,7 @@ export default function OnSite() {
           </div>
           <div className="text-center mt-10">
             <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-10 rounded-xl text-lg transition-all shadow-lg">
-              <Phone className="w-5 h-5" /> Call for a Free Diagnosis
+              <Phone className="w-5 h-5" /> Call Us
             </a>
           </div>
         </div>
