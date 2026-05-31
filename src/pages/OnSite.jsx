@@ -75,8 +75,8 @@ export default function OnSite() {
       {/* ── NAVIGATION ── */}
       <nav className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <a href="#top" className="text-[#1a2e5a] font-extrabold text-lg leading-tight">
-            On-Site <span className="text-orange-500">Computer Service</span>
+          <a href="#top">
+            <img src="https://media.base44.com/images/public/6a1bc65b7f812ffe372bc401/0feb55d71_On-Site-Computer-Service-with-tagline.png" alt="On-Site Computer Service" className="h-12 w-auto" />
           </a>
           <div className="hidden md:flex items-center gap-7 text-base font-semibold text-gray-700">
             <a href="#top" className="hover:text-blue-700 transition-colors">Home</a>
