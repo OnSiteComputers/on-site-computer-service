@@ -9,7 +9,8 @@ import { Phone, MapPin, Star, Shield, Clock, Monitor, Wifi, HardDrive, Lock, Use
 
 // ── LOGO ── Replace src with your hosted logo URL if needed
 const ONSITE_LOGO = "https://media.base44.com/images/public/6a1bc65b7f812ffe372bc401/3cfeb6ed9_On-Site-Computer-Service-Logo.png";
-const HERO_IMAGE = "../assets/On-Site_Computer_Service_transparent.v1(2).png";
+import HeroLogo from "../assets/On-Site_Computer_Service_transparent.v1(2).png";
+const HERO_IMAGE = HeroLogo;
 
 // ── CONTACT INFO ── Easy to edit
 const PHONE = "(704) 784-9969"; // TODO: replace with real number
@@ -96,7 +97,7 @@ export default function OnSite() {
       </nav>
 
       {/* ── HERO ── */}
-      <section className="bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white pt-0 pb-12 md:pt-0 md:pb-16">
+      <section className="bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
           <div className="flex-1 text-center md:text-left">
             <p className="text-blue-200 uppercase tracking-widest text-sm font-semibold mb-3">House Calls for Technology Since 2010</p>
@@ -118,7 +119,7 @@ export default function OnSite() {
           </div>
           {/* Logo + Trust Card */}
           <div className="flex-shrink-0 w-full md:w-auto">
-            <div className="p-0">
+            <div className="p-6 md:p-8">
 
               <img
                 src={HERO_IMAGE}
@@ -128,17 +129,17 @@ export default function OnSite() {
 
               <div className="mt-6 grid grid-cols-3 gap-4 text-center">
                 <div>
-                  <div className="text-2xl text-orange-400 mb-1" style={{ fontFamily: "'Brush Script MT', cursive", fontWeight: 700, textShadow: "2px 2px 0 #1a2e5a" }}>26</div>
+                  <div className="text-2xl font-extrabold text-orange-400">26</div>
                   <div className="text-xs text-blue-100">Years Experience</div>
                 </div>
 
                 <div>
-                  <div className="text-2xl text-orange-400 mb-1" style={{ fontFamily: "'Brush Script MT', cursive", fontWeight: 700, textShadow: "2px 2px 0 #1a2e5a" }}>177</div>
+                  <div className="text-2xl font-extrabold text-orange-400">176+</div>
                   <div className="text-xs text-blue-100">5-Star Reviews</div>
                 </div>
 
                 <div>
-                  <div className="text-2xl text-orange-400 mb-1" style={{ fontFamily: "'Brush Script MT', cursive", fontWeight: 700, textShadow: "2px 2px 0 #1a2e5a" }}>16</div>
+                  <div className="text-2xl font-extrabold text-orange-400">16</div>
                   <div className="text-xs text-blue-100">Years Downtown</div>
                 </div>
               </div>
