@@ -124,6 +124,12 @@ export default function OnSite() {
             />
           </div>
         </div>
+
+        {/* ── GOOGLE REVIEWS SCROLL BAR ── */}
+        <div className="mt-10 border-t border-white/20 pt-6">
+          <script src="https://static.elfsight.com/platform/platform.js" async></script>
+          <div className="elfsight-app-59326f3f-41fd-4afb-959a-18438e9cd406" data-elfsight-app-lazy></div>
+        </div>
       </section>
 
       {/* ── TRUST BAR ── */}
@@ -142,6 +148,12 @@ export default function OnSite() {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* ── GOOGLE REVIEWS SCROLL BAR ── */}
+        <div className="mt-10 border-t border-white/20 pt-6">
+          <script src="https://static.elfsight.com/platform/platform.js" async></script>
+          <div className="elfsight-app-59326f3f-41fd-4afb-959a-18438e9cd406" data-elfsight-app-lazy></div>
         </div>
       </section>
 
@@ -168,6 +180,12 @@ export default function OnSite() {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* ── GOOGLE REVIEWS SCROLL BAR ── */}
+        <div className="mt-10 border-t border-white/20 pt-6">
+          <script src="https://static.elfsight.com/platform/platform.js" async></script>
+          <div className="elfsight-app-59326f3f-41fd-4afb-959a-18438e9cd406" data-elfsight-app-lazy></div>
         </div>
       </section>
 
@@ -202,6 +220,12 @@ export default function OnSite() {
             </div>
           </div>
         </div>
+
+        {/* ── GOOGLE REVIEWS SCROLL BAR ── */}
+        <div className="mt-10 border-t border-white/20 pt-6">
+          <script src="https://static.elfsight.com/platform/platform.js" async></script>
+          <div className="elfsight-app-59326f3f-41fd-4afb-959a-18438e9cd406" data-elfsight-app-lazy></div>
+        </div>
       </section>
 
       {/* ── SERVICES ── */}
@@ -228,6 +252,12 @@ export default function OnSite() {
             </a>
           </div>
         </div>
+
+        {/* ── GOOGLE REVIEWS SCROLL BAR ── */}
+        <div className="mt-10 border-t border-white/20 pt-6">
+          <script src="https://static.elfsight.com/platform/platform.js" async></script>
+          <div className="elfsight-app-59326f3f-41fd-4afb-959a-18438e9cd406" data-elfsight-app-lazy></div>
+        </div>
       </section>
 
       {/* ── DIAGNOSTIC PROCESS ── */}
@@ -253,6 +283,12 @@ export default function OnSite() {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* ── GOOGLE REVIEWS SCROLL BAR ── */}
+        <div className="mt-10 border-t border-white/20 pt-6">
+          <script src="https://static.elfsight.com/platform/platform.js" async></script>
+          <div className="elfsight-app-59326f3f-41fd-4afb-959a-18438e9cd406" data-elfsight-app-lazy></div>
         </div>
       </section>
 
@@ -296,6 +332,12 @@ export default function OnSite() {
             </a>
           </div>
         </div>
+
+        {/* ── GOOGLE REVIEWS SCROLL BAR ── */}
+        <div className="mt-10 border-t border-white/20 pt-6">
+          <script src="https://static.elfsight.com/platform/platform.js" async></script>
+          <div className="elfsight-app-59326f3f-41fd-4afb-959a-18438e9cd406" data-elfsight-app-lazy></div>
+        </div>
       </section>
 
       {/* ── SERVICE AREAS ── */}
@@ -311,6 +353,12 @@ export default function OnSite() {
               </span>
             ))}
           </div>
+        </div>
+
+        {/* ── GOOGLE REVIEWS SCROLL BAR ── */}
+        <div className="mt-10 border-t border-white/20 pt-6">
+          <script src="https://static.elfsight.com/platform/platform.js" async></script>
+          <div className="elfsight-app-59326f3f-41fd-4afb-959a-18438e9cd406" data-elfsight-app-lazy></div>
         </div>
       </section>
 
@@ -336,6 +384,12 @@ export default function OnSite() {
             <MapPin className="w-5 h-5" />
             <span className="text-lg">{ADDRESS}</span>
           </div>
+        </div>
+
+        {/* ── GOOGLE REVIEWS SCROLL BAR ── */}
+        <div className="mt-10 border-t border-white/20 pt-6">
+          <script src="https://static.elfsight.com/platform/platform.js" async></script>
+          <div className="elfsight-app-59326f3f-41fd-4afb-959a-18438e9cd406" data-elfsight-app-lazy></div>
         </div>
       </section>
 
