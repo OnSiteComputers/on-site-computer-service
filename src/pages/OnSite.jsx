@@ -18,40 +18,6 @@ const PHONE = "980-236-0810";
 const EMAIL = "greg@onsitecomputerservice.net";
 const ADDRESS = "53 Cabarrus Ave. W, Concord, NC 28025";
 
-// ── GOOGLE REVIEWS ── Real reviews — replace/add as needed
-const REVIEWS = [
-  {
-    name: "Sandra M.",
-    stars: 5,
-    text: "Greg is absolutely the best! He came to my house, fixed my laptop in under an hour, and explained everything he did. I have been coming to him for 8 years and would not go anywhere else. Honest, affordable, and genuinely cares about his customers.",
-  },
-  {
-    name: "James T.",
-    stars: 5,
-    text: "I was ready to throw my computer out the window. Greg had it running better than new within a day. He has been at the same location forever — that alone tells you everything you need to know about his reputation.",
-  },
-  {
-    name: "Patricia W.",
-    stars: 5,
-    text: "Brought my Mac in after another shop told me it was dead. Greg recovered all my photos and files and had it working again. I was in tears with relief. He is a miracle worker and a genuinely kind person.",
-  },
-  {
-    name: "Robert K.",
-    stars: 5,
-    text: "We have used Greg for our small business IT for years. Always on time, always honest about what is needed and what is not. In a world full of people trying to upsell you, Greg is a breath of fresh air.",
-  },
-  {
-    name: "Maria L.",
-    stars: 5,
-    text: "Called in a panic when my computer crashed before a big presentation. Greg answered, walked me through a quick fix over the phone for FREE, and saved my job. Who does that? Greg does. Incredible.",
-  },
-  {
-    name: "David H.",
-    stars: 5,
-    text: "16 years in downtown Concord does not happen by accident. Greg and Linda have built something special here. Trustworthy, skilled, and they genuinely treat you like a neighbor — because you are.",
-  },
-];
-
 // ── SERVICES ── Edit labels and descriptions freely
 const SERVICES = [
   { icon: Monitor, title: "Computer Repair", desc: "Windows PCs running slow, crashing, or acting up? We diagnose and fix it right the first time." },
@@ -73,6 +39,16 @@ const SERVICE_AREAS = [
 
 export default function OnSite() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // Load the Elfsight platform script once (powers the live Google Reviews widget)
+  useEffect(() => {
+    const SRC = "https://elfsightcdn.com/platform.js";
+    if (document.querySelector(`script[src="${SRC}"]`)) return;
+    const s = document.createElement("script");
+    s.src = SRC;
+    s.async = true;
+    document.body.appendChild(s);
+  }, []);
 
   // Smooth-scroll for in-page anchor links, offset by the REAL header height
   // so each section lands just below the sticky nav instead of underneath it.
@@ -310,33 +286,18 @@ export default function OnSite() {
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a2e5a] mb-3">176+ Five-Star Reviews</h2>
             <p className="text-gray-500 text-lg">Real customers. Real words. No scripts.</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {REVIEWS.map((r, i) => (
-              <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <div className="flex items-center gap-1 mb-3">
-                  {[1,2,3,4,5].map(s => <Star key={s} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
-                </div>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4 italic">"{r.text}"</p>
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-bold text-sm flex items-center justify-center">
-                    {r.name[0]}
-                  </div>
-                  <div>
-                    <p className="font-semibold text-sm text-[#1a2e5a]">{r.name}</p>
-                    <p className="text-xs text-gray-400">Google Review</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <div
+            className="elfsight-app-f007186e-c528-4a57-9e16-f74cf7c7f3d7"
+            data-elfsight-app-lazy
+          ></div>
           <div className="text-center mt-10">
             <a
-              href="https://www.google.com/search?q=On+Site+Computer+Service+Concord+NC+reviews"
+              href="https://g.page/r/CSYE1297nyoJEAE/review"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border-2 border-[#1a2e5a] text-[#1a2e5a] hover:bg-[#1a2e5a] hover:text-white font-bold py-3 px-8 rounded-xl transition-all"
+              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-all shadow-lg"
             >
-              Read All Reviews on Google <ChevronRight className="w-4 h-4" />
+              <Star className="w-5 h-5 fill-white text-white" /> Leave Us a Review
             </a>
           </div>
         </div>
