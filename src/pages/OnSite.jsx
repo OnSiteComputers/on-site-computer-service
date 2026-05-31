@@ -117,12 +117,12 @@ export default function OnSite() {
           </div>
           {/* Logo + Trust Card */}
           <div className="flex-shrink-0 w-full md:w-auto">
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 md:p-8 shadow-2xl">
+            <div className="bg-blue-50 border border-blue-100 rounded-3xl p-6 md:p-8 shadow-2xl">
 
               <img
                 src={ONSITE_LOGO}
                 alt="On-Site Computer Service"
-                className="w-[380px] md:w-[460px] h-auto mx-auto"
+                className="w-[280px] md:w-[360px] h-auto mx-auto"
               />
 
               <div className="mt-6 grid grid-cols-3 gap-4 text-center">
