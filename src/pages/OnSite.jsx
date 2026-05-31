@@ -8,8 +8,8 @@
 import { Phone, MapPin, Star, Shield, Clock, Monitor, Wifi, HardDrive, Lock, Users, Wrench, Laptop, CheckCircle, ChevronRight } from "lucide-react";
 
 // ── LOGO ── Replace src with your hosted logo URL if needed
-const ONSITE_LOGO = "https://media.base44.com/images/public/6a1bc65b7f812ffe372bc401/67fdf1495_On-Site_Computer_Service_transparent.png";
-const HERO_IMAGE = "https://media.base44.com/images/public/6a1bc65b7f812ffe372bc401/67fdf1495_On-Site_Computer_Service_transparent.png";
+const ONSITE_LOGO = "https://media.base44.com/images/public/6a1bc65b7f812ffe372bc401/3cfeb6ed9_On-Site-Computer-Service-Logo.png";
+const HERO_IMAGE = "https://media.base44.com/images/public/6a1bc65b7f812ffe372bc401/1a9cb9872_On-Site-Computer-Service-full-logo.png";
 
 // ── CONTACT INFO ── Easy to edit
 const PHONE = "(704) 784-9969"; // TODO: replace with real number
@@ -77,7 +77,7 @@ export default function OnSite() {
       <nav className="bg-blue-50 border-b border-blue-100 sticky top-0 z-50 shadow-sm overflow-visible">
         <div className="max-w-6xl mx-auto px-4 py-1 flex items-center justify-between">
           <a href="#top">
-            <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="h-20 w-auto relative z-10" />
+            <img src="https://media.base44.com/images/public/6a1bc65b7f812ffe372bc401/0feb55d71_On-Site-Computer-Service-with-tagline.png" alt="On-Site Computer Service" className="h-20 w-auto relative z-10" />
           </a>
           <div className="hidden md:flex items-center gap-7 text-base font-semibold text-gray-700">
             <a href="#top" className="hover:text-blue-700 transition-colors">Home</a>
