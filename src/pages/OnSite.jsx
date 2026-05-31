@@ -143,8 +143,8 @@ export default function OnSite() {
               { number: "100%", label: "Locally Owned and Operated" },
             ].map((stat, i) => (
               <div key={i} className="p-4">
-                <div className="text-4xl font-extrabold text-orange-400 mb-1">{stat.number}</div>
-                <div className="text-blue-200 text-sm font-medium">{stat.label}</div>
+                <div className="text-6xl md:text-7xl font-black text-orange-400 mb-2 drop-shadow-lg" style={{textShadow: '0 0 30px rgba(251,146,60,0.5)'}}>{stat.number}</div>
+                <div className="text-blue-200 text-sm font-semibold uppercase tracking-widest">{stat.label}</div>
               </div>
             ))}
           </div>
