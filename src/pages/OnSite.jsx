@@ -9,6 +9,7 @@ import { Phone, MapPin, Star, Shield, Clock, Monitor, Wifi, HardDrive, Lock, Use
 
 // ── LOGO ── Replace src with your hosted logo URL if needed
 const ONSITE_LOGO = "https://media.base44.com/images/public/6a1bc65b7f812ffe372bc401/3cfeb6ed9_On-Site-Computer-Service-Logo.png";
+const HERO_IMAGE = "https://media.base44.com/images/public/6a1bc65b7f812ffe372bc401/1a9cb9872_On-Site-Computer-Service-full-logo.png";
 
 // ── CONTACT INFO ── Easy to edit
 const PHONE = "(704) 784-9969"; // TODO: replace with real number
@@ -117,10 +118,10 @@ export default function OnSite() {
           </div>
           {/* Logo + Trust Card */}
           <div className="flex-shrink-0 w-full md:w-auto">
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 md:p-8 shadow-2xl">
+            <div className="bg-white rounded-3xl p-6 md:p-8 shadow-2xl">
 
               <img
-                src={ONSITE_LOGO}
+                src={HERO_IMAGE}
                 alt="On-Site Computer Service"
                 className="w-[380px] md:w-[460px] h-auto mx-auto"
               />
