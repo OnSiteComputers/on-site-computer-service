@@ -13,7 +13,7 @@ import HeroLogo from "../assets/On-Site_Computer_Service_transparent.v1(2).png";
 const HERO_IMAGE = HeroLogo;
 
 // ── CONTACT INFO ── Easy to edit
-const PHONE = "(704) 784-9969"; // TODO: replace with real number
+const PHONE = "980-236-0810";
 const EMAIL = "greg@onsitecomputerservice.net"; // TODO: replace
 const ADDRESS = "53 Cabarrus Ave. W, Concord, NC 28025"; // TODO: replace with full address
 
@@ -126,23 +126,6 @@ export default function OnSite() {
                 alt="On-Site Computer Service"
                 className="w-[380px] md:w-[460px] h-auto mx-auto"
               />
-
-              <div className="mt-6 grid grid-cols-3 gap-4 text-center">
-                <div>
-                  <div className="text-2xl font-extrabold text-orange-400">26</div>
-                  <div className="text-xs text-blue-100">Years Experience</div>
-                </div>
-
-                <div>
-                  <div className="text-2xl font-extrabold text-orange-400">176+</div>
-                  <div className="text-xs text-blue-100">5-Star Reviews</div>
-                </div>
-
-                <div>
-                  <div className="text-2xl font-extrabold text-orange-400">16</div>
-                  <div className="text-xs text-blue-100">Years Downtown</div>
-                </div>
-              </div>
 
             </div>
           </div>
