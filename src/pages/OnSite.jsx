@@ -11,9 +11,9 @@ import { Phone, MapPin, Star, Shield, Clock, Monitor, Wifi, HardDrive, Lock, Use
 const ONSITE_LOGO = "https://media.base44.com/images/public/6a1bc65b7f812ffe372bc401/3cfeb6ed9_On-Site-Computer-Service-Logo.png";
 
 // ── CONTACT INFO ── Easy to edit
-const PHONE = "(704) 555-0100"; // TODO: replace with real number
+const PHONE = "(704) 784-9969"; // TODO: replace with real number
 const EMAIL = "greg@onsitecomputerservice.net"; // TODO: replace
-const ADDRESS = "Downtown Concord, NC"; // TODO: replace with full address
+const ADDRESS = "53 Cabarrus Ave. W, Concord, NC 28025"; // TODO: replace with full address
 
 // ── GOOGLE REVIEWS ── Real reviews — replace/add as needed
 const REVIEWS = [
@@ -115,9 +115,34 @@ export default function OnSite() {
               </a>
             </div>
           </div>
-          {/* Logo — integrated into hero */}
-          <div className="flex-shrink-0 opacity-90">
-            <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="w-72 h-auto drop-shadow-xl" />
+          {/* Logo + Trust Card */}
+          <div className="flex-shrink-0 w-full md:w-auto">
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 md:p-8 shadow-2xl">
+
+              <img
+                src={ONSITE_LOGO}
+                alt="On-Site Computer Service"
+                className="w-[380px] md:w-[460px] h-auto mx-auto"
+              />
+
+              <div className="mt-6 grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <div className="text-2xl font-extrabold text-orange-400">26</div>
+                  <div className="text-xs text-blue-100">Years Experience</div>
+                </div>
+
+                <div>
+                  <div className="text-2xl font-extrabold text-orange-400">176+</div>
+                  <div className="text-xs text-blue-100">5-Star Reviews</div>
+                </div>
+
+                <div>
+                  <div className="text-2xl font-extrabold text-orange-400">16</div>
+                  <div className="text-xs text-blue-100">Years Downtown</div>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
       </section>
