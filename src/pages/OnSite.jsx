@@ -40,6 +40,30 @@ const SERVICE_AREAS = [
 export default function OnSite() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // ── CONTACT FORM ──
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/xaqkgykp";
+  const [formStatus, setFormStatus] = useState("idle"); // idle | sending | success | error
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setFormStatus("sending");
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(e.target),
+      });
+      if (res.ok) {
+        setFormStatus("success");
+        e.target.reset();
+      } else {
+        setFormStatus("error");
+      }
+    } catch {
+      setFormStatus("error");
+    }
+  };
+
   // Load the Elfsight platform script once (powers the live Google Reviews widget)
   useEffect(() => {
     const SRC = "https://elfsightcdn.com/platform.js";
@@ -87,6 +111,7 @@ export default function OnSite() {
             <a href="#about" className="hover:text-blue-700 transition-colors">About Us</a>
             <a href="#reviews" className="hover:text-blue-700 transition-colors">Reviews</a>
             <a href="#areas" className="hover:text-blue-700 transition-colors">Service Areas</a>
+            <a href="#contact" className="hover:text-blue-700 transition-colors">Contact</a>
             <a href="#contact" className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2.5 rounded-lg transition-colors font-bold text-base">
               Call Us
             </a>
@@ -110,6 +135,7 @@ export default function OnSite() {
               <a href="#about" className="py-3 border-b border-blue-100 hover:text-blue-700">About Us</a>
               <a href="#reviews" className="py-3 border-b border-blue-100 hover:text-blue-700">Reviews</a>
               <a href="#areas" className="py-3 border-b border-blue-100 hover:text-blue-700">Service Areas</a>
+              <a href="#contact" className="py-3 border-b border-blue-100 hover:text-blue-700">Contact</a>
               <a href={`tel:${PHONE}`} className="mt-4 bg-orange-500 hover:bg-orange-600 text-white px-5 py-3 rounded-lg text-center font-bold flex items-center justify-center gap-2">
                 <Phone className="w-4 h-4" /> Call Greg Now
               </a>
@@ -321,25 +347,109 @@ export default function OnSite() {
 
       {/* ── CONTACT / CTA ── */}
       <section id="contact" className="py-16 md:py-24 bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-5xl font-extrabold mb-4">
-            Computer Problems? <br className="hidden md:block" />
-            <span className="text-orange-400">Let us Talk.</span>
-          </h2>
-          <p className="text-blue-100 text-xl mb-10 max-w-xl mx-auto">
-            Call Greg directly. No hold music, no ticket numbers — just a real conversation with someone who can actually help.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-5 justify-center mb-10">
-            <a href={`tel:${PHONE}`} className="bg-orange-500 hover:bg-orange-600 text-white font-extrabold py-5 px-10 rounded-xl text-xl transition-all shadow-xl flex items-center justify-center gap-3">
-              <Phone className="w-6 h-6" /> {PHONE}
-            </a>
-            <a href={`mailto:${EMAIL}`} className="border-2 border-white text-white hover:bg-white hover:text-blue-800 font-bold py-5 px-10 rounded-xl text-xl transition-all flex items-center justify-center gap-3">
-              Send Email
-            </a>
-          </div>
-          <div className="flex items-center justify-center gap-2 text-blue-200">
-            <MapPin className="w-5 h-5" />
-            <span className="text-lg">{ADDRESS}</span>
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-start">
+
+            {/* LEFT: contact info */}
+            <div className="text-center md:text-left">
+              <h2 className="text-3xl md:text-5xl font-extrabold mb-4">
+                Computer Problems? <br className="hidden md:block" />
+                <span className="text-orange-400">Let us Talk.</span>
+              </h2>
+              <p className="text-blue-100 text-xl mb-8 max-w-xl mx-auto md:mx-0">
+                Call Greg directly. No hold music, no ticket numbers — just a real conversation with someone who can actually help.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8">
+                <a href={`tel:${PHONE}`} className="bg-orange-500 hover:bg-orange-600 text-white font-extrabold py-4 px-8 rounded-xl text-lg transition-all shadow-xl flex items-center justify-center gap-3">
+                  <Phone className="w-6 h-6" /> {PHONE}
+                </a>
+                <a href={`mailto:${EMAIL}`} className="border-2 border-white text-white hover:bg-white hover:text-blue-800 font-bold py-4 px-8 rounded-xl text-lg transition-all flex items-center justify-center gap-3">
+                  Send Email
+                </a>
+              </div>
+              <div className="flex items-center justify-center md:justify-start gap-2 text-blue-200 mb-6">
+                <MapPin className="w-5 h-5 flex-shrink-0" />
+                <span className="text-lg">{ADDRESS}</span>
+              </div>
+              <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
+                <iframe
+                  title="On-Site Computer Service location"
+                  src="https://www.google.com/maps?q=53%20Cabarrus%20Ave%20W%2C%20Concord%2C%20NC%2028025&output=embed"
+                  width="100%"
+                  height="240"
+                  style={{ border: 0, display: "block" }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+
+            {/* RIGHT: contact form */}
+            <div className="bg-white rounded-2xl shadow-2xl p-6 md:p-8 text-gray-800">
+              <h3 className="text-2xl font-extrabold text-[#1a2e5a] mb-1">Send Us a Message</h3>
+              <p className="text-gray-500 text-sm mb-6">Fill this out and Greg will get back to you.</p>
+
+              {formStatus === "success" ? (
+                <div className="bg-green-50 border border-green-200 rounded-xl p-6 text-center">
+                  <CheckCircle className="w-10 h-10 text-green-500 mx-auto mb-3" />
+                  <p className="font-bold text-green-800 mb-1">Message sent!</p>
+                  <p className="text-green-700 text-sm">Thanks for reaching out — we will be in touch soon.</p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-1">Name</label>
+                    <input type="text" name="name" required
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                  </div>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-1">Email</label>
+                      <input type="email" name="email" required
+                        className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-1">Phone</label>
+                      <input type="tel" name="phone"
+                        className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-1">What can we help with?</label>
+                    <select name="topic" required defaultValue=""
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                      <option value="" disabled>Select a problem type…</option>
+                      <option>Computer Repair</option>
+                      <option>Mac Repair</option>
+                      <option>Data Recovery</option>
+                      <option>Virus / Malware Removal</option>
+                      <option>Business IT Support</option>
+                      <option>Networking / Wi-Fi</option>
+                      <option>On-Site / House Call</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-1">Message</label>
+                    <textarea name="message" rows="4" required
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                  </div>
+
+                  {formStatus === "error" && (
+                    <p className="text-red-600 text-sm font-medium">
+                      Something went wrong. Please try again, or just call us at {PHONE}.
+                    </p>
+                  )}
+
+                  <button type="submit" disabled={formStatus === "sending"}
+                    className="w-full bg-orange-500 hover:bg-orange-600 disabled:opacity-60 text-white font-bold py-3.5 rounded-lg text-lg transition-all shadow-lg">
+                    {formStatus === "sending" ? "Sending…" : "Send Message"}
+                  </button>
+                </form>
+              )}
+            </div>
+
           </div>
         </div>
       </section>
