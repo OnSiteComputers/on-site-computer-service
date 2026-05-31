@@ -92,7 +92,7 @@ export default function OnSite() {
       </nav>
 
       {/* ── HERO ── */}
-      <section className="bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white py-16 md:py-24">
+      <section className="bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white pt-16 pb-0 md:pt-20 md:pb-0 overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-12 md:gap-16">
           <div className="flex-1 text-center md:text-left">
             <p className="text-blue-200 uppercase tracking-widest text-sm font-semibold mb-3">House Calls for Technology Since 2010</p>
@@ -112,9 +112,9 @@ export default function OnSite() {
               </a>
             </div>
           </div>
-          {/* Logo — prominent on left side */}
-          <div className="flex-1 flex justify-center md:justify-end">
-            <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="w-80 md:w-96 h-auto drop-shadow-2xl" />
+          {/* Logo — anchored to bottom so it sits flush */}
+          <div className="flex-1 flex justify-center md:justify-end items-end self-end">
+            <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="w-80 md:w-[420px] h-auto drop-shadow-2xl" />
           </div>
         </div>
       </section>
