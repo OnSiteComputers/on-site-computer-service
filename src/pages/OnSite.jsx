@@ -114,7 +114,9 @@ export default function OnSite() {
           </div>
           {/* Logo block — centered in its half of the hero */}
           <div className="flex-1 flex flex-col items-center justify-center gap-3">
-            <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="w-80 md:w-[400px] h-auto drop-shadow-2xl" />
+            <div className="bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] rounded-2xl p-6">
+              <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="w-80 md:w-[400px] h-auto drop-shadow-2xl" />
+            </div>
             <div className="text-center">
               <p className="text-2xl md:text-3xl font-extrabold text-white tracking-tight leading-tight drop-shadow">On-Site Computer Service</p>
               <p className="text-orange-400 font-bold text-lg md:text-xl tracking-widest uppercase mt-1">Your Computer's Doctor</p>
