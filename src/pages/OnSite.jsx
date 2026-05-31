@@ -9,7 +9,7 @@ import { Phone, MapPin, Star, Shield, Clock, Monitor, Wifi, HardDrive, Lock, Use
 
 // ── LOGO ── Replace src with your hosted logo URL if needed
 const ONSITE_LOGO = "https://media.base44.com/images/public/6a1bc65b7f812ffe372bc401/3cfeb6ed9_On-Site-Computer-Service-Logo.png";
-const HERO_IMAGE = "https://media.base44.com/images/public/6a1bc65b7f812ffe372bc401/1a9cb9872_On-Site-Computer-Service-full-logo.png";
+const HERO_IMAGE = "https://media.base44.com/images/public/6a1bc65b7f812ffe372bc401/e5231d563_On-Site_Computer_Service_transparentv1.png";
 
 // ── CONTACT INFO ── Easy to edit
 const PHONE = "(704) 784-9969"; // TODO: replace with real number
@@ -96,8 +96,8 @@ export default function OnSite() {
       </nav>
 
       {/* ── HERO ── */}
-      <section className="bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white py-16 md:py-24">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
+      <section className="bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white pt-0 pb-10 md:pt-0 md:pb-12">
+        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-6">
           <div className="flex-1 text-center md:text-left">
             <p className="text-blue-200 uppercase tracking-widest text-sm font-semibold mb-3">House Calls for Technology Since 2010</p>
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
@@ -118,12 +118,12 @@ export default function OnSite() {
           </div>
           {/* Logo + Trust Card */}
           <div className="flex-shrink-0 w-full md:w-auto">
-            <div className="p-6 md:p-8">
+            <div className="p-0">
 
               <img
                 src={HERO_IMAGE}
                 alt="On-Site Computer Service"
-                className="w-[380px] md:w-[460px] h-auto mx-auto"
+                className="w-[420px] md:w-[520px] h-auto mx-auto"
               />
 
               <div className="mt-6 grid grid-cols-3 gap-4 text-center">
@@ -133,8 +133,8 @@ export default function OnSite() {
                 </div>
 
                 <div>
-                  <div className="text-2xl font-extrabold text-orange-400">176+</div>
-                  <div className="text-xs text-blue-100">5-Star Reviews</div>
+                  <div className="text-2xl font-extrabold text-orange-400">177</div>
+                  <div className="text-xs text-blue-100">Google Reviews</div>
                 </div>
 
                 <div>
@@ -155,7 +155,7 @@ export default function OnSite() {
             {[
               { number: "26", label: "Years of Experience" },
               { number: "16", label: "Years in Downtown Concord" },
-              { number: "176+", label: "Five-Star Google Reviews" },
+              { number: "177", label: "Five-Star Google Reviews" },
               { number: "100%", label: "Locally Owned and Operated" },
             ].map((stat, i) => (
               <div key={i} className="p-4">
@@ -220,7 +220,7 @@ export default function OnSite() {
               <div className="flex">
                 {[1,2,3,4,5].map(s => <Star key={s} className="w-5 h-5 fill-yellow-400 text-yellow-400" />)}
               </div>
-              <span className="text-gray-500 font-medium">176+ five-star Google reviews</span>
+              <span className="text-gray-500 font-medium">177 Google reviews · 4.9 out of 5</span>
             </div>
           </div>
         </div>
@@ -285,8 +285,8 @@ export default function OnSite() {
             <div className="flex justify-center gap-1 mb-3">
               {[1,2,3,4,5].map(s => <Star key={s} className="w-7 h-7 fill-yellow-400 text-yellow-400" />)}
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a2e5a] mb-3">176+ Five-Star Reviews</h2>
-            <p className="text-gray-500 text-lg">Real customers. Real words. No scripts.</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a2e5a] mb-3">177 Google Reviews</h2>
+            <p className="text-gray-500 text-lg">4.9 out of 5 based on 177 Google reviews</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {REVIEWS.map((r, i) => (
