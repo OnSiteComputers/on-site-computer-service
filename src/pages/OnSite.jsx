@@ -93,7 +93,7 @@ export default function OnSite() {
 
       {/* ── HERO ── */}
       <section className="bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white py-16 md:py-24">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
+        <div className="max-w-6xl mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-12 md:gap-16">
           <div className="flex-1 text-center md:text-left">
             <p className="text-blue-200 uppercase tracking-widest text-sm font-semibold mb-3">House Calls for Technology Since 2010</p>
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
@@ -112,9 +112,9 @@ export default function OnSite() {
               </a>
             </div>
           </div>
-          {/* Logo — integrated into hero */}
-          <div className="flex-shrink-0 opacity-90">
-            <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="w-72 h-auto drop-shadow-xl" />
+          {/* Logo — prominent on left side */}
+          <div className="flex-1 flex justify-center md:justify-end">
+            <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="w-80 md:w-96 h-auto drop-shadow-2xl" />
           </div>
         </div>
       </section>
