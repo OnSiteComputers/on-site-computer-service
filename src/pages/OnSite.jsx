@@ -191,7 +191,15 @@ export default function OnSite() {
               { number: "100%", label: "Locally Owned and Operated" },
             ].map((stat, i) => (
               <div key={i} className="px-1">
-                <div className="glimmer-gold text-3xl sm:text-4xl md:text-5xl font-black leading-none mb-0.5">{stat.number}</div>
+                <div
+                  className="text-3xl sm:text-4xl md:text-5xl font-black leading-none mb-0.5"
+                  style={{
+                    color: "#f6c453",
+                    textShadow: "0 0 14px rgba(246,196,83,0.5)",
+                  }}
+                >
+                  {stat.number}
+                </div>
                 <div className="text-blue-200 text-[10px] sm:text-xs font-semibold uppercase tracking-wide leading-tight">{stat.label}</div>
               </div>
             ))}
@@ -285,7 +293,7 @@ export default function OnSite() {
           </div>
           <div className="grid md:grid-cols-4 gap-6">
             {[
-              { step: "1", title: "You Call or Bring It In", desc: "Reach out by phone or drop off your device at our downtown Concord location. No appointment needed." },
+              { step: "1", title: "You Call or Bring It In", desc: "Reach out by phone or drop off your device at our downtown Concord location. Calling ahead is best — Greg is often out on service calls." },
               { step: "2", title: "We Diagnose", desc: "Greg personally examines your device and identifies the exact problem — no assumptions, no guesswork." },
               { step: "3", title: "We Quote You First", desc: "Before anything is touched, you get a clear, honest quote. You decide. No pressure, ever." },
               { step: "4", title: "We Fix It Right", desc: "Quality repair with the right parts. We do not cut corners, and we stand behind our work." },
