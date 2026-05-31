@@ -112,9 +112,9 @@ export default function OnSite() {
               </a>
             </div>
           </div>
-          {/* Logo — compact, right side */}
-          <div className="flex-shrink-0">
-            <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="w-48 md:w-56 h-auto drop-shadow-xl" />
+          {/* Logo — centered in column, prominent */}
+          <div className="flex-shrink-0 flex flex-col items-center justify-center">
+            <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="w-72 md:w-80 h-auto drop-shadow-2xl" />
           </div>
         </div>
       </section>
