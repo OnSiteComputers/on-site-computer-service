@@ -112,11 +112,9 @@ export default function OnSite() {
               </a>
             </div>
           </div>
-          {/* Logo card */}
-          <div className="flex-shrink-0">
-            <div className="bg-white rounded-3xl p-6 shadow-2xl">
-              <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="w-64 h-auto" />
-            </div>
+          {/* Logo — integrated into hero */}
+          <div className="flex-shrink-0 opacity-90">
+            <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="w-72 h-auto drop-shadow-xl" />
           </div>
         </div>
       </section>
