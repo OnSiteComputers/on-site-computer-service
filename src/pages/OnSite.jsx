@@ -127,7 +127,6 @@ export default function OnSite() {
 
         {/* ── GOOGLE REVIEWS SCROLL BAR ── */}
         <div className="mt-10 border-t border-white/20 pt-6">
-          <script src="https://static.elfsight.com/platform/platform.js" async></script>
           <div className="elfsight-app-59326f3f-41fd-4afb-959a-18438e9cd406" data-elfsight-app-lazy></div>
         </div>
       </section>
@@ -152,7 +151,6 @@ export default function OnSite() {
 
         {/* ── GOOGLE REVIEWS SCROLL BAR ── */}
         <div className="mt-10 border-t border-white/20 pt-6">
-          <script src="https://static.elfsight.com/platform/platform.js" async></script>
           <div className="elfsight-app-59326f3f-41fd-4afb-959a-18438e9cd406" data-elfsight-app-lazy></div>
         </div>
       </section>
@@ -184,7 +182,6 @@ export default function OnSite() {
 
         {/* ── GOOGLE REVIEWS SCROLL BAR ── */}
         <div className="mt-10 border-t border-white/20 pt-6">
-          <script src="https://static.elfsight.com/platform/platform.js" async></script>
           <div className="elfsight-app-59326f3f-41fd-4afb-959a-18438e9cd406" data-elfsight-app-lazy></div>
         </div>
       </section>
@@ -223,7 +220,6 @@ export default function OnSite() {
 
         {/* ── GOOGLE REVIEWS SCROLL BAR ── */}
         <div className="mt-10 border-t border-white/20 pt-6">
-          <script src="https://static.elfsight.com/platform/platform.js" async></script>
           <div className="elfsight-app-59326f3f-41fd-4afb-959a-18438e9cd406" data-elfsight-app-lazy></div>
         </div>
       </section>
@@ -255,7 +251,6 @@ export default function OnSite() {
 
         {/* ── GOOGLE REVIEWS SCROLL BAR ── */}
         <div className="mt-10 border-t border-white/20 pt-6">
-          <script src="https://static.elfsight.com/platform/platform.js" async></script>
           <div className="elfsight-app-59326f3f-41fd-4afb-959a-18438e9cd406" data-elfsight-app-lazy></div>
         </div>
       </section>
@@ -287,7 +282,6 @@ export default function OnSite() {
 
         {/* ── GOOGLE REVIEWS SCROLL BAR ── */}
         <div className="mt-10 border-t border-white/20 pt-6">
-          <script src="https://static.elfsight.com/platform/platform.js" async></script>
           <div className="elfsight-app-59326f3f-41fd-4afb-959a-18438e9cd406" data-elfsight-app-lazy></div>
         </div>
       </section>
@@ -335,7 +329,6 @@ export default function OnSite() {
 
         {/* ── GOOGLE REVIEWS SCROLL BAR ── */}
         <div className="mt-10 border-t border-white/20 pt-6">
-          <script src="https://static.elfsight.com/platform/platform.js" async></script>
           <div className="elfsight-app-59326f3f-41fd-4afb-959a-18438e9cd406" data-elfsight-app-lazy></div>
         </div>
       </section>
@@ -357,7 +350,6 @@ export default function OnSite() {
 
         {/* ── GOOGLE REVIEWS SCROLL BAR ── */}
         <div className="mt-10 border-t border-white/20 pt-6">
-          <script src="https://static.elfsight.com/platform/platform.js" async></script>
           <div className="elfsight-app-59326f3f-41fd-4afb-959a-18438e9cd406" data-elfsight-app-lazy></div>
         </div>
       </section>
@@ -388,7 +380,6 @@ export default function OnSite() {
 
         {/* ── GOOGLE REVIEWS SCROLL BAR ── */}
         <div className="mt-10 border-t border-white/20 pt-6">
-          <script src="https://static.elfsight.com/platform/platform.js" async></script>
           <div className="elfsight-app-59326f3f-41fd-4afb-959a-18438e9cd406" data-elfsight-app-lazy></div>
         </div>
       </section>
