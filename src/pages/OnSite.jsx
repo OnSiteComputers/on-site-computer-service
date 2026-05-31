@@ -8,7 +8,7 @@
 import { Phone, MapPin, Star, Shield, Clock, Monitor, Wifi, HardDrive, Lock, Users, Wrench, Laptop, CheckCircle, ChevronRight } from "lucide-react";
 
 // ── LOGO ── Replace src with your hosted logo URL if needed
-const ONSITE_LOGO = "https://media.base44.com/images/public/6a1bc65b7f812ffe372bc401/3cfeb6ed9_On-Site-Computer-Service-Logo.png";
+const ONSITE_LOGO = "https://media.base44.com/images/public/6a1bc65b7f812ffe372bc401/32dd0a4b8_LogonewNoBackgroundnobackgroundfinal3.png";
 
 // ── CONTACT INFO ── Easy to edit
 const PHONE = "(704) 555-0100"; // TODO: replace with real number
@@ -75,7 +75,7 @@ export default function OnSite() {
       {/* ── NAVIGATION ── */}
       <nav className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <img src={ONSITE_LOGO} alt="On-Site Computer Service Logo" className="h-14 w-auto" />
+          <img src={ONSITE_LOGO} alt="On-Site Computer Service Logo" className="h-16 w-auto" />
           <div className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
             <a href="#services" className="hover:text-blue-700 transition-colors">Services</a>
             <a href="#about" className="hover:text-blue-700 transition-colors">About Greg</a>
@@ -112,9 +112,13 @@ export default function OnSite() {
               </a>
             </div>
           </div>
-          {/* Logo — centered in its half of the hero */}
-          <div className="flex-1 flex items-center justify-center">
-            <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="w-80 md:w-96 h-auto drop-shadow-2xl" />
+          {/* Logo block — centered in its half of the hero */}
+          <div className="flex-1 flex flex-col items-center justify-center gap-3">
+            <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="w-80 md:w-[400px] h-auto drop-shadow-2xl" />
+            <div className="text-center">
+              <p className="text-2xl md:text-3xl font-extrabold text-white tracking-tight leading-tight drop-shadow">On-Site Computer Service</p>
+              <p className="text-orange-400 font-bold text-lg md:text-xl tracking-widest uppercase mt-1">Your Computer's Doctor</p>
+            </div>
           </div>
         </div>
       </section>
@@ -335,7 +339,7 @@ export default function OnSite() {
       {/* ── FOOTER ── */}
       <footer className="bg-[#111827] text-gray-400 py-8 text-center text-sm">
         <div className="max-w-6xl mx-auto px-4">
-          <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="h-10 mx-auto mb-4 opacity-80" />
+          <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="h-16 mx-auto mb-4 opacity-80" />
           <p className="mb-1">2025 On-Site Computer Service — Downtown Concord, NC</p>
           <p className="text-gray-500">Your Computer's Doctor | House Calls for Technology Since 2010</p>
         </div>
