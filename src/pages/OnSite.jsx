@@ -14,8 +14,8 @@ const HERO_IMAGE = HeroLogo;
 
 // ── CONTACT INFO ── Easy to edit
 const PHONE = "980-236-0810";
-const EMAIL = "greg@onsitecomputerservice.net"; // TODO: replace
-const ADDRESS = "53 Cabarrus Ave. W, Concord, NC 28025"; // TODO: replace with full address
+const EMAIL = "greg@onsitecomputerservice.net";
+const ADDRESS = "53 Cabarrus Ave. W, Concord, NC 28025";
 
 // ── GOOGLE REVIEWS ── Real reviews — replace/add as needed
 const REVIEWS = [
@@ -97,10 +97,10 @@ export default function OnSite() {
       </nav>
 
       {/* ── HERO ── */}
-      <section className="bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white py-16 md:py-24">
+      <section id="top" className="bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
           <div className="flex-1 text-center md:text-left">
-            <p className="text-blue-200 uppercase tracking-widest text-sm font-semibold mb-3">House Calls for Technology Since 2010</p>
+            <p className="text-blue-200 uppercase tracking-widest text-sm font-semibold mb-3">House Calls for Technology Since 2000</p>
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
               Trusted for <span className="text-orange-400">26 Years.</span><br />
               Serving Downtown<br className="hidden md:block" /> Concord for 16.
@@ -179,20 +179,12 @@ export default function OnSite() {
 
       {/* ── MEET GREG & LINDA ── */}
       <section id="about" className="py-16 md:py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-4 flex flex-col md:flex-row gap-12 items-center">
-          {/* Photo placeholder — replace with real photo */}
-          <div className="flex-shrink-0">
-            <div className="w-64 h-72 bg-blue-50 rounded-2xl border-2 border-dashed border-blue-200 flex flex-col items-center justify-center text-center p-4">
-              <div className="text-5xl mb-3">📷</div>
-              <p className="text-blue-400 text-sm font-medium">Photo of Greg and Linda</p>
-              <p className="text-blue-300 text-xs mt-1">(Replace with real photo)</p>
-            </div>
-          </div>
+        <div className="max-w-3xl mx-auto px-4">
           <div className="flex-1">
             <p className="text-orange-500 font-semibold uppercase tracking-widest text-sm mb-2">The People Behind the Business</p>
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a2e5a] mb-5">Meet Greg and Linda Blair</h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-4">
-              Greg Blair has been repairing computers since 1998 — long before most people had one in their home. For the past 16 years, he has operated On-Site Computer Service from the same location in downtown Concord, building a reputation one honest repair at a time.
+              Greg Blair has been repairing computers for 26 years — long before most people had one in their home. For the past 16 years, he has operated On-Site Computer Service from the same location in downtown Concord, building a reputation one honest repair at a time.
             </p>
             <p className="text-gray-600 text-lg leading-relaxed mb-4">
               Linda runs the front of house, handles communications, and makes sure every customer leaves feeling heard and taken care of. Together, they have built a business that has become part of the Concord community — not just a shop, but a trusted resource.
@@ -350,7 +342,7 @@ export default function OnSite() {
         <div className="max-w-6xl mx-auto px-4">
           <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="h-10 mx-auto mb-4 opacity-80" />
           <p className="mb-1">2025 On-Site Computer Service — Downtown Concord, NC</p>
-          <p className="text-gray-500">Your Computer's Doctor | House Calls for Technology Since 2010</p>
+          <p className="text-gray-500">Your Computer's Doctor | House Calls for Technology Since 2000</p>
         </div>
       </footer>
 
