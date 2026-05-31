@@ -8,7 +8,7 @@
 import { Phone, MapPin, Star, Shield, Clock, Monitor, Wifi, HardDrive, Lock, Users, Wrench, Laptop, CheckCircle, ChevronRight } from "lucide-react";
 
 // ── LOGO ── Replace src with your hosted logo URL if needed
-const ONSITE_LOGO = "https://media.base44.com/images/public/6a1bc65b7f812ffe372bc401/32dd0a4b8_LogonewNoBackgroundnobackgroundfinal3.png";
+const ONSITE_LOGO = "https://media.base44.com/images/public/6a1bc65b7f812ffe372bc401/d9e412d93_LogonewNoBackgroundnobackgroundfinal3.png";
 
 // ── CONTACT INFO ── Easy to edit
 const PHONE = "(704) 555-0100"; // TODO: replace with real number
