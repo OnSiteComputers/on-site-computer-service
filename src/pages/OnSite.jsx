@@ -75,13 +75,14 @@ export default function OnSite() {
       {/* ── NAVIGATION ── */}
       <nav className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <img src={ONSITE_LOGO} alt="On-Site Computer Service Logo" className="h-14 w-auto" />
-          <div className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
+          <img src={ONSITE_LOGO} alt="On-Site Computer Service Logo" className="h-9 w-auto" />
+          <div className="hidden md:flex items-center gap-7 text-base font-semibold text-gray-700">
+            <a href="#top" className="hover:text-blue-700 transition-colors">Home</a>
             <a href="#services" className="hover:text-blue-700 transition-colors">Services</a>
             <a href="#about" className="hover:text-blue-700 transition-colors">About Greg</a>
             <a href="#reviews" className="hover:text-blue-700 transition-colors">Reviews</a>
             <a href="#areas" className="hover:text-blue-700 transition-colors">Service Areas</a>
-            <a href="#contact" className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg transition-colors font-semibold">
+            <a href="#contact" className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2.5 rounded-lg transition-colors font-bold text-base">
               Call Us
             </a>
           </div>
