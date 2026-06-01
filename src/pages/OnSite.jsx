@@ -9,9 +9,8 @@ import { useEffect, useState } from "react";
 import { Phone, MapPin, Star, Shield, Clock, Monitor, Wifi, HardDrive, Lock, Users, Wrench, Laptop, CheckCircle, ChevronRight, Menu, X } from "lucide-react";
 
 // ── LOGO ── Replace src with your hosted logo URL if needed
-const ONSITE_LOGO = "https://media.base44.com/images/public/6a1bc65b7f812ffe372bc401/3cfeb6ed9_On-Site-Computer-Service-Logo.png";
-import HeroLogo from "../assets/On-Site_Computer_Service_transparent.v1(2).png";
-const HERO_IMAGE = HeroLogo;
+const ONSITE_LOGO = "/logo.png";
+const HERO_IMAGE = "/hero-logo.png";
 
 // ── CONTACT INFO ── Easy to edit
 const PHONE = "980-236-0810";
@@ -24,9 +23,9 @@ const SERVICES = [
   { icon: Laptop, title: "Mac Repair", desc: "Certified experience with Apple laptops and desktops. Fans, screens, logic boards, and more." },
   { icon: HardDrive, title: "Data Recovery", desc: "Lost files, failed hard drives, accidental deletions — we recover what matters most to you." },
   { icon: Users, title: "Business IT Support", desc: "Keep your business running. We handle networks, servers, workstations, and on-site visits." },
-  { icon: Lock, title: "Cybersecurity", desc: "Virus removal, malware cleanup, protection setup, and security audits for home and business." },
+  { icon: Lock, title: "Virus & Malware Removal", desc: "Caught a virus or pop-ups taking over? We clean it up, lock it down, and set up protection for home and business." },
   { icon: Wifi, title: "Networking", desc: "Home or office — routers, switches, Wi-Fi setup, and wired network installations." },
-  { icon: Shield, title: "Remote Support", desc: "Many issues solved remotely without you leaving home. Fast, secure, and convenient." },
+  { icon: Shield, title: "Remote Support", desc: "Many issues solved remotely without you leaving home — fast, secure, and convenient. See our Remote Support page to get started." },
   { icon: Wrench, title: "On-Site Service", desc: "We come to you — home or office visits available throughout Concord and surrounding areas." },
 ];
 
@@ -103,17 +102,18 @@ export default function OnSite() {
       <nav id="site-nav" className="bg-blue-50 border-b border-blue-100 sticky top-0 z-50 shadow-sm overflow-visible">
         <div className="max-w-6xl mx-auto px-4 py-1 flex items-center justify-between">
           <a href="#top">
-            <img src="https://media.base44.com/images/public/6a1bc65b7f812ffe372bc401/0feb55d71_On-Site-Computer-Service-with-tagline.png" alt="On-Site Computer Service" className="h-20 w-auto relative z-10" />
+            <img src="/logo.png" alt="On-Site Computer Service" className="h-20 w-auto relative z-10" />
           </a>
           <div className="hidden md:flex items-center gap-7 text-base font-semibold text-gray-700">
             <a href="#top" className="hover:text-blue-700 transition-colors">Home</a>
             <a href="#services" className="hover:text-blue-700 transition-colors">Services</a>
+            <a href="/remote-support" className="hover:text-blue-700 transition-colors">Remote Support</a>
             <a href="#about" className="hover:text-blue-700 transition-colors">About Us</a>
             <a href="#reviews" className="hover:text-blue-700 transition-colors">Reviews</a>
             <a href="#areas" className="hover:text-blue-700 transition-colors">Service Areas</a>
             <a href="#contact" className="hover:text-blue-700 transition-colors">Contact</a>
             <a href="#contact" className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2.5 rounded-lg transition-colors font-bold text-base">
-              Call Us
+              Call Greg
             </a>
           </div>
           <button
@@ -132,6 +132,7 @@ export default function OnSite() {
             <div className="flex flex-col text-base font-semibold text-gray-700">
               <a href="#top" className="py-3 border-b border-blue-100 hover:text-blue-700">Home</a>
               <a href="#services" className="py-3 border-b border-blue-100 hover:text-blue-700">Services</a>
+              <a href="/remote-support" className="py-3 border-b border-blue-100 hover:text-blue-700">Remote Support</a>
               <a href="#about" className="py-3 border-b border-blue-100 hover:text-blue-700">About Us</a>
               <a href="#reviews" className="py-3 border-b border-blue-100 hover:text-blue-700">Reviews</a>
               <a href="#areas" className="py-3 border-b border-blue-100 hover:text-blue-700">Service Areas</a>
@@ -247,6 +248,7 @@ export default function OnSite() {
             </p>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
               "We have never been about volume. We are about doing right by each person who walks through that door or calls us for help. That has not changed in 26 years."
+              <span className="block mt-2 text-[#1a2e5a] font-semibold not-italic">— Greg Blair</span>
             </p>
             <div className="flex items-center gap-3">
               <div className="flex">
@@ -278,7 +280,7 @@ export default function OnSite() {
           </div>
           <div className="text-center mt-10">
             <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-10 rounded-xl text-lg transition-all shadow-lg">
-              <Phone className="w-5 h-5" /> Call Us
+              <Phone className="w-5 h-5" /> Call Greg
             </a>
           </div>
         </div>
@@ -375,9 +377,13 @@ export default function OnSite() {
                   Send Email
                 </a>
               </div>
-              <div className="flex items-center justify-center md:justify-start gap-2 text-blue-200 mb-6">
+              <div className="flex items-center justify-center md:justify-start gap-2 text-blue-200 mb-2">
                 <MapPin className="w-5 h-5 flex-shrink-0" />
                 <span className="text-lg">{ADDRESS}</span>
+              </div>
+              <div className="flex items-center justify-center md:justify-start gap-2 text-blue-200 mb-6">
+                <Clock className="w-5 h-5 flex-shrink-0" />
+                <span className="text-lg">Mon–Fri, 10:00 AM – 6:00 PM EST</span>
               </div>
               <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
                 <iframe
@@ -466,7 +472,7 @@ export default function OnSite() {
       <footer className="bg-[#111827] text-gray-400 py-8 text-center text-sm">
         <div className="max-w-6xl mx-auto px-4">
           <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="h-10 mx-auto mb-4 opacity-80" />
-          <p className="mb-1">2025 On-Site Computer Service — Downtown Concord, NC</p>
+          <p className="mb-1">© 2026 On-Site Computer Service — Downtown Concord, NC</p>
           <p className="text-gray-500">Your Computer's Doctor | House Calls for Technology Since 2000</p>
         </div>
       </footer>
