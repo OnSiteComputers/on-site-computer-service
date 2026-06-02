@@ -6,14 +6,18 @@ const ONSITE_LOGO = "/logo.png";
 
 // ── CONTACT INFO ──
 const PHONE = "980-236-0810";
+const EMERGENCY_PHONE = "704-577-4936"; // Greg's cell — emergency callbacks come from this number
 
 // ── PAYMENT LINKS ── TODO: replace with your real PayRoc payment links
-const PAY_REGULAR = "#";   // $179 regular remote support
-const PAY_EMERGENCY = "#"; // $299 emergency remote support
+const PAY_REGULAR = "https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=fdc8610a-5e1c-11f1-a8e1-12a0879a85b1";   // $199 regular remote support
+const PAY_EMERGENCY = "https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=16545ed3-5e1d-11f1-a8e1-12a0879a85b1"; // $299 emergency remote support
 
-// ── REMOTE TOOL ── TODO: replace with your remote tool download link + name
-const REMOTE_TOOL_NAME = "our remote support tool";
-const REMOTE_TOOL_LINK = "#";
+// ── SCHEDULING ── Google Calendar booking page (live)
+const BOOKING_LINK = "https://calendar.app.google/yYRnBHKE5EL12QZE9";
+
+// ── REMOTE TOOL ── TODO: replace REMOTE_TOOL_LINK with your TeamViewer QuickSupport download link
+const REMOTE_TOOL_NAME = "TeamViewer QuickSupport";
+const REMOTE_TOOL_LINK = "https://download.teamviewer.com/download/TeamViewerQS_x64.exe";
 
 export default function RemoteSupport() {
   useEffect(() => {
@@ -35,16 +39,44 @@ export default function RemoteSupport() {
         </div>
       </nav>
 
-      {/* ── HERO ── */}
-      <section className="bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white py-14 md:py-20">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-1.5 mb-5 text-blue-100 text-sm font-semibold">
-            <Monitor className="w-4 h-4" /> Remote Support
+      {/* ── HERO (HTML banner — patriotic, responsive) ── */}
+      <section className="bg-[#002868] text-white py-12 md:py-16">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-10">
+
+            {/* Cartoon artwork (left) */}
+            <div className="flex-shrink-0 w-full md:w-1/2">
+              <img
+                src="/hero-logo.png"
+                alt="On-Site Computer Service — Your Computer's Doctor"
+                className="w-full max-w-md mx-auto drop-shadow-2xl"
+              />
+            </div>
+
+            {/* Text block (right) */}
+            <div className="flex-1 text-center md:text-left">
+              <h1 className="leading-none mb-2">
+                <span className="block text-5xl md:text-6xl font-black text-orange-500 tracking-tight">ON-SITE</span>
+                <span className="block text-3xl md:text-4xl font-extrabold text-white tracking-tight">COMPUTER SERVICE</span>
+              </h1>
+
+              <div className="flex items-center justify-center md:justify-start gap-3 my-4">
+                <span className="hidden md:block h-0.5 w-8 bg-orange-500"></span>
+                <span className="text-xl md:text-2xl font-bold text-white uppercase tracking-wide">We Come to You!</span>
+                <span className="h-0.5 flex-1 bg-orange-500"></span>
+              </div>
+
+              <a href={`tel:${PHONE}`} className="block text-4xl md:text-5xl font-black text-orange-500 hover:text-orange-400 transition-colors mb-2">
+                {PHONE}
+              </a>
+              <p className="text-lg md:text-xl font-bold text-white tracking-wide mb-3">www.onsitecomputerservice.net</p>
+              <p className="text-blue-200 text-sm md:text-base">Your Computer's Doctor &nbsp;•&nbsp; Trusted for 26 Years</p>
+            </div>
+
           </div>
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">
-            Get Help Without <span className="text-orange-400">Leaving Home.</span>
-          </h1>
-          <p className="text-blue-100 text-lg md:text-xl max-w-2xl mx-auto">
+
+          {/* sub-line under the banner */}
+          <p className="text-blue-100 text-base md:text-lg max-w-2xl mx-auto text-center mt-10">
             Greg connects to your computer securely over the internet to diagnose and fix
             problems — no house call required. Pay first, then we get you connected.
           </p>
@@ -77,7 +109,7 @@ export default function RemoteSupport() {
       <section className="py-14 md:py-16 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-extrabold text-[#1a2e5a] text-center mb-3">Choose Your Support</h2>
-          <p className="text-gray-500 text-center mb-10 max-w-xl mx-auto">Each session covers up to one hour. Additional time is billed separately.</p>
+          <p className="text-gray-500 text-center mb-10 max-w-xl mx-auto">One-hour minimum per session. Additional time is billed in 30-minute increments.</p>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
 
@@ -88,10 +120,10 @@ export default function RemoteSupport() {
                 <h3 className="text-xl font-bold">Regular Remote Support</h3>
               </div>
               <div className="mb-1">
-                <span className="text-4xl font-extrabold text-[#1a2e5a]">$179</span>
-                <span className="text-gray-500 text-sm"> / up to 1 hour</span>
+                <span className="text-4xl font-extrabold text-[#1a2e5a]">$199</span>
+                <span className="text-gray-500 text-sm"> / 1-hour minimum</span>
               </div>
-              <p className="text-gray-600 text-sm mb-5">Scheduled callback during business hours.</p>
+              <p className="text-gray-600 text-sm mb-5">Pay, then pick a callback time during business hours.</p>
               <ul className="text-sm text-gray-600 space-y-2 mb-6 flex-1">
                 <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" /> Pick a time that works for you</li>
                 <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" /> Mon–Fri, 10:00 AM–6:00 PM EST</li>
@@ -99,7 +131,7 @@ export default function RemoteSupport() {
               </ul>
               <a href={PAY_REGULAR} target="_blank" rel="noopener noreferrer"
                 className="bg-[#1a2e5a] hover:bg-[#22386e] text-white font-bold py-3.5 rounded-xl text-center transition-all">
-                Pay &amp; Schedule — $179
+                Pay &amp; Schedule — $199
               </a>
             </div>
 
@@ -112,25 +144,26 @@ export default function RemoteSupport() {
               </div>
               <div className="mb-1">
                 <span className="text-4xl font-extrabold text-orange-600">$299</span>
-                <span className="text-gray-500 text-sm"> / up to 1 hour</span>
+                <span className="text-gray-500 text-sm"> / 1-hour minimum</span>
               </div>
-              <p className="text-gray-600 text-sm mb-5">Drop-everything priority — Greg calls you back ASAP.</p>
+              <p className="text-gray-600 text-sm mb-5">Pay now — Greg calls you back ASAP from {EMERGENCY_PHONE}.</p>
               <ul className="text-sm text-gray-600 space-y-2 mb-6 flex-1">
                 <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" /> Jumps to the front of the line</li>
-                <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" /> Fastest possible callback</li>
+                <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" /> No scheduling — call comes ASAP</li>
                 <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" /> For urgent, can't-wait problems</li>
               </ul>
               <a href={PAY_EMERGENCY} target="_blank" rel="noopener noreferrer"
                 className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3.5 rounded-xl text-center transition-all">
                 Pay &amp; Get Priority — $299
               </a>
+              <p className="text-gray-400 text-xs mt-3 text-center">After payment, watch for a call from {EMERGENCY_PHONE}.</p>
             </div>
           </div>
 
           {/* trust note */}
           <div className="flex flex-wrap items-center justify-center gap-6 mt-10 text-sm text-gray-500">
             <span className="flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-[#1a2e5a]" /> Secure payment</span>
-            <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-[#1a2e5a]" /> Up to 1 hour per session</span>
+            <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-[#1a2e5a]" /> 1-hour minimum</span>
             <span className="flex items-center gap-2"><Phone className="w-4 h-4 text-[#1a2e5a]" /> Questions? {PHONE}</span>
           </div>
         </div>
@@ -139,16 +172,28 @@ export default function RemoteSupport() {
       {/* ── AFTER PAYMENT INSTRUCTIONS ── */}
       <section className="py-12 bg-[#1a2e5a] text-white">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-xl md:text-2xl font-bold mb-3">After You Pay</h2>
-          <p className="text-blue-100 mb-6">
-            Once your payment goes through, Greg will reach out to schedule (or call you right back for
-            emergencies). When it's time, you'll get a link to {REMOTE_TOOL_NAME} to start the session.
-          </p>
-          <a href={REMOTE_TOOL_LINK} target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-[#1a2e5a] font-bold py-3 px-7 rounded-xl transition-all">
-            <Monitor className="w-5 h-5" /> Download {REMOTE_TOOL_NAME}
-          </a>
-          <p className="text-blue-300 text-xs mt-4">Only start the remote tool after you've paid and Greg has confirmed.</p>
+          <h2 className="text-xl md:text-2xl font-bold mb-4">After You Pay</h2>
+          <div className="grid sm:grid-cols-2 gap-6 text-left mb-8">
+            <div className="bg-white/5 rounded-xl p-5">
+              <div className="flex items-center gap-2 font-bold mb-2"><CalendarClock className="w-5 h-5 text-orange-400" /> Regular ($199)</div>
+              <p className="text-blue-100 text-sm">Schedule your callback below. Greg will call you at your chosen time and connect via {REMOTE_TOOL_NAME}.</p>
+            </div>
+            <div className="bg-white/5 rounded-xl p-5">
+              <div className="flex items-center gap-2 font-bold mb-2"><Zap className="w-5 h-5 text-orange-400" /> Emergency ($299)</div>
+              <p className="text-blue-100 text-sm">No scheduling needed. Greg will call you ASAP from {EMERGENCY_PHONE} — keep an eye out for that number.</p>
+            </div>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href={BOOKING_LINK} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-7 rounded-xl transition-all">
+              <CalendarClock className="w-5 h-5" /> Schedule Your Callback
+            </a>
+            <a href={REMOTE_TOOL_LINK} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-[#1a2e5a] font-bold py-3 px-7 rounded-xl transition-all">
+              <Monitor className="w-5 h-5" /> Download {REMOTE_TOOL_NAME}
+            </a>
+          </div>
+          <p className="text-blue-300 text-xs mt-4">Please pay first. Only start {REMOTE_TOOL_NAME} once Greg is on the phone with you.</p>
         </div>
       </section>
 

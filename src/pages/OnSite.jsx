@@ -101,8 +101,12 @@ export default function OnSite() {
       {/* ── NAVIGATION ── */}
       <nav id="site-nav" className="bg-blue-50 border-b border-blue-100 sticky top-0 z-50 shadow-sm overflow-visible">
         <div className="max-w-6xl mx-auto px-4 py-1 flex items-center justify-between">
-          <a href="#top">
-            <img src="/logo.png" alt="On-Site Computer Service" className="h-20 w-auto relative z-10" />
+          <a href="#top" className="leading-none py-2" style={{ fontFamily: "'Archivo Black', sans-serif" }}>
+            <div className="text-2xl md:text-[28px] leading-none">
+              <span className="text-[#1a2e5a]">On-Site</span>{" "}
+              <span className="text-orange-500">Computer Service</span>
+            </div>
+            <div className="text-orange-500 italic text-sm md:text-base leading-none mt-1">Your Computer's Doctor</div>
           </a>
           <div className="hidden md:flex items-center gap-7 text-base font-semibold text-gray-700">
             <a href="#top" className="hover:text-blue-700 transition-colors">Home</a>
@@ -209,11 +213,11 @@ export default function OnSite() {
       </section>
 
       {/* ── WHY PEOPLE CALL GREG ── */}
-      <section className="py-16 md:py-20 bg-gray-50">
+      <section className="py-16 md:py-20 bg-[#002868]">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a2e5a] mb-3">Why People Call Greg</h2>
-            <p className="text-gray-500 max-w-xl mx-auto text-lg">No runaround. No upsells. Just honest answers and real fixes — the same way since 2000.</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">Why People Call Greg</h2>
+            <p className="text-blue-200 max-w-xl mx-auto text-lg">No runaround. No upsells. Just honest answers and real fixes — the same way since 2000.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -261,11 +265,11 @@ export default function OnSite() {
       </section>
 
       {/* ── SERVICES ── */}
-      <section id="services" className="py-16 md:py-20 bg-gray-50">
+      <section id="services" className="py-16 md:py-20 bg-[#002868]">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a2e5a] mb-3">What We Fix</h2>
-            <p className="text-gray-500 max-w-xl mx-auto text-lg">From a slow laptop to a crashed server, Greg has seen it all — and fixed most of it.</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">What We Fix</h2>
+            <p className="text-blue-200 max-w-xl mx-auto text-lg">From a slow laptop to a crashed server, Greg has seen it all — and fixed most of it.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICES.map((svc, i) => (
@@ -313,14 +317,14 @@ export default function OnSite() {
       </section>
 
       {/* ── GOOGLE REVIEWS ── */}
-      <section id="reviews" className="py-16 md:py-20 bg-gray-50">
+      <section id="reviews" className="py-16 md:py-20 bg-[#002868]">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
             <div className="flex justify-center gap-1 mb-3">
               {[1,2,3,4,5].map(s => <Star key={s} className="w-7 h-7 fill-yellow-400 text-yellow-400" />)}
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a2e5a] mb-3">176+ Five-Star Reviews</h2>
-            <p className="text-gray-500 text-lg">Real customers. Real words. No scripts.</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">176+ Five-Star Reviews</h2>
+            <p className="text-blue-200 text-lg">Real customers. Real words. No scripts.</p>
           </div>
           <div
             className="elfsight-app-f007186e-c528-4a57-9e16-f74cf7c7f3d7"
