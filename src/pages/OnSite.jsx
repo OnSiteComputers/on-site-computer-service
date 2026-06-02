@@ -84,12 +84,12 @@ export default function OnSite() {
       const target = document.getElementById(id);
       if (!target) return;
       e.preventDefault();
-      const nav = document.getElementById("site-nav");
-      const offset = nav ? nav.offsetHeight : 0;
-      const y = target.getBoundingClientRect().top + window.scrollY - offset - 12;
-      window.scrollTo({ top: Math.max(y, 0), behavior: "smooth" });
+      // scrollIntoView finds whatever container is actually scrolling
+      // (Base44 wraps the app in its own scroll container), so this works
+      // where window.scrollTo does not. scroll-margin-top in the CSS handles
+      // the sticky-nav offset so the section isn't hidden under the header.
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
       setMenuOpen(false);
-      // keep the URL hash in sync without an extra jump
       if (history.replaceState) history.replaceState(null, "", `#${id}`);
     };
     document.addEventListener("click", handleClick);
