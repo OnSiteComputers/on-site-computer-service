@@ -6,7 +6,6 @@ const ONSITE_LOGO = "/logo.png";
 
 // ── CONTACT INFO ──
 const PHONE = "980-236-0810";
-const EMERGENCY_PHONE = "704-577-4936"; // Greg's cell — emergency callbacks come from this number
 
 // ── PAYMENT LINKS ── TODO: replace with your real PayRoc payment links
 const PAY_REGULAR = "https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=fdc8610a-5e1c-11f1-a8e1-12a0879a85b1";   // $199 regular remote support
@@ -133,6 +132,7 @@ export default function RemoteSupport() {
                 className="bg-[#1a2e5a] hover:bg-[#22386e] text-white font-bold py-3.5 rounded-xl text-center transition-all">
                 Pay &amp; Schedule — $199
               </a>
+              <p className="text-gray-400 text-xs mt-3 text-center">After payment, pick a callback time that works for you.</p>
             </div>
 
             {/* EMERGENCY */}
@@ -146,7 +146,7 @@ export default function RemoteSupport() {
                 <span className="text-4xl font-extrabold text-orange-600">$299</span>
                 <span className="text-gray-500 text-sm"> / 1-hour minimum</span>
               </div>
-              <p className="text-gray-600 text-sm mb-5">Pay now — Greg calls you back ASAP from {EMERGENCY_PHONE}.</p>
+              <p className="text-gray-600 text-sm mb-5">Pay now — Greg calls you back ASAP at the number you provide.</p>
               <ul className="text-sm text-gray-600 space-y-2 mb-6 flex-1">
                 <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" /> Jumps to the front of the line</li>
                 <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" /> No scheduling — call comes ASAP</li>
@@ -156,7 +156,7 @@ export default function RemoteSupport() {
                 className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3.5 rounded-xl text-center transition-all">
                 Pay &amp; Get Priority — $299
               </a>
-              <p className="text-gray-400 text-xs mt-3 text-center">After payment, watch for a call from {EMERGENCY_PHONE}.</p>
+              <p className="text-gray-400 text-xs mt-3 text-center">After payment, your confirmation will tell you what number Greg will call from.</p>
             </div>
           </div>
 
@@ -180,7 +180,7 @@ export default function RemoteSupport() {
             </div>
             <div className="bg-white/5 rounded-xl p-5">
               <div className="flex items-center gap-2 font-bold mb-2"><Zap className="w-5 h-5 text-orange-400" /> Emergency ($299)</div>
-              <p className="text-blue-100 text-sm">No scheduling needed. Greg will call you ASAP from {EMERGENCY_PHONE} — keep an eye out for that number.</p>
+              <p className="text-blue-100 text-sm">No scheduling needed. Greg will call you ASAP at the number you provided — your payment confirmation will tell you what number to expect the call from.</p>
             </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

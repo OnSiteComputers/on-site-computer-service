@@ -110,9 +110,9 @@ export default function OnSite() {
           </a>
           <div className="hidden md:flex items-center gap-7 text-base font-semibold text-gray-700">
             <a href="#top" className="hover:text-blue-700 transition-colors">Home</a>
+            <a href="#about" className="hover:text-blue-700 transition-colors">About Us</a>
             <a href="#services" className="hover:text-blue-700 transition-colors">Services</a>
             <a href="/remote-support" className="hover:text-blue-700 transition-colors">Remote Support</a>
-            <a href="#about" className="hover:text-blue-700 transition-colors">About Us</a>
             <a href="#reviews" className="hover:text-blue-700 transition-colors">Reviews</a>
             <a href="#areas" className="hover:text-blue-700 transition-colors">Service Areas</a>
             <a href="#contact" className="hover:text-blue-700 transition-colors">Contact</a>
@@ -135,9 +135,9 @@ export default function OnSite() {
           <div className="md:hidden bg-blue-50 border-t border-blue-100 px-4 pb-4">
             <div className="flex flex-col text-base font-semibold text-gray-700">
               <a href="#top" className="py-3 border-b border-blue-100 hover:text-blue-700">Home</a>
+              <a href="#about" className="py-3 border-b border-blue-100 hover:text-blue-700">About Us</a>
               <a href="#services" className="py-3 border-b border-blue-100 hover:text-blue-700">Services</a>
               <a href="/remote-support" className="py-3 border-b border-blue-100 hover:text-blue-700">Remote Support</a>
-              <a href="#about" className="py-3 border-b border-blue-100 hover:text-blue-700">About Us</a>
               <a href="#reviews" className="py-3 border-b border-blue-100 hover:text-blue-700">Reviews</a>
               <a href="#areas" className="py-3 border-b border-blue-100 hover:text-blue-700">Service Areas</a>
               <a href="#contact" className="py-3 border-b border-blue-100 hover:text-blue-700">Contact</a>
