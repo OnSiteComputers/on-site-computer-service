@@ -237,15 +237,63 @@ export default function RemoteSupport() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="bg-[#111827] text-gray-400 py-8 text-center text-sm">
-        <div className="max-w-6xl mx-auto px-4">
-          <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="h-24 w-auto mx-auto mb-4 opacity-90" />
-          <p className="mb-1">On-Site Computer Service — Downtown Concord, NC</p>
-          <p className="text-gray-500">Your Computer's Doctor | House Calls for Technology Since 2000</p>
-          <p className="mt-5 text-gray-500 text-xs uppercase tracking-wider mb-2">Website by</p>
-          <a href="https://gnldigitalgroup.com" target="_blank" rel="noopener noreferrer" className="inline-block hover:opacity-80 transition-opacity">
-            <img src="/gnl-logo.png" alt="GNL Digital Group — Local Dominance. Real Results." className="h-16 w-auto mx-auto" />
-          </a>
+      <footer className="bg-[#111827] text-gray-400 text-sm">
+        <div className="max-w-6xl mx-auto px-4 py-12">
+
+          {/* Top: three columns */}
+          <div className="grid md:grid-cols-3 gap-10 text-left">
+            <div>
+              <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="h-16 w-auto mb-4 opacity-90" />
+              <p className="text-gray-400 leading-relaxed max-w-xs">
+                Downtown Concord's trusted computer &amp; Mac repair. House calls, data recovery, and business IT — your computer's doctor since 2000.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-[#f97316] font-bold tracking-widest uppercase text-xs mb-4" style={{ fontFamily: "'Oswald', sans-serif" }}>Navigation</h4>
+              <ul className="space-y-2">
+                <li><a href="/" className="hover:text-orange-400 transition-colors">Home</a></li>
+                <li><a href="/#about" className="hover:text-orange-400 transition-colors">About Us</a></li>
+                <li><a href="/#services" className="hover:text-orange-400 transition-colors">Services</a></li>
+                <li><a href="/remote-support" className="hover:text-orange-400 transition-colors">Remote Support</a></li>
+                <li><a href="/#reviews" className="hover:text-orange-400 transition-colors">Reviews</a></li>
+                <li><a href="/#contact" className="hover:text-orange-400 transition-colors">Contact</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-[#f97316] font-bold tracking-widest uppercase text-xs mb-4" style={{ fontFamily: "'Oswald', sans-serif" }}>Contact</h4>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-2">
+                  <Phone className="w-4 h-4 text-orange-400 flex-shrink-0" />
+                  <a href={`tel:${PHONE}`} className="hover:text-orange-400 transition-colors">{PHONE}</a>
+                </li>
+                <li className="leading-relaxed text-gray-400">53 Cabarrus Ave. W<br/>Concord, NC 28025</li>
+                <li className="text-gray-500">Mon–Fri 10AM–6PM EST</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* GNL cross-link CTA box */}
+          <div className="mt-12 bg-white/[0.03] border border-white/10 rounded-xl p-8 text-center">
+            <img src="/gnl-logo.png" alt="GNL Digital Group" className="h-14 w-auto mx-auto mb-3" />
+            <h3 className="text-[#d4af6a] text-xl md:text-2xl font-bold mb-1" style={{ fontFamily: "'Oswald', sans-serif" }}>Website by GNL Digital Group</h3>
+            <p className="text-gray-300 mb-6">Local Dominance. Real Results. — Web design &amp; SEO for local businesses.</p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+              <a href="https://gnldigitalgroup.com" target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#b8965a] hover:bg-[#c9aa6c] text-[#111827] font-bold px-7 py-3 rounded-lg transition-colors">
+                Visit Our Website
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+              <a href="tel:+17045945826"
+                className="inline-flex items-center gap-2 bg-[#1a2740] hover:bg-[#22335a] text-white font-bold px-7 py-3 rounded-lg border border-white/15 transition-colors">
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Call Us
+              </a>
+            </div>
+          </div>
+
+          <div className="mt-10 pt-6 border-t border-white/10 text-center text-gray-500">
+            © 2026 On-Site Computer Service — Your Computer's Doctor. All rights reserved.
+          </div>
         </div>
       </footer>
     </div>
