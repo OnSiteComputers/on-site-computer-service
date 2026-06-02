@@ -106,18 +106,25 @@ export default function OnSite() {
               <span className="text-[#1a2e5a]">On-Site</span>{" "}
               <span className="text-orange-500">Computer Service</span>
             </div>
-            <div className="text-orange-500 italic text-sm md:text-base leading-none mt-1">Your Computer's Doctor</div>
+            <div
+              className="italic text-sm md:text-base leading-none mt-1"
+              style={{
+                color: "#f97316",
+                WebkitTextStroke: "0.75px #111827",
+                textShadow: "0.5px 0.5px 0 #111827, -0.5px 0.5px 0 #111827",
+              }}
+            >Your Computer's Doctor</div>
           </a>
-          <div className="hidden md:flex items-center gap-7 text-base font-semibold text-gray-700">
-            <a href="#top" className="hover:text-blue-700 transition-colors">Home</a>
-            <a href="#about" className="hover:text-blue-700 transition-colors">About Us</a>
-            <a href="#services" className="hover:text-blue-700 transition-colors">Services</a>
-            <a href="/remote-support" className="hover:text-blue-700 transition-colors">Remote Support</a>
-            <a href="#reviews" className="hover:text-blue-700 transition-colors">Reviews</a>
-            <a href="#areas" className="hover:text-blue-700 transition-colors">Service Areas</a>
-            <a href="#contact" className="hover:text-blue-700 transition-colors">Contact</a>
-            <a href="#contact" className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2.5 rounded-lg transition-colors font-bold text-base">
-              Call Greg
+          <div className="hidden md:flex items-center gap-5 lg:gap-6 text-sm lg:text-[15px] font-semibold text-gray-700 whitespace-nowrap">
+            <a href="#top" className="hover:text-orange-500 transition-colors">Home</a>
+            <a href="#about" className="hover:text-orange-500 transition-colors">About Us</a>
+            <a href="#services" className="hover:text-orange-500 transition-colors">Services</a>
+            <a href="/remote-support" className="hover:text-orange-500 transition-colors">Remote Support</a>
+            <a href="#reviews" className="hover:text-orange-500 transition-colors">Reviews</a>
+            <a href="#areas" className="hover:text-orange-500 transition-colors">Service Areas</a>
+            <a href="#contact" className="hover:text-orange-500 transition-colors">Contact</a>
+            <a href="#contact" className="bg-orange-500 hover:bg-orange-600 text-white px-4 lg:px-5 py-2 rounded-lg transition-colors font-bold shadow-sm">
+              Contact Us
             </a>
           </div>
           <button
@@ -142,7 +149,7 @@ export default function OnSite() {
               <a href="#areas" className="py-3 border-b border-blue-100 hover:text-blue-700">Service Areas</a>
               <a href="#contact" className="py-3 border-b border-blue-100 hover:text-blue-700">Contact</a>
               <a href={`tel:${PHONE}`} className="mt-4 bg-orange-500 hover:bg-orange-600 text-white px-5 py-3 rounded-lg text-center font-bold flex items-center justify-center gap-2">
-                <Phone className="w-4 h-4" /> Call Greg Now
+                <Phone className="w-4 h-4" /> Contact Us
               </a>
             </div>
           </div>
@@ -163,7 +170,7 @@ export default function OnSite() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <a href={`tel:${PHONE}`} className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all shadow-lg flex items-center justify-center gap-2">
-                <Phone className="w-5 h-5" /> Call Greg Now
+                <Phone className="w-5 h-5" /> Contact Us
               </a>
               <a href="#services" className="border-2 border-white text-white hover:bg-white hover:text-blue-800 font-bold py-4 px-8 rounded-xl text-lg transition-all flex items-center justify-center gap-2">
                 View Services <ChevronRight className="w-5 h-5" />
@@ -216,7 +223,7 @@ export default function OnSite() {
       <section className="py-16 md:py-20 bg-[#002868]">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">Why People Call Greg</h2>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">Why Us?</h2>
             <p className="text-blue-200 max-w-xl mx-auto text-lg">No runaround. No upsells. Just honest answers and real fixes — the same way since 2000.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -284,7 +291,7 @@ export default function OnSite() {
           </div>
           <div className="text-center mt-10">
             <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-10 rounded-xl text-lg transition-all shadow-lg">
-              <Phone className="w-5 h-5" /> Call Greg
+              <Phone className="w-5 h-5" /> Contact Us
             </a>
           </div>
         </div>
