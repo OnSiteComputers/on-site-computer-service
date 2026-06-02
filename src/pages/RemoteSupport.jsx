@@ -35,14 +35,6 @@ export default function RemoteSupport() {
               <span className="text-[#1a2e5a]">On-Site</span>{" "}
               <span className="text-orange-500">Computer Service</span>
             </div>
-            <div
-              className="italic text-xs md:text-sm leading-none mt-1 whitespace-nowrap text-center"
-              style={{
-                color: "#f97316",
-                WebkitTextStroke: "0.6px #111827",
-                textShadow: "0.5px 0.5px 0 #111827, -0.5px 0.5px 0 #111827",
-              }}
-            >Your Computer's Doctor</div>
           </a>
           <div className="hidden md:flex items-center gap-5 lg:gap-6 text-sm lg:text-[15px] font-semibold text-gray-700 whitespace-nowrap">
             <a href="/" className="hover:text-orange-500 transition-colors">Home</a>
