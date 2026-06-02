@@ -44,8 +44,8 @@ export default function RemoteSupport() {
             <a href="/#reviews" className="hover:text-orange-500 transition-colors">Reviews</a>
             <a href="/#areas" className="hover:text-orange-500 transition-colors">Service Areas</a>
             <a href="/#contact" className="hover:text-orange-500 transition-colors">Contact</a>
-            <a href="/#contact" className="bg-orange-500 hover:bg-orange-600 text-white px-4 lg:px-5 py-2 rounded-lg transition-colors font-bold shadow-sm">
-              Contact Us
+            <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-4 lg:px-5 py-2 rounded-lg transition-colors font-bold shadow-sm whitespace-nowrap">
+              <Phone className="w-4 h-4" /> {PHONE}
             </a>
           </div>
           <button
@@ -70,7 +70,7 @@ export default function RemoteSupport() {
               <a href="/#areas" className="py-3 border-b border-blue-100 hover:text-orange-500">Service Areas</a>
               <a href="/#contact" className="py-3 border-b border-blue-100 hover:text-orange-500">Contact</a>
               <a href={`tel:${PHONE}`} className="mt-4 bg-orange-500 hover:bg-orange-600 text-white px-5 py-3 rounded-lg text-center font-bold flex items-center justify-center gap-2">
-                <Phone className="w-4 h-4" /> Contact Us
+                <Phone className="w-4 h-4" /> {PHONE}
               </a>
             </div>
           </div>
