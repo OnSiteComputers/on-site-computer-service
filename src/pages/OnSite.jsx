@@ -100,8 +100,8 @@ export default function OnSite() {
 
       {/* ── NAVIGATION ── */}
       <nav id="site-nav" className="bg-blue-50 border-b border-blue-100 sticky top-0 z-50 shadow-sm overflow-visible">
-        <div className="max-w-6xl mx-auto px-4 py-1 flex items-center justify-between">
-          <a href="#top" className="leading-none py-2 flex-shrink-0" style={{ fontFamily: "'Archivo Black', sans-serif" }}>
+        <div className="max-w-6xl mx-auto px-4 py-3 flex items-end justify-between gap-4">
+          <a href="#top" className="leading-none flex-shrink-0" style={{ fontFamily: "'Archivo Black', sans-serif" }}>
             <div className="text-lg md:text-xl lg:text-2xl leading-none whitespace-nowrap">
               <span className="text-[#1a2e5a]">On-Site</span>{" "}
               <span className="text-orange-500">Computer Service</span>
@@ -115,8 +115,8 @@ export default function OnSite() {
             <a href="#reviews" className="hover:text-orange-500 transition-colors">Reviews</a>
             <a href="#areas" className="hover:text-orange-500 transition-colors">Service Areas</a>
             <a href="#contact" className="hover:text-orange-500 transition-colors">Contact</a>
-            <a href="#contact" className="bg-orange-500 hover:bg-orange-600 text-white px-4 lg:px-5 py-2 rounded-lg transition-colors font-bold shadow-sm">
-              Contact Us
+            <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-4 lg:px-5 py-2 rounded-lg transition-colors font-bold shadow-sm whitespace-nowrap">
+              <Phone className="w-4 h-4" /> {PHONE}
             </a>
           </div>
           <button
@@ -141,7 +141,7 @@ export default function OnSite() {
               <a href="#areas" className="py-3 border-b border-blue-100 hover:text-blue-700">Service Areas</a>
               <a href="#contact" className="py-3 border-b border-blue-100 hover:text-blue-700">Contact</a>
               <a href={`tel:${PHONE}`} className="mt-4 bg-orange-500 hover:bg-orange-600 text-white px-5 py-3 rounded-lg text-center font-bold flex items-center justify-center gap-2">
-                <Phone className="w-4 h-4" /> Contact Us
+                <Phone className="w-4 h-4" /> {PHONE}
               </a>
             </div>
           </div>
@@ -149,7 +149,7 @@ export default function OnSite() {
       </nav>
 
       {/* ── HERO ── */}
-      <section id="top" className="bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white pt-12 pb-8 md:pt-16 md:pb-10">
+      <section id="top" className="bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white pt-2 pb-8 md:pt-4 md:pb-10">
         <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
           <div className="flex-1 text-center md:text-left">
             <p className="text-blue-200 uppercase tracking-widest text-sm font-semibold mb-3">House Calls for Technology Since 2000</p>

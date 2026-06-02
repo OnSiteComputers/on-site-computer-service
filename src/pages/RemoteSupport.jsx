@@ -29,14 +29,14 @@ export default function RemoteSupport() {
 
       {/* ── NAV (matches homepage) ── */}
       <nav id="site-nav" className="bg-blue-50 border-b border-blue-100 sticky top-0 z-50 shadow-sm overflow-visible">
-        <div className="max-w-6xl mx-auto px-4 py-1 flex items-center justify-between">
-          <a href="/" className="leading-none py-2 flex-shrink-0" style={{ fontFamily: "'Archivo Black', sans-serif" }}>
+        <div className="max-w-6xl mx-auto px-4 py-3 flex items-end justify-between gap-4">
+          <a href="/" className="leading-none flex-shrink-0" style={{ fontFamily: "'Archivo Black', sans-serif" }}>
             <div className="text-lg md:text-xl lg:text-2xl leading-none whitespace-nowrap">
               <span className="text-[#1a2e5a]">On-Site</span>{" "}
               <span className="text-orange-500">Computer Service</span>
             </div>
           </a>
-          <div className="hidden md:flex items-center gap-5 lg:gap-6 text-sm lg:text-[15px] font-semibold text-gray-700 whitespace-nowrap">
+          <div className="hidden md:flex items-end gap-5 lg:gap-6 text-sm lg:text-[15px] font-semibold text-gray-700 whitespace-nowrap">
             <a href="/" className="hover:text-orange-500 transition-colors">Home</a>
             <a href="/#about" className="hover:text-orange-500 transition-colors">About Us</a>
             <a href="/#services" className="hover:text-orange-500 transition-colors">Services</a>
@@ -78,7 +78,7 @@ export default function RemoteSupport() {
       </nav>
 
       {/* ── HERO (HTML banner — patriotic, responsive) ── */}
-      <section className="bg-[#002868] text-white py-12 md:py-16">
+      <section className="bg-[#002868] text-white pt-4 pb-12 md:pt-6 md:pb-16">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center gap-8 md:gap-10">
 
