@@ -94,8 +94,8 @@ export default function RemoteSupport() {
             {/* Text block (right) */}
             <div className="flex-1 text-center md:text-left">
               <h1 className="leading-none mb-2">
-                <span className="block text-5xl md:text-6xl font-black text-orange-500 tracking-tight">ON-SITE</span>
-                <span className="block text-3xl md:text-4xl font-extrabold text-white tracking-tight">COMPUTER SERVICE</span>
+                <span className="block text-5xl md:text-6xl font-black text-orange-500 tracking-tight">On-Site</span>
+                <span className="block text-3xl md:text-4xl font-extrabold text-white tracking-tight">Computer Service</span>
               </h1>
 
               <div className="flex items-center justify-center md:justify-start gap-3 my-4">
@@ -239,7 +239,7 @@ export default function RemoteSupport() {
       {/* ── FOOTER ── */}
       <footer className="bg-[#111827] text-gray-400 py-8 text-center text-sm">
         <div className="max-w-6xl mx-auto px-4">
-          <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="h-10 mx-auto mb-4 opacity-80" />
+          <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="h-24 w-auto mx-auto mb-4 opacity-90" />
           <p className="mb-1">On-Site Computer Service — Downtown Concord, NC</p>
           <p className="text-gray-500">Your Computer's Doctor | House Calls for Technology Since 2000</p>
         </div>
