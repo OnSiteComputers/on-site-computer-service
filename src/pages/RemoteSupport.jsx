@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { Phone, Monitor, Clock, ShieldCheck, CreditCard, CalendarClock, Zap, CheckCircle, ArrowLeft } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Phone, Monitor, Clock, ShieldCheck, CreditCard, CalendarClock, Zap, CheckCircle, Menu, X } from "lucide-react";
 
 // ── LOGO ──
 const ONSITE_LOGO = "/logo.png";
@@ -19,23 +19,70 @@ const REMOTE_TOOL_NAME = "TeamViewer QuickSupport";
 const REMOTE_TOOL_LINK = "https://download.teamviewer.com/download/TeamViewerQS_x64.exe";
 
 export default function RemoteSupport() {
+  const [menuOpen, setMenuOpen] = useState(false);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-800">
+    <div className="min-h-screen bg-gray-50 text-gray-800 page-fade-in">
 
-      {/* ── NAV ── */}
-      <nav className="bg-blue-50 border-b border-blue-100 sticky top-0 z-50 shadow-sm">
-        <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between">
-          <a href="/" className="flex items-center">
-            <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="h-12" />
+      {/* ── NAV (matches homepage) ── */}
+      <nav id="site-nav" className="bg-blue-50 border-b border-blue-100 sticky top-0 z-50 shadow-sm overflow-visible">
+        <div className="max-w-6xl mx-auto px-4 py-1 flex items-center justify-between">
+          <a href="/" className="leading-none py-2 flex-shrink-0" style={{ fontFamily: "'Archivo Black', sans-serif" }}>
+            <div className="text-lg md:text-xl lg:text-2xl leading-none whitespace-nowrap">
+              <span className="text-[#1a2e5a]">On-Site</span>{" "}
+              <span className="text-orange-500">Computer Service</span>
+            </div>
+            <div
+              className="italic text-xs md:text-sm leading-none mt-1 whitespace-nowrap text-center"
+              style={{
+                color: "#f97316",
+                WebkitTextStroke: "0.6px #111827",
+                textShadow: "0.5px 0.5px 0 #111827, -0.5px 0.5px 0 #111827",
+              }}
+            >Your Computer's Doctor</div>
           </a>
-          <a href="/" className="text-[#1a2e5a] hover:text-blue-700 font-semibold flex items-center gap-1 text-sm">
-            <ArrowLeft className="w-4 h-4" /> Back to Home
-          </a>
+          <div className="hidden md:flex items-center gap-5 lg:gap-6 text-sm lg:text-[15px] font-semibold text-gray-700 whitespace-nowrap">
+            <a href="/" className="hover:text-orange-500 transition-colors">Home</a>
+            <a href="/#about" className="hover:text-orange-500 transition-colors">About Us</a>
+            <a href="/#services" className="hover:text-orange-500 transition-colors">Services</a>
+            <a href="/remote-support" className="text-orange-500 transition-colors">Remote Support</a>
+            <a href="/#reviews" className="hover:text-orange-500 transition-colors">Reviews</a>
+            <a href="/#areas" className="hover:text-orange-500 transition-colors">Service Areas</a>
+            <a href="/#contact" className="hover:text-orange-500 transition-colors">Contact</a>
+            <a href="/#contact" className="bg-orange-500 hover:bg-orange-600 text-white px-4 lg:px-5 py-2 rounded-lg transition-colors font-bold shadow-sm">
+              Contact Us
+            </a>
+          </div>
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="md:hidden text-[#1a2e5a] p-2 -mr-2"
+            aria-label="Toggle navigation menu"
+            aria-expanded={menuOpen}
+          >
+            {menuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+          </button>
         </div>
+
+        {/* ── MOBILE DROPDOWN MENU ── */}
+        {menuOpen && (
+          <div className="md:hidden bg-blue-50 border-t border-blue-100 px-4 pb-4">
+            <div className="flex flex-col text-base font-semibold text-gray-700">
+              <a href="/" className="py-3 border-b border-blue-100 hover:text-orange-500">Home</a>
+              <a href="/#about" className="py-3 border-b border-blue-100 hover:text-orange-500">About Us</a>
+              <a href="/#services" className="py-3 border-b border-blue-100 hover:text-orange-500">Services</a>
+              <a href="/remote-support" className="py-3 border-b border-blue-100 text-orange-500">Remote Support</a>
+              <a href="/#reviews" className="py-3 border-b border-blue-100 hover:text-orange-500">Reviews</a>
+              <a href="/#areas" className="py-3 border-b border-blue-100 hover:text-orange-500">Service Areas</a>
+              <a href="/#contact" className="py-3 border-b border-blue-100 hover:text-orange-500">Contact</a>
+              <a href={`tel:${PHONE}`} className="mt-4 bg-orange-500 hover:bg-orange-600 text-white px-5 py-3 rounded-lg text-center font-bold flex items-center justify-center gap-2">
+                <Phone className="w-4 h-4" /> Contact Us
+              </a>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* ── HERO (HTML banner — patriotic, responsive) ── */}
@@ -110,7 +157,7 @@ export default function RemoteSupport() {
           <h2 className="text-2xl md:text-3xl font-extrabold text-[#1a2e5a] text-center mb-3">Choose Your Support</h2>
           <p className="text-gray-500 text-center mb-10 max-w-xl mx-auto">One-hour minimum per session. Additional time is billed in 30-minute increments.</p>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto items-stretch">
 
             {/* REGULAR */}
             <div className="bg-white rounded-2xl border-2 border-gray-200 p-8 flex flex-col shadow-sm">
@@ -122,7 +169,7 @@ export default function RemoteSupport() {
                 <span className="text-4xl font-extrabold text-[#1a2e5a]">$199</span>
                 <span className="text-gray-500 text-sm"> / 1-hour minimum</span>
               </div>
-              <p className="text-gray-600 text-sm mb-5">Pay, then pick a callback time during business hours.</p>
+              <p className="text-gray-600 text-sm mb-5 min-h-[40px]">Pay, then pick a callback time during business hours.</p>
               <ul className="text-sm text-gray-600 space-y-2 mb-6 flex-1">
                 <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" /> Pick a time that works for you</li>
                 <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" /> Mon–Fri, 10:00 AM–6:00 PM EST</li>
@@ -132,7 +179,7 @@ export default function RemoteSupport() {
                 className="bg-[#1a2e5a] hover:bg-[#22386e] text-white font-bold py-3.5 rounded-xl text-center transition-all">
                 Pay &amp; Schedule — $199
               </a>
-              <p className="text-gray-400 text-xs mt-3 text-center">After payment, pick a callback time that works for you.</p>
+              <p className="text-gray-400 text-xs mt-3 text-center min-h-[32px]">After payment, pick a callback time that works for you.</p>
             </div>
 
             {/* EMERGENCY */}
@@ -146,7 +193,7 @@ export default function RemoteSupport() {
                 <span className="text-4xl font-extrabold text-orange-600">$299</span>
                 <span className="text-gray-500 text-sm"> / 1-hour minimum</span>
               </div>
-              <p className="text-gray-600 text-sm mb-5">Pay now — Greg calls you back ASAP at the number you provide.</p>
+              <p className="text-gray-600 text-sm mb-5 min-h-[40px]">Pay now — Greg calls you back ASAP at the number you provide.</p>
               <ul className="text-sm text-gray-600 space-y-2 mb-6 flex-1">
                 <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" /> Jumps to the front of the line</li>
                 <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" /> No scheduling — call comes ASAP</li>
@@ -156,7 +203,7 @@ export default function RemoteSupport() {
                 className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3.5 rounded-xl text-center transition-all">
                 Pay &amp; Get Priority — $299
               </a>
-              <p className="text-gray-400 text-xs mt-3 text-center">After payment, your confirmation will tell you what number Greg will call from.</p>
+              <p className="text-gray-400 text-xs mt-3 text-center min-h-[32px]">After payment, your confirmation will tell you what number Greg will call from.</p>
             </div>
           </div>
 
