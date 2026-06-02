@@ -101,19 +101,11 @@ export default function OnSite() {
       {/* ── NAVIGATION ── */}
       <nav id="site-nav" className="bg-blue-50 border-b border-blue-100 sticky top-0 z-50 shadow-sm overflow-visible">
         <div className="max-w-6xl mx-auto px-4 py-1 flex items-center justify-between">
-          <a href="#top" className="leading-none py-2" style={{ fontFamily: "'Archivo Black', sans-serif" }}>
-            <div className="text-2xl md:text-[28px] leading-none">
+          <a href="#top" className="leading-none py-2 flex-shrink-0" style={{ fontFamily: "'Archivo Black', sans-serif" }}>
+            <div className="text-lg md:text-xl lg:text-2xl leading-none whitespace-nowrap">
               <span className="text-[#1a2e5a]">On-Site</span>{" "}
               <span className="text-orange-500">Computer Service</span>
             </div>
-            <div
-              className="italic text-sm md:text-base leading-none mt-1"
-              style={{
-                color: "#f97316",
-                WebkitTextStroke: "0.75px #111827",
-                textShadow: "0.5px 0.5px 0 #111827, -0.5px 0.5px 0 #111827",
-              }}
-            >Your Computer's Doctor</div>
           </a>
           <div className="hidden md:flex items-center gap-5 lg:gap-6 text-sm lg:text-[15px] font-semibold text-gray-700 whitespace-nowrap">
             <a href="#top" className="hover:text-orange-500 transition-colors">Home</a>
