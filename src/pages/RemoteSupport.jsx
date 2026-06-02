@@ -242,6 +242,10 @@ export default function RemoteSupport() {
           <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="h-24 w-auto mx-auto mb-4 opacity-90" />
           <p className="mb-1">On-Site Computer Service — Downtown Concord, NC</p>
           <p className="text-gray-500">Your Computer's Doctor | House Calls for Technology Since 2000</p>
+          <p className="mt-5 text-gray-500 text-xs uppercase tracking-wider mb-2">Website by</p>
+          <a href="https://gnldigitalgroup.com" target="_blank" rel="noopener noreferrer" className="inline-block hover:opacity-80 transition-opacity">
+            <img src="/gnl-logo.png" alt="GNL Digital Group — Local Dominance. Real Results." className="h-16 w-auto mx-auto" />
+          </a>
         </div>
       </footer>
     </div>
