@@ -38,6 +38,7 @@ const SERVICE_AREAS = [
 
 export default function OnSite() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [footerNavOpen, setFooterNavOpen] = useState(false);
 
   // ── CONTACT FORM ──
   const FORMSPREE_ENDPOINT = "https://formspree.io/f/xaqkgykp";
@@ -485,17 +486,29 @@ export default function OnSite() {
               </p>
             </div>
 
-            {/* Col 2 — navigation */}
+            {/* Col 2 — navigation (collapsible pancake menu) */}
             <div>
               <h4 className="text-[#f97316] font-bold tracking-widest uppercase text-xs mb-4" style={{ fontFamily: "'Oswald', sans-serif" }}>Navigation</h4>
-              <ul className="space-y-2">
-                <li><a href="#top" className="hover:text-orange-400 transition-colors">Home</a></li>
-                <li><a href="#about" className="hover:text-orange-400 transition-colors">About Us</a></li>
-                <li><a href="#services" className="hover:text-orange-400 transition-colors">Services</a></li>
-                <li><a href="/remote-support" className="hover:text-orange-400 transition-colors">Remote Support</a></li>
-                <li><a href="#reviews" className="hover:text-orange-400 transition-colors">Reviews</a></li>
-                <li><a href="#contact" className="hover:text-orange-400 transition-colors">Contact</a></li>
-              </ul>
+              <div className="relative inline-block">
+                {/* expanding list — sits ABOVE the button, revealed on toggle */}
+                {footerNavOpen && (
+                  <ul className="absolute bottom-full mb-2 left-0 w-48 bg-[#1a2740] border border-white/10 rounded-lg shadow-xl overflow-hidden">
+                    <li><a href="#top" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">Home</a></li>
+                    <li><a href="#about" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">About Us</a></li>
+                    <li><a href="#services" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">Services</a></li>
+                    <li><a href="/remote-support" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">Remote Support</a></li>
+                    <li><a href="#reviews" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">Reviews</a></li>
+                    <li><a href="#contact" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors">Contact</a></li>
+                  </ul>
+                )}
+                <button
+                  onClick={() => setFooterNavOpen(!footerNavOpen)}
+                  className="inline-flex items-center gap-2 text-gray-300 hover:text-orange-400 transition-colors font-semibold"
+                  aria-expanded={footerNavOpen}
+                >
+                  {footerNavOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />} Menu
+                </button>
+              </div>
             </div>
 
             {/* Col 3 — contact */}
