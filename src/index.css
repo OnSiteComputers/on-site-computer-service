@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── PAGE FADE-IN ──
+   Used by the Remote Support page so it eases in on load instead of hard-flashing. */
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.page-fade-in {
+  animation: pageFadeIn 0.5s ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-fade-in { animation: none; }
+}
+
 /* ── TYPOGRAPHY ──
    Oswald (bold, condensed) for headings/display — gives a strong, confident look.
    Body text stays on the clean default sans for readability. */
