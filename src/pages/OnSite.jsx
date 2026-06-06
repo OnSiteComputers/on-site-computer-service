@@ -84,19 +84,33 @@ export default function OnSite() {
     document.body.appendChild(s);
   }, []);
 
-  // Smooth-scroll for in-page anchor links. Sections are top-aligned, so the
-  // heading sits right where the anchor lands (just under the sticky nav via the
-  // scroll-margin-top in index.css). Menu closes on click.
+  // Smooth-scroll for in-page anchor links. The reviews section loads a tall
+  // third-party widget asynchronously; if we scroll while it's still expanding,
+  // the layout shifts and the jump can strand at the top. So we scroll, then
+  // re-assert the position twice after short delays to settle on the target.
   useEffect(() => {
     const handleClick = (e) => {
       const link = e.target.closest('a[href^="#"]');
       if (!link) return;
       const id = link.getAttribute("href").slice(1);
-      const target = document.getElementById(id);
-      if (!target) return;
+      if (!document.getElementById(id)) return;
       e.preventDefault();
       setMenuOpen(false);
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+      const scrollToTarget = (smooth) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const nav = document.getElementById("site-nav");
+        const offset = (nav ? nav.offsetHeight : 72) + 8;
+        const y = el.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: y, behavior: smooth ? "smooth" : "auto" });
+      };
+
+      scrollToTarget(true);
+      // re-assert after the layout (and any lazy widget) settles
+      setTimeout(() => scrollToTarget(false), 350);
+      setTimeout(() => scrollToTarget(false), 800);
+
       if (history.replaceState) history.replaceState(null, "", `#${id}`);
     };
     document.addEventListener("click", handleClick);

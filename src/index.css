@@ -25,56 +25,23 @@ h1, h2, h3, h4,
 }
 /* keep the nav brand wordmark on Archivo Black (set inline), don't override it */
 
-/* Smooth anchor scrolling with offset for the sticky header.
-   Mobile: the bar sits a little lower, so jumps need a larger offset (100px) or the
-   heading tucks UNDER the header. Desktop: a tight 80px lands it just below the bar.
-   Same landing logic on every page, just sized to each screen. */
+/* Anchor scrolling is handled in JS (see OnSite.jsx handleClick), which measures
+   the REAL header height live so jumps land just below the sticky bar on every
+   screen size. We deliberately do NOT set scroll-padding-top / scroll-margin-top
+   here — fixed-pixel guesses fought the JS and landed too low on desktop / too
+   high on mobile. Keep smooth behavior only. */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px; /* mobile offset — clears the bar, no hidden headings */
-}
-@media (min-width: 768px) {
-  html {
-    scroll-padding-top: 80px; /* desktop — tighter, just below the header */
-  }
-}
-
-/* scroll-padding on the root handles most browsers. scroll-margin on each
-   anchored section is the fallback for Base44's own scroll container, matched to the
-   SAME responsive values so the landing spot is uniform on each screen size. */
-section[id],
-[id="top"] {
-  scroll-margin-top: 100px;
-}
-@media (min-width: 768px) {
-  section[id],
-  [id="top"] {
-    scroll-margin-top: 80px;
-  }
 }
 
 /* ── STICKY-NAV OVERLAP FIX ──
    Inside the Base44 mobile app and preview ("BC") site, the whole app is wrapped
-   in its own scroll container. A `sticky top-0` nav sticks to the top of THAT
-   container. Forcing the sticky nav to a known stacking position keeps content
-   from hiding behind the bar — on the live domain AND inside the Base44 wrapper.
-   Applies to every page that uses the shared #site-nav. */
+   in its own scroll container. Forcing the sticky nav to a known stacking position
+   keeps content from hiding behind the bar — on the live domain AND in Base44. */
 #site-nav {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-}
-#site-nav + section,
-#site-nav + main,
-#site-nav + div {
-  scroll-margin-top: 100px;
-}
-@media (min-width: 768px) {
-  #site-nav + section,
-  #site-nav + main,
-  #site-nav + div {
-    scroll-margin-top: 80px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
