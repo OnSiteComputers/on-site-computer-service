@@ -134,7 +134,7 @@ export default function ServerSetups() {
             {[
               { number: "26", label: "Years of Experience" },
               { number: "16", label: "Years in Downtown Concord" },
-              { number: "176+", label: "Five-Star Google Reviews" },
+              { number: "177+", label: "Five-Star Google Reviews" },
               { number: "100%", label: "Locally Owned and Operated" },
             ].map((stat, i) => (
               <div key={i} className="px-1">
@@ -260,7 +260,7 @@ export default function ServerSetups() {
             <div className="flex">
               {[1,2,3,4,5].map(s => <Star key={s} className="w-5 h-5 fill-yellow-400 text-yellow-400" />)}
             </div>
-            <span className="text-blue-200 font-medium">176+ five-star Google reviews</span>
+            <span className="text-blue-200 font-medium">177+ five-star Google reviews</span>
           </div>
         </div>
       </section>

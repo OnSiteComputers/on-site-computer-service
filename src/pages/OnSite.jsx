@@ -194,7 +194,7 @@ export default function OnSite() {
             {[
               { number: "26", label: "Years of Experience" },
               { number: "16", label: "Years in Downtown Concord" },
-              { number: "176+", label: "Five-Star Google Reviews" },
+              { number: "177+", label: "Five-Star Google Reviews" },
               { number: "100%", label: "Locally Owned and Operated" },
             ].map((stat, i) => (
               <div key={i} className="px-1">
@@ -225,7 +225,7 @@ export default function OnSite() {
             {[
               { icon: "🩺", title: "He diagnoses first, bills second", desc: "Greg tells you exactly what is wrong and what it will cost before he does anything. No surprises, no hidden fees." },
               { icon: "🤝", title: "He treats you like a neighbor", desc: "Same location for 16 years. Same phone number. Same face. He knows his customers and they know him." },
-              { icon: "⭐", title: "176+ five-star reviews speak for themselves", desc: "Not paid ads or gimmicks — just hundreds of real customers who came back and sent their families." },
+              { icon: "⭐", title: "177+ five-star reviews speak for themselves", desc: "Not paid ads or gimmicks — just hundreds of real customers who came back and sent their families." },
               { icon: "🏠", title: "He comes to you", desc: "Can not bring it in? No problem. Greg offers on-site service — home visits or office calls in the Concord area." },
               { icon: "💻", title: "Windows AND Mac", desc: "Most shops pick one. Greg fixes both. PCs and Macs treated with equal care and expertise." },
               { icon: "💛", title: "Core philosophy: treat people right", desc: "Treat people like you want to be treated. That is the whole business model — and it has worked for 26 years." },
@@ -253,6 +253,9 @@ export default function OnSite() {
               Linda runs the front of house, handles communications, and makes sure every customer leaves feeling heard and taken care of. Together, they have built a business that has become part of the Concord community — not just a shop, but a trusted resource.
             </p>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
+              Greg grew up learning a lesson from his grandmother that shaped everything: "Greg, whatever you do for a living, make sure you love it — because you are going to do it a long time." Twenty-six years later, it still holds true. "I can do this stuff all day long and never feel like I worked a day in my life. That is not a sales line — that is just the truth."
+            </p>
+            <p className="text-gray-600 text-lg leading-relaxed mb-6">
               "We have never been about volume. We are about doing right by each person who walks through that door or calls us for help. That has not changed in 26 years."
               <span className="block mt-2 text-[#1a2e5a] font-semibold not-italic">— Greg Blair</span>
             </p>
@@ -260,7 +263,7 @@ export default function OnSite() {
               <div className="flex">
                 {[1,2,3,4,5].map(s => <Star key={s} className="w-5 h-5 fill-yellow-400 text-yellow-400" />)}
               </div>
-              <span className="text-gray-500 font-medium">176+ five-star Google reviews</span>
+              <span className="text-gray-500 font-medium">177+ five-star Google reviews</span>
             </div>
           </div>
         </div>
@@ -325,7 +328,7 @@ export default function OnSite() {
             <div className="flex justify-center gap-1 mb-3">
               {[1,2,3,4,5].map(s => <Star key={s} className="w-7 h-7 fill-yellow-400 text-yellow-400" />)}
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">176+ Five-Star Reviews</h2>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">177+ Five-Star Reviews</h2>
             <p className="text-blue-200 text-lg">Real customers. Real words. No scripts.</p>
           </div>
           <div
