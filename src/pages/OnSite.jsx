@@ -6,7 +6,7 @@
 // ============================================================
 
 import { useEffect, useState } from "react";
-import { Phone, MapPin, Star, Shield, Clock, Monitor, Wifi, HardDrive, Lock, Users, Wrench, Laptop, CheckCircle, ChevronRight, Menu, X } from "lucide-react";
+import { Phone, MapPin, Star, Shield, Clock, Monitor, Wifi, HardDrive, Lock, Users, Wrench, Laptop, CheckCircle, ChevronRight, Menu, X, Server, Database, Network } from "lucide-react";
 
 // ── LOGO ── Replace src with your hosted logo URL if needed
 const ONSITE_LOGO = "/logo.png";
@@ -27,6 +27,16 @@ const SERVICES = [
   { icon: Wifi, title: "Networking", desc: "Home or office — routers, switches, Wi-Fi setup, and wired network installations." },
   { icon: Shield, title: "Remote Support", desc: "Many issues solved remotely without you leaving home — fast, secure, and convenient. See our Remote Support page to get started." },
   { icon: Wrench, title: "On-Site Service", desc: "We come to you — home or office visits available throughout Concord and surrounding areas." },
+];
+
+// ── SERVER SETUPS ──
+const SERVER_SERVICES = [
+  { icon: Server, title: "Small-Business & Office Servers", desc: "From a first file server to a full domain — we spec, build, and install the right server for how your business actually works." },
+  { icon: Database, title: "File Sharing & User Management", desc: "Shared drives that just work. Centralized files, user accounts, permissions, and printer sharing so your whole team is on the same page." },
+  { icon: HardDrive, title: "NAS & File Storage", desc: "Network-attached storage sized to your needs. Documents, project files, and archives in one reliable place reachable from any machine." },
+  { icon: Shield, title: "Backups & Data Protection", desc: "On-site and off-site backups that run automatically and actually get tested. If a drive dies or ransomware hits, your data is safe." },
+  { icon: Network, title: "Networking & Wi-Fi", desc: "Routers, switches, business-grade Wi-Fi, and clean wired runs. A network that stays fast and stable as you add people and devices." },
+  { icon: Lock, title: "VPN & Secure Remote Access", desc: "Reach your office files and systems securely from home, the road, or a second location. Locked-down remote access done right." },
 ];
 
 // ── SERVICE AREAS ──
@@ -112,7 +122,7 @@ export default function OnSite() {
             <a href="#top" className="hover:text-orange-500 transition-colors">Home</a>
             <a href="#about" className="hover:text-orange-500 transition-colors">About Us</a>
             <a href="#services" className="hover:text-orange-500 transition-colors">Services</a>
-            <a href="/server-setups" className="hover:text-orange-500 transition-colors">Server Setups</a>
+            <a href="#server-setups" className="hover:text-orange-500 transition-colors">Server Setups</a>
             <a href="/remote-support" className="hover:text-orange-500 transition-colors">Remote Support</a>
             <a href="#reviews" className="hover:text-orange-500 transition-colors">Reviews</a>
             <a href="#areas" className="hover:text-orange-500 transition-colors">Service Areas</a>
@@ -138,7 +148,7 @@ export default function OnSite() {
               <a href="#top" className="py-3 border-b border-blue-100 hover:text-blue-700">Home</a>
               <a href="#about" className="py-3 border-b border-blue-100 hover:text-blue-700">About Us</a>
               <a href="#services" className="py-3 border-b border-blue-100 hover:text-blue-700">Services</a>
-              <a href="/server-setups" className="py-3 border-b border-blue-100 hover:text-blue-700">Server Setups</a>
+              <a href="#server-setups" className="py-3 border-b border-blue-100 hover:text-blue-700">Server Setups</a>
               <a href="/remote-support" className="py-3 border-b border-blue-100 hover:text-blue-700">Remote Support</a>
               <a href="#reviews" className="py-3 border-b border-blue-100 hover:text-blue-700">Reviews</a>
               <a href="#areas" className="py-3 border-b border-blue-100 hover:text-blue-700">Service Areas</a>
@@ -278,6 +288,33 @@ export default function OnSite() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICES.map((svc, i) => (
+              <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md hover:border-blue-200 transition-all group">
+                <div className="w-12 h-12 bg-blue-50 group-hover:bg-blue-100 rounded-xl flex items-center justify-center mb-4 transition-colors">
+                  <svc.icon className="w-6 h-6 text-blue-600" />
+                </div>
+                <h3 className="text-base font-bold text-[#1a2e5a] mb-2">{svc.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{svc.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-10 rounded-xl text-lg transition-all shadow-lg">
+              <Phone className="w-5 h-5" /> Contact Us
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SERVER SETUPS ── */}
+      <section id="server-setups" className="min-h-screen flex items-center py-16 md:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 w-full">
+          <div className="text-center mb-12">
+            <p className="text-orange-500 uppercase tracking-widest text-sm font-semibold mb-3">Servers · Storage · Networking</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a2e5a] mb-3">Server Setups</h2>
+            <p className="text-gray-500 max-w-xl mx-auto text-lg">Built right the first time — servers, storage, backups, and networks sized to how your business actually works.</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {SERVER_SERVICES.map((svc, i) => (
               <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md hover:border-blue-200 transition-all group">
                 <div className="w-12 h-12 bg-blue-50 group-hover:bg-blue-100 rounded-xl flex items-center justify-center mb-4 transition-colors">
                   <svc.icon className="w-6 h-6 text-blue-600" />
@@ -501,7 +538,7 @@ export default function OnSite() {
                     <li><a href="#top" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">Home</a></li>
                     <li><a href="#about" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">About Us</a></li>
                     <li><a href="#services" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">Services</a></li>
-                    <li><a href="/server-setups" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">Server Setups</a></li>
+                    <li><a href="#server-setups" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">Server Setups</a></li>
                     <li><a href="/remote-support" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">Remote Support</a></li>
                     <li><a href="#reviews" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">Reviews</a></li>
                     <li><a href="#contact" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors">Contact</a></li>
