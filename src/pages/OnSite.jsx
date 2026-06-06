@@ -226,21 +226,22 @@ export default function OnSite() {
             </div>
           </div>
         </div>
-      </section>
 
-      {/* ── TRUST BAR ── */}
-      <section className="bg-[#1a2e5a] text-white py-3 md:py-4">
-        <div className="max-w-6xl mx-auto px-3">
-          <div className="grid grid-cols-4 gap-x-2 md:gap-x-4 text-center">
+        {/* ── TRUST BAR (bottom of hero) ── */}
+        <div className="max-w-6xl mx-auto px-3 mt-6 md:mt-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
             {[
-              { number: "26", label: "Years of Experience" },
-              { number: "16", label: "Years in Downtown Concord" },
-              { number: "177+", label: "Five-Star Google Reviews" },
-              { number: "100%", label: "Locally Owned and Operated" },
+              { number: "26", label: "Years of Expertise" },
+              { number: "16", label: "Years Serving Downtown Concord" },
+              { number: "177+", label: "Five-Star Reviews & Counting" },
+              { number: "100%", label: "Locally Owned & Operated" },
             ].map((stat, i) => (
-              <div key={i} className="px-1">
+              <div
+                key={i}
+                className="bg-white/[0.06] border border-white/10 rounded-2xl px-3 py-4 md:px-4 md:py-5 text-center backdrop-blur-sm shadow-lg hover:bg-white/[0.09] transition-colors"
+              >
                 <div
-                  className="glimmer-gold text-3xl sm:text-4xl md:text-5xl font-black leading-none mb-0.5"
+                  className="glimmer-gold text-3xl sm:text-4xl md:text-5xl font-black leading-none mb-1.5"
                   style={{
                     color: "#f6c453",
                     textShadow: "0 0 14px rgba(246,196,83,0.5)",
@@ -248,7 +249,7 @@ export default function OnSite() {
                 >
                   {stat.number}
                 </div>
-                <div className="text-blue-200 text-[10px] sm:text-xs font-semibold uppercase tracking-wide leading-tight">{stat.label}</div>
+                <div className="text-blue-100 text-[10px] sm:text-xs font-semibold uppercase tracking-widest leading-tight">{stat.label}</div>
               </div>
             ))}
           </div>
