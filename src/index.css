@@ -37,6 +37,26 @@ section[id],
   scroll-margin-top: 96px;
 }
 
+/* ── STICKY-NAV OVERLAP FIX ──
+   Inside the Base44 mobile app and preview ("BC") site, the whole app is wrapped
+   in its own scroll container. A `sticky top-0` nav sticks to the top of THAT
+   container, and because the hero starts with almost no top padding, the first
+   bit of content paints underneath the nav. Forcing the sticky nav to a known
+   stacking position and giving the element that immediately follows it a small
+   guaranteed top offset keeps the content from ever hiding behind the bar —
+   on the live domain AND inside the Base44 wrapper. Applies to every page that
+   uses the shared #site-nav (home, remote support, server setups). */
+#site-nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+#site-nav + section,
+#site-nav + main,
+#site-nav + div {
+  scroll-margin-top: 96px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
