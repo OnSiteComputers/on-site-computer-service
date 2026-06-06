@@ -99,10 +99,10 @@ export default function RemoteSupport() {
                 <span className="block text-3xl md:text-4xl font-extrabold text-white tracking-tight">Computer Service</span>
               </h1>
 
-              <div className="flex items-center justify-center md:justify-start gap-3 my-4">
+              <div className="inline-flex items-center justify-center md:justify-start gap-3 my-4">
                 <span className="hidden md:block h-0.5 w-8 bg-orange-500"></span>
-                <span className="text-xl md:text-2xl font-bold text-white uppercase tracking-wide">We Come to You!</span>
-                <span className="h-0.5 flex-1 bg-orange-500"></span>
+                <span className="text-xl md:text-2xl font-bold text-white uppercase tracking-wide whitespace-nowrap">We Come to You!</span>
+                <span className="h-0.5 w-8 bg-orange-500"></span>
               </div>
 
               <a href={`tel:${PHONE}`} className="block text-4xl md:text-5xl font-black text-orange-500 hover:text-orange-400 transition-colors mb-2">
