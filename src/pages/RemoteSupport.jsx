@@ -14,9 +14,9 @@ const PAY_EMERGENCY = "https://securelink-prod.valorpaytech.com:4430/?redirect=1
 // ── SCHEDULING ── Google Calendar booking page (live)
 const BOOKING_LINK = "https://calendar.app.google/yYRnBHKE5EL12QZE9";
 
-// ── REMOTE TOOL ── TODO: replace REMOTE_TOOL_LINK with your TeamViewer QuickSupport download link
+// ── REMOTE TOOL ── Branded TeamViewer QuickSupport (hosted by TeamViewer)
 const REMOTE_TOOL_NAME = "TeamViewer QuickSupport";
-const REMOTE_TOOL_LINK = "https://download.teamviewer.com/download/TeamViewerQS_x64.exe";
+const REMOTE_TOOL_LINK = "https://get.teamviewer.com/6mfcqdq";
 
 export default function RemoteSupport() {
   const [menuOpen, setMenuOpen] = useState(false);
