@@ -17,6 +17,19 @@ const PHONE = "980-236-0810";
 const EMAIL = "greg@onsitecomputerservice.net";
 const ADDRESS = "53 Cabarrus Ave. W, Concord, NC 28025";
 
+// ── GOOGLE REVIEWS ── Add new ones here as they come in (newest first looks best).
+// Keep "text" reasonably short so all 8 cards fit on screen; full text optional.
+const REVIEWS = [
+  { name: "Marlo James", when: "20 days ago", text: "We've been working with Onsite Computer Services for several years; recently we needed to upgrade our security and they handled it start to finish." },
+  { name: "Puro Dano", when: "12 days ago", text: "I first met Greg when I had a PC emergency about 20 years ago. He fixed it and helped improve our office network. Still my go-to." },
+  { name: "Liam Custer", when: "25 days ago", text: "I needed a quick part to get a PC working, and Greg helped me out super quick and with a great price. Highly recommend." },
+  { name: "Anon Ymous", when: "1 month ago", text: "Took my non-bootable laptop to his shop about 10 a.m. He fixed it and delivered it back to my home about 8 p.m. Can't ask for better." },
+  { name: "Bryce Rogers", when: "1 month ago", text: "Greg is thorough and honest; the Lord bless this place!" },
+  { name: "Garen Kalender", when: "1 month ago", text: "Brought in my gaming PC that was shot after a power outage. Greg solved a multitude of problems and I couldn't be more thankful." },
+  { name: "Max Williams", when: "1 month ago", text: "Had an issue with my PC for 1.5 years and finally took it in. Nobody else could diagnose it — Greg did. Outstanding." },
+  { name: "von gab", when: "2 months ago", text: "I'd like to commend Greg Blair of On-Site Computer Service. Extremely efficient, knowledgeable, and an expert at troubleshooting." },
+];
+
 // ── SERVICES ── Edit labels and descriptions freely
 const SERVICES = [
   { icon: Monitor, title: "Computer Repair", desc: "Windows PCs running slow, crashing, or acting up? We diagnose and fix it right the first time." },
@@ -49,6 +62,37 @@ const SERVICE_AREAS = [
 export default function OnSite() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [footerNavOpen, setFooterNavOpen] = useState(false);
+
+  // ── REVIEWS ROTATION ── shows 8 at a time (2 rows × 4), auto-fades to the next set
+  const REVIEWS_PER_PAGE = 8;
+  const reviewPages = Math.max(1, Math.ceil(REVIEWS.length / REVIEWS_PER_PAGE));
+  const [reviewPage, setReviewPage] = useState(0);
+  const [reviewFading, setReviewFading] = useState(false);
+
+  const goToReviewPage = (next) => {
+    setReviewFading(true);
+    setTimeout(() => {
+      setReviewPage((p) => (next + reviewPages) % reviewPages);
+      setReviewFading(false);
+    }, 350);
+  };
+
+  useEffect(() => {
+    if (reviewPages <= 1) return;
+    const id = setInterval(() => {
+      setReviewFading(true);
+      setTimeout(() => {
+        setReviewPage((p) => (p + 1) % reviewPages);
+        setReviewFading(false);
+      }, 350);
+    }, 6000);
+    return () => clearInterval(id);
+  }, [reviewPages]);
+
+  const visibleReviews = REVIEWS.slice(
+    reviewPage * REVIEWS_PER_PAGE,
+    reviewPage * REVIEWS_PER_PAGE + REVIEWS_PER_PAGE
+  );
 
   // ── CONTACT FORM ──
   const FORMSPREE_ENDPOINT = "https://formspree.io/f/xaqkgykp";
@@ -391,25 +435,91 @@ export default function OnSite() {
       </section>
 
       {/* ── GOOGLE REVIEWS ── */}
-      <section id="reviews" className="min-h-screen flex items-start py-16 md:py-20 bg-[#002868]">
+      <section id="reviews" className="flex items-start py-16 md:py-20 bg-[#002868]">
         <div className="max-w-6xl mx-auto px-4 w-full">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <div className="flex justify-center gap-1 mb-3">
               {[1,2,3,4,5].map(s => <Star key={s} className="w-7 h-7 fill-yellow-400 text-yellow-400" />)}
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">177+ Five-Star Reviews</h2>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-2">177+ Five-Star Reviews</h2>
             <p className="text-blue-200 text-lg">Real customers. Real words. No scripts.</p>
           </div>
-          <div
-            className="elfsight-app-f007186e-c528-4a57-9e16-f74cf7c7f3d7"
-            data-elfsight-app-lazy
-          ></div>
-          <div className="text-center mt-10">
+          {/* ── ROTATING REVIEW GRID (2 rows × 4) ── */}
+          <div className="relative">
+            <div
+              className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 transition-opacity duration-300 ${reviewFading ? "opacity-0" : "opacity-100"}`}
+            >
+              {visibleReviews.map((r, i) => (
+                <div
+                  key={`${reviewPage}-${i}`}
+                  className="bg-white/[0.07] border border-white/12 rounded-2xl p-5 backdrop-blur-sm shadow-lg flex flex-col"
+                >
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-9 h-9 rounded-full bg-orange-500 text-white font-bold flex items-center justify-center text-sm flex-shrink-0">
+                      {r.name.charAt(0).toUpperCase()}
+                    </div>
+                    <div className="min-w-0">
+                      <div className="text-white font-semibold text-sm leading-tight truncate">{r.name}</div>
+                      <div className="text-blue-300 text-xs">{r.when}</div>
+                    </div>
+                  </div>
+                  <div className="flex gap-0.5 mb-2">
+                    {[1,2,3,4,5].map(s => <Star key={s} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />)}
+                  </div>
+                  <p className="text-blue-100 text-sm leading-snug">{r.text}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* arrows (only when there's more than one page) */}
+            {reviewPages > 1 && (
+              <>
+                <button
+                  onClick={() => goToReviewPage(reviewPage - 1)}
+                  aria-label="Previous reviews"
+                  className="absolute -left-3 md:-left-5 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-[#1a2e5a] hover:bg-orange-500 text-white border border-white/20 flex items-center justify-center shadow-lg transition-colors"
+                >
+                  <ChevronRight className="w-6 h-6 rotate-180" />
+                </button>
+                <button
+                  onClick={() => goToReviewPage(reviewPage + 1)}
+                  aria-label="Next reviews"
+                  className="absolute -right-3 md:-right-5 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-[#1a2e5a] hover:bg-orange-500 text-white border border-white/20 flex items-center justify-center shadow-lg transition-colors"
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </button>
+              </>
+            )}
+
+            {/* dots */}
+            {reviewPages > 1 && (
+              <div className="flex justify-center gap-2 mt-6">
+                {Array.from({ length: reviewPages }).map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => goToReviewPage(i)}
+                    aria-label={`Go to review set ${i + 1}`}
+                    className={`h-2.5 rounded-full transition-all ${i === reviewPage ? "w-6 bg-orange-500" : "w-2.5 bg-white/30 hover:bg-white/50"}`}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+
+          <div className="text-center mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href="https://www.google.com/search?q=On-Site+Computer+Service+Concord+reviews"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 border-2 border-white/70 text-white hover:bg-white hover:text-[#1a2e5a] font-bold py-3 px-8 rounded-xl transition-all"
+            >
+              See All Reviews on Google
+            </a>
             <a
               href="https://g.page/r/CSYE1297nyoJEAE/review"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-all shadow-lg"
+              className="inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-all shadow-lg"
             >
               <Star className="w-5 h-5 fill-white text-white" /> Leave Us a Review
             </a>
@@ -468,7 +578,7 @@ export default function OnSite() {
                   title="On-Site Computer Service location"
                   src="https://www.google.com/maps?q=53%20Cabarrus%20Ave%20W%2C%20Concord%2C%20NC%2028025&output=embed"
                   width="100%"
-                  height="240"
+                  className="block w-full h-[240px] md:h-[420px]"
                   style={{ border: 0, display: "block" }}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
@@ -525,7 +635,7 @@ export default function OnSite() {
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-1">Message</label>
                     <textarea name="message" rows="4" required
-                      className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2.5 md:min-h-[180px] focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
                   </div>
 
                   {formStatus === "error" && (
