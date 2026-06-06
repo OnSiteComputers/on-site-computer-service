@@ -152,7 +152,7 @@ export default function ServerSetups() {
       </section>
 
       {/* ── WHAT WE SET UP ── */}
-      <section id="server-services" className="min-h-screen flex items-center py-16 md:py-20 bg-[#002868]">
+      <section id="server-services" className="min-h-screen flex items-start py-16 md:py-20 bg-[#002868]">
         <div className="max-w-6xl mx-auto px-4 w-full">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">What We Set Up</h2>

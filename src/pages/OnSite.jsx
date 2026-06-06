@@ -84,8 +84,9 @@ export default function OnSite() {
     document.body.appendChild(s);
   }, []);
 
-  // Smooth-scroll for in-page anchor links, offset by the REAL header height
-  // so each section lands just below the sticky nav instead of underneath it.
+  // Smooth-scroll for in-page anchor links. Sections are top-aligned, so the
+  // heading sits right where the anchor lands (just under the sticky nav via the
+  // scroll-margin-top in index.css). Menu closes on click.
   useEffect(() => {
     const handleClick = (e) => {
       const link = e.target.closest('a[href^="#"]');
@@ -94,12 +95,8 @@ export default function OnSite() {
       const target = document.getElementById(id);
       if (!target) return;
       e.preventDefault();
-      // scrollIntoView finds whatever container is actually scrolling
-      // (Base44 wraps the app in its own scroll container), so this works
-      // where window.scrollTo does not. scroll-margin-top in the CSS handles
-      // the sticky-nav offset so the section isn't hidden under the header.
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
       setMenuOpen(false);
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
       if (history.replaceState) history.replaceState(null, "", `#${id}`);
     };
     document.addEventListener("click", handleClick);
@@ -251,7 +248,7 @@ export default function OnSite() {
       </section>
 
       {/* ── MEET GREG & LINDA ── */}
-      <section id="about" className="min-h-screen flex items-center py-16 md:py-20 bg-white">
+      <section id="about" className="min-h-screen flex items-start py-16 md:py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 w-full">
           <div className="flex-1">
             <p className="text-orange-500 font-semibold uppercase tracking-widest text-sm mb-2">The People Behind the Business</p>
@@ -280,7 +277,7 @@ export default function OnSite() {
       </section>
 
       {/* ── SERVICES ── */}
-      <section id="services" className="min-h-screen flex items-center py-16 md:py-20 bg-[#002868]">
+      <section id="services" className="min-h-screen flex items-start py-16 md:py-20 bg-[#002868]">
         <div className="max-w-6xl mx-auto px-4 w-full">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">What We Fix</h2>
@@ -306,7 +303,7 @@ export default function OnSite() {
       </section>
 
       {/* ── SERVER SETUPS ── */}
-      <section id="server-setups" className="min-h-screen flex items-center py-16 md:py-20 bg-white">
+      <section id="server-setups" className="min-h-screen flex items-start py-16 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 w-full">
           <div className="text-center mb-12">
             <p className="text-orange-500 uppercase tracking-widest text-sm font-semibold mb-3">Servers · Storage · Networking</p>
@@ -359,7 +356,7 @@ export default function OnSite() {
       </section>
 
       {/* ── GOOGLE REVIEWS ── */}
-      <section id="reviews" className="min-h-screen flex items-center py-16 md:py-20 bg-[#002868]">
+      <section id="reviews" className="min-h-screen flex items-start py-16 md:py-20 bg-[#002868]">
         <div className="max-w-6xl mx-auto px-4 w-full">
           <div className="text-center mb-12">
             <div className="flex justify-center gap-1 mb-3">
@@ -386,7 +383,7 @@ export default function OnSite() {
       </section>
 
       {/* ── SERVICE AREAS ── */}
-      <section id="areas" className="min-h-screen flex items-center py-16 md:py-20 bg-white">
+      <section id="areas" className="min-h-screen flex items-start py-16 md:py-20 bg-white">
         <div className="max-w-5xl mx-auto px-4 text-center w-full">
           <MapPin className="w-10 h-10 text-orange-500 mx-auto mb-4" />
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a2e5a] mb-3">Where We Serve</h2>
@@ -402,7 +399,7 @@ export default function OnSite() {
       </section>
 
       {/* ── CONTACT / CTA ── */}
-      <section id="contact" className="min-h-screen flex items-center py-16 md:py-24 bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white">
+      <section id="contact" className="min-h-screen flex items-start py-16 md:py-24 bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white">
         <div className="max-w-6xl mx-auto px-4 w-full">
           <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-start">
 
