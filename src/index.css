@@ -25,35 +25,40 @@ h1, h2, h3, h4,
 }
 /* keep the nav brand wordmark on Archivo Black (set inline), don't override it */
 
-/* Smooth anchor scrolling with offset for the sticky header */
+/* Smooth anchor scrolling with offset for the sticky header.
+   Mobile: the bar sits a little lower, so jumps need a larger offset (100px) or the
+   heading tucks UNDER the header. Desktop: a tight 80px lands it just below the bar.
+   Same landing logic on every page, just sized to each screen. */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* mobile offset — clears the bar, no hidden headings */
+}
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 80px; /* desktop — tighter, just below the header */
+  }
 }
 
-/* Sections that are jumped to via #anchor links land below the sticky nav
-   instead of being hidden underneath it. Nav is ~88px on desktop; on mobile the
-   sticky bar is shorter, but the section title still needs clearance so it never
-   lands UNDER the header. We set a generous mobile offset and a tighter desktop one. */
+/* scroll-padding on the root handles most browsers. scroll-margin on each
+   anchored section is the fallback for Base44's own scroll container, matched to the
+   SAME responsive values so the landing spot is uniform on each screen size. */
 section[id],
 [id="top"] {
-  scroll-margin-top: 110px; /* mobile default — bar + breathing room */
+  scroll-margin-top: 100px;
 }
 @media (min-width: 768px) {
   section[id],
   [id="top"] {
-    scroll-margin-top: 96px;
+    scroll-margin-top: 80px;
   }
 }
 
 /* ── STICKY-NAV OVERLAP FIX ──
    Inside the Base44 mobile app and preview ("BC") site, the whole app is wrapped
    in its own scroll container. A `sticky top-0` nav sticks to the top of THAT
-   container, and because the hero starts with almost no top padding, the first
-   bit of content paints underneath the nav. Forcing the sticky nav to a known
-   stacking position and giving the element that immediately follows it a small
-   guaranteed top offset keeps the content from ever hiding behind the bar —
-   on the live domain AND inside the Base44 wrapper. Applies to every page that
-   uses the shared #site-nav (home, remote support, server setups). */
+   container. Forcing the sticky nav to a known stacking position keeps content
+   from hiding behind the bar — on the live domain AND inside the Base44 wrapper.
+   Applies to every page that uses the shared #site-nav. */
 #site-nav {
   position: -webkit-sticky;
   position: sticky;
@@ -62,13 +67,13 @@ section[id],
 #site-nav + section,
 #site-nav + main,
 #site-nav + div {
-  scroll-margin-top: 110px;
+  scroll-margin-top: 100px;
 }
 @media (min-width: 768px) {
   #site-nav + section,
   #site-nav + main,
   #site-nav + div {
-    scroll-margin-top: 96px;
+    scroll-margin-top: 80px;
   }
 }
 
