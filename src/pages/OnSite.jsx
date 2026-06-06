@@ -153,7 +153,7 @@ export default function OnSite() {
 
       {/* ── HERO ── */}
       <section id="top" className="bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white pt-2 pb-8 md:pt-4 md:pb-10">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
+        <div className="max-w-6xl mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-10">
           <div className="flex-1 text-center md:text-left">
             <p className="text-blue-200 uppercase tracking-widest text-sm font-semibold mb-3">House Calls for Technology Since 2000</p>
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
@@ -174,12 +174,12 @@ export default function OnSite() {
           </div>
           {/* Logo + Trust Card */}
           <div className="flex-shrink-0 w-full md:w-auto">
-            <div className="p-6 md:p-8">
+            <div className="p-2 md:p-8">
 
               <img
                 src={HERO_IMAGE}
                 alt="On-Site Computer Service"
-                className="w-[380px] md:w-[460px] h-auto mx-auto"
+                className="w-[180px] md:w-[460px] h-auto mx-auto"
               />
 
             </div>
@@ -241,8 +241,8 @@ export default function OnSite() {
       </section>
 
       {/* ── MEET GREG & LINDA ── */}
-      <section id="about" className="py-16 md:py-20 bg-white">
-        <div className="max-w-3xl mx-auto px-4">
+      <section id="about" className="min-h-screen flex items-center py-16 md:py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-4 w-full">
           <div className="flex-1">
             <p className="text-orange-500 font-semibold uppercase tracking-widest text-sm mb-2">The People Behind the Business</p>
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a2e5a] mb-5">Meet Greg and Linda Blair</h2>
@@ -270,8 +270,8 @@ export default function OnSite() {
       </section>
 
       {/* ── SERVICES ── */}
-      <section id="services" className="py-16 md:py-20 bg-[#002868]">
-        <div className="max-w-6xl mx-auto px-4">
+      <section id="services" className="min-h-screen flex items-center py-16 md:py-20 bg-[#002868]">
+        <div className="max-w-6xl mx-auto px-4 w-full">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">What We Fix</h2>
             <p className="text-blue-200 max-w-xl mx-auto text-lg">From a slow laptop to a crashed server, Greg has seen it all — and fixed most of it.</p>
@@ -322,8 +322,8 @@ export default function OnSite() {
       </section>
 
       {/* ── GOOGLE REVIEWS ── */}
-      <section id="reviews" className="py-16 md:py-20 bg-[#002868]">
-        <div className="max-w-6xl mx-auto px-4">
+      <section id="reviews" className="min-h-screen flex items-center py-16 md:py-20 bg-[#002868]">
+        <div className="max-w-6xl mx-auto px-4 w-full">
           <div className="text-center mb-12">
             <div className="flex justify-center gap-1 mb-3">
               {[1,2,3,4,5].map(s => <Star key={s} className="w-7 h-7 fill-yellow-400 text-yellow-400" />)}
@@ -349,8 +349,8 @@ export default function OnSite() {
       </section>
 
       {/* ── SERVICE AREAS ── */}
-      <section id="areas" className="py-16 md:py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-4 text-center">
+      <section id="areas" className="min-h-screen flex items-center py-16 md:py-20 bg-white">
+        <div className="max-w-5xl mx-auto px-4 text-center w-full">
           <MapPin className="w-10 h-10 text-orange-500 mx-auto mb-4" />
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a2e5a] mb-3">Where We Serve</h2>
           <p className="text-gray-500 text-lg mb-10">Based in downtown Concord — serving communities across the region.</p>
@@ -365,8 +365,8 @@ export default function OnSite() {
       </section>
 
       {/* ── CONTACT / CTA ── */}
-      <section id="contact" className="py-16 md:py-24 bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white">
-        <div className="max-w-6xl mx-auto px-4">
+      <section id="contact" className="min-h-screen flex items-center py-16 md:py-24 bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white">
+        <div className="max-w-6xl mx-auto px-4 w-full">
           <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-start">
 
             {/* LEFT: contact info */}
