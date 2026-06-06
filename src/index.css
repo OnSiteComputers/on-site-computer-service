@@ -31,10 +31,18 @@ html {
 }
 
 /* Sections that are jumped to via #anchor links land below the sticky nav
-   instead of being hidden underneath it. Nav is ~88px tall; 96px gives breathing room. */
+   instead of being hidden underneath it. Nav is ~88px on desktop; on mobile the
+   sticky bar is shorter, but the section title still needs clearance so it never
+   lands UNDER the header. We set a generous mobile offset and a tighter desktop one. */
 section[id],
 [id="top"] {
-  scroll-margin-top: 96px;
+  scroll-margin-top: 110px; /* mobile default — bar + breathing room */
+}
+@media (min-width: 768px) {
+  section[id],
+  [id="top"] {
+    scroll-margin-top: 96px;
+  }
 }
 
 /* ── STICKY-NAV OVERLAP FIX ──
@@ -54,7 +62,14 @@ section[id],
 #site-nav + section,
 #site-nav + main,
 #site-nav + div {
-  scroll-margin-top: 96px;
+  scroll-margin-top: 110px;
+}
+@media (min-width: 768px) {
+  #site-nav + section,
+  #site-nav + main,
+  #site-nav + div {
+    scroll-margin-top: 96px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
