@@ -14,9 +14,9 @@ const PAY_EMERGENCY = "https://securelink-prod.valorpaytech.com:4430/?redirect=1
 // ── SCHEDULING ── Google Calendar booking page (live)
 const BOOKING_LINK = "https://calendar.app.google/yYRnBHKE5EL12QZE9";
 
-// ── REMOTE TOOL ── Branded TeamViewer QuickSupport (hosted by TeamViewer)
+// ── REMOTE TOOL ── TODO: replace REMOTE_TOOL_LINK with your TeamViewer QuickSupport download link
 const REMOTE_TOOL_NAME = "TeamViewer QuickSupport";
-const REMOTE_TOOL_LINK = "https://get.teamviewer.com/6mfcqdq";
+const REMOTE_TOOL_LINK = "https://download.teamviewer.com/download/TeamViewerQS_x64.exe";
 
 export default function RemoteSupport() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -41,7 +41,6 @@ export default function RemoteSupport() {
             <a href="/" className="hover:text-orange-500 transition-colors">Home</a>
             <a href="/#about" className="hover:text-orange-500 transition-colors">About Us</a>
             <a href="/#services" className="hover:text-orange-500 transition-colors">Services</a>
-            <a href="/server-setups" className="hover:text-orange-500 transition-colors">Server Setups</a>
             <a href="/remote-support" className="text-orange-500 transition-colors">Remote Support</a>
             <a href="/#reviews" className="hover:text-orange-500 transition-colors">Reviews</a>
             <a href="/#areas" className="hover:text-orange-500 transition-colors">Service Areas</a>
@@ -67,7 +66,6 @@ export default function RemoteSupport() {
               <a href="/" className="py-3 border-b border-blue-100 hover:text-orange-500">Home</a>
               <a href="/#about" className="py-3 border-b border-blue-100 hover:text-orange-500">About Us</a>
               <a href="/#services" className="py-3 border-b border-blue-100 hover:text-orange-500">Services</a>
-              <a href="/server-setups" className="py-3 border-b border-blue-100 hover:text-orange-500">Server Setups</a>
               <a href="/remote-support" className="py-3 border-b border-blue-100 text-orange-500">Remote Support</a>
               <a href="/#reviews" className="py-3 border-b border-blue-100 hover:text-orange-500">Reviews</a>
               <a href="/#areas" className="py-3 border-b border-blue-100 hover:text-orange-500">Service Areas</a>
@@ -88,7 +86,7 @@ export default function RemoteSupport() {
             {/* Cartoon artwork (left) */}
             <div className="flex-shrink-0 w-full md:w-1/2">
               <img
-                src="/hero-logo.png"
+                src="/remote-hero-cartoon.png"
                 alt="On-Site Computer Service — Your Computer's Doctor"
                 className="w-full max-w-md mx-auto drop-shadow-2xl"
               />
