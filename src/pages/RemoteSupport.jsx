@@ -41,6 +41,7 @@ export default function RemoteSupport() {
             <a href="/" className="hover:text-orange-500 transition-colors">Home</a>
             <a href="/#about" className="hover:text-orange-500 transition-colors">About Us</a>
             <a href="/#services" className="hover:text-orange-500 transition-colors">Services</a>
+            <a href="/server-setups" className="hover:text-orange-500 transition-colors">Server Setups</a>
             <a href="/remote-support" className="text-orange-500 transition-colors">Remote Support</a>
             <a href="/#reviews" className="hover:text-orange-500 transition-colors">Reviews</a>
             <a href="/#areas" className="hover:text-orange-500 transition-colors">Service Areas</a>
@@ -66,6 +67,7 @@ export default function RemoteSupport() {
               <a href="/" className="py-3 border-b border-blue-100 hover:text-orange-500">Home</a>
               <a href="/#about" className="py-3 border-b border-blue-100 hover:text-orange-500">About Us</a>
               <a href="/#services" className="py-3 border-b border-blue-100 hover:text-orange-500">Services</a>
+              <a href="/server-setups" className="py-3 border-b border-blue-100 hover:text-orange-500">Server Setups</a>
               <a href="/remote-support" className="py-3 border-b border-blue-100 text-orange-500">Remote Support</a>
               <a href="/#reviews" className="py-3 border-b border-blue-100 hover:text-orange-500">Reviews</a>
               <a href="/#areas" className="py-3 border-b border-blue-100 hover:text-orange-500">Service Areas</a>
