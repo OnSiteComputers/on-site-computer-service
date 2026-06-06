@@ -41,6 +41,7 @@ export default function RemoteSupport() {
             <a href="/" className="hover:text-orange-500 transition-colors">Home</a>
             <a href="/#about" className="hover:text-orange-500 transition-colors">About Us</a>
             <a href="/#services" className="hover:text-orange-500 transition-colors">Services</a>
+            <a href="/server-setups" className="hover:text-orange-500 transition-colors">Server Setups</a>
             <a href="/remote-support" className="text-orange-500 transition-colors">Remote Support</a>
             <a href="/#reviews" className="hover:text-orange-500 transition-colors">Reviews</a>
             <a href="/#areas" className="hover:text-orange-500 transition-colors">Service Areas</a>
@@ -66,6 +67,7 @@ export default function RemoteSupport() {
               <a href="/" className="py-3 border-b border-blue-100 hover:text-orange-500">Home</a>
               <a href="/#about" className="py-3 border-b border-blue-100 hover:text-orange-500">About Us</a>
               <a href="/#services" className="py-3 border-b border-blue-100 hover:text-orange-500">Services</a>
+              <a href="/server-setups" className="py-3 border-b border-blue-100 hover:text-orange-500">Server Setups</a>
               <a href="/remote-support" className="py-3 border-b border-blue-100 text-orange-500">Remote Support</a>
               <a href="/#reviews" className="py-3 border-b border-blue-100 hover:text-orange-500">Reviews</a>
               <a href="/#areas" className="py-3 border-b border-blue-100 hover:text-orange-500">Service Areas</a>
@@ -80,42 +82,43 @@ export default function RemoteSupport() {
 
       {/* ── HERO (HTML banner — patriotic, responsive) ── */}
       <section className="bg-[#002868] text-white pt-4 pb-12 md:pt-6 md:pb-16">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-10">
+        <div className="max-w-3xl mx-auto px-4 text-center">
 
-            {/* Cartoon artwork (left) */}
-            <div className="flex-shrink-0 w-full md:w-1/2">
-              <img
-                src="/remote-hero-cartoon.png"
-                alt="On-Site Computer Service — Your Computer's Doctor"
-                className="w-full max-w-md mx-auto drop-shadow-2xl"
-              />
+          {/* Cartoon artwork (top, centered) — text-free logo */}
+          <img
+            src="/hero-logo-no-text.png"
+            alt="On-Site Computer Service — Your Computer's Doctor"
+            className="w-full max-w-sm mx-auto drop-shadow-2xl mb-6"
+          />
+
+          {/* ── BRAND LOCKUP (custom text box under the logo) ── */}
+          <div className="inline-block bg-white/[0.04] border border-white/10 rounded-2xl px-8 py-6 md:px-12 md:py-7 shadow-2xl backdrop-blur-sm">
+            <h1 className="leading-none">
+              <span className="block text-5xl md:text-6xl font-black text-orange-500 tracking-tight" style={{ fontFamily: "'Oswald', sans-serif" }}>On-Site</span>
+              <span className="block text-2xl md:text-3xl font-extrabold text-white tracking-[0.08em] uppercase mt-1" style={{ fontFamily: "'Oswald', sans-serif" }}>Computer Service</span>
+            </h1>
+
+            {/* gold tagline badge with divider rules */}
+            <div className="flex items-center justify-center gap-3 mt-4">
+              <span className="h-px w-8 md:w-12 bg-gradient-to-r from-transparent to-[#d4af6a]"></span>
+              <span className="text-sm md:text-base font-bold uppercase tracking-[0.18em] text-[#e8c887] whitespace-nowrap">Your Computer's Doctor</span>
+              <span className="h-px w-8 md:w-12 bg-gradient-to-l from-transparent to-[#d4af6a]"></span>
             </div>
-
-            {/* Text block (right) */}
-            <div className="flex-1 text-center md:text-left">
-              <h1 className="leading-none mb-2">
-                <span className="block text-5xl md:text-6xl font-black text-orange-500 tracking-tight">On-Site</span>
-                <span className="block text-3xl md:text-4xl font-extrabold text-white tracking-tight">Computer Service</span>
-              </h1>
-
-              <div className="inline-flex items-center justify-center md:justify-start gap-3 my-4">
-                <span className="hidden md:block h-0.5 w-8 bg-orange-500"></span>
-                <span className="text-xl md:text-2xl font-bold text-white uppercase tracking-wide whitespace-nowrap">We Come to You!</span>
-                <span className="h-0.5 w-8 bg-orange-500"></span>
-              </div>
-
-              <a href={`tel:${PHONE}`} className="block text-4xl md:text-5xl font-black text-orange-500 hover:text-orange-400 transition-colors mb-2">
-                {PHONE}
-              </a>
-              <p className="text-lg md:text-xl font-bold text-white tracking-wide mb-3">www.onsitecomputerservice.net</p>
-              <p className="text-blue-200 text-sm md:text-base">Your Computer's Doctor &nbsp;•&nbsp; Trusted for 26 Years</p>
-            </div>
-
           </div>
 
+          {/* "We Come to You!" */}
+          <div className="mt-6 mb-2">
+            <span className="text-xl md:text-2xl font-bold text-white uppercase tracking-wide">We Come to You!</span>
+          </div>
+
+          <a href={`tel:${PHONE}`} className="block text-4xl md:text-5xl font-black text-orange-500 hover:text-orange-400 transition-colors mb-2">
+            {PHONE}
+          </a>
+          <p className="text-lg md:text-xl font-bold text-white tracking-wide mb-2">www.onsitecomputerservice.net</p>
+          <p className="text-blue-200 text-sm md:text-base">Trusted for 26 Years</p>
+
           {/* sub-line under the banner */}
-          <p className="text-blue-100 text-base md:text-lg max-w-2xl mx-auto text-center mt-10">
+          <p className="text-blue-100 text-base md:text-lg max-w-2xl mx-auto mt-10">
             Greg connects to your computer securely over the internet to diagnose and fix
             problems — no house call required. Pay first, then we get you connected.
           </p>
@@ -125,6 +128,7 @@ export default function RemoteSupport() {
       {/* ── HOW IT WORKS ── */}
       <section className="py-14 md:py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4">
+          <p className="text-orange-500 uppercase tracking-widest text-sm font-semibold text-center mb-3">Remote Support</p>
           <h2 className="text-2xl md:text-3xl font-extrabold text-[#1a2e5a] text-center mb-10">How It Works</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -257,6 +261,7 @@ export default function RemoteSupport() {
                     <li><a href="/" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">Home</a></li>
                     <li><a href="/#about" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">About Us</a></li>
                     <li><a href="/#services" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">Services</a></li>
+                    <li><a href="/server-setups" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">Server Setups</a></li>
                     <li><a href="/remote-support" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">Remote Support</a></li>
                     <li><a href="/#reviews" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">Reviews</a></li>
                     <li><a href="/#contact" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors">Contact</a></li>
