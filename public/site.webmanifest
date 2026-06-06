@@ -1,0 +1,23 @@
+{
+  "name": "On-Site Computer Service",
+  "short_name": "On-Site",
+  "description": "Honest, local computer & Mac repair in downtown Concord, NC. Trusted for 26 years.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a2e5a",
+  "theme_color": "#1a2e5a",
+  "icons": [
+    {
+      "src": "/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
