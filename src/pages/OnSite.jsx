@@ -101,7 +101,7 @@ export default function OnSite() {
         const el = document.getElementById(id);
         if (!el) return;
         const nav = document.getElementById("site-nav");
-        const offset = (nav ? nav.offsetHeight : 72) + 8;
+        const offset = (nav ? nav.offsetHeight : 72) - 16;
         const y = el.getBoundingClientRect().top + window.pageYOffset - offset;
         window.scrollTo({ top: y, behavior: smooth ? "smooth" : "auto" });
       };
@@ -115,6 +115,26 @@ export default function OnSite() {
     };
     document.addEventListener("click", handleClick);
     return () => document.removeEventListener("click", handleClick);
+  }, []);
+
+  // When arriving at the homepage with a #section in the URL (e.g. clicking
+  // "About Us" from the Remote Support page lands at /#about), scroll to that
+  // section once the page has rendered. Uses the same measured-header offset.
+  useEffect(() => {
+    const id = window.location.hash.slice(1);
+    if (!id) return;
+    const scrollToHash = () => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const nav = document.getElementById("site-nav");
+      const offset = (nav ? nav.offsetHeight : 72) - 16;
+      const y = el.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: y, behavior: "auto" });
+    };
+    // wait for layout (and lazy widgets) before measuring
+    setTimeout(scrollToHash, 100);
+    setTimeout(scrollToHash, 500);
+    setTimeout(scrollToHash, 1000);
   }, []);
 
   return (

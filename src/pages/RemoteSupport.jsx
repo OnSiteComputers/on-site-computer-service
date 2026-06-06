@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Phone, Monitor, Clock, ShieldCheck, CreditCard, CalendarClock, Zap, CheckCircle, Menu, X } from "lucide-react";
+import { Phone, Monitor, Clock, ShieldCheck, CreditCard, CalendarClock, Zap, CheckCircle, Menu, X, ChevronDown } from "lucide-react";
 
 // ── LOGO ──
 const ONSITE_LOGO = "/logo.png";
@@ -104,11 +104,17 @@ export default function RemoteSupport() {
               </div>
             ))}
           </div>
+
+          {/* scroll-down cue */}
+          <div className="text-center mt-10">
+            <a href="#after-you-pay" className="inline-flex flex-col items-center text-[#1a2e5a] hover:text-orange-500 transition-colors group">
+              <span className="text-sm font-semibold uppercase tracking-wide mb-1">After You Pay</span>
+              <ChevronDown className="w-7 h-7 animate-bounce" />
+            </a>
+          </div>
         </div>
       </section>
-
-      {/* ── PRICING OPTIONS ── */}
-      <section className="py-8 md:py-10 bg-gray-50">
+      <section id="pricing" className="py-8 md:py-10 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-extrabold text-[#1a2e5a] text-center mb-2">Choose Your Support</h2>
           <p className="text-gray-500 text-center mb-6 max-w-xl mx-auto">One-hour minimum per session. Additional time is billed in 30-minute increments.</p>
@@ -173,7 +179,7 @@ export default function RemoteSupport() {
       </section>
 
       {/* ── AFTER PAYMENT INSTRUCTIONS ── */}
-      <section className="py-8 bg-[#1a2e5a] text-white">
+      <section id="after-you-pay" className="py-8 bg-[#1a2e5a] text-white">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-xl md:text-2xl font-bold mb-4">After You Pay</h2>
           <div className="grid sm:grid-cols-2 gap-4 text-left mb-6">
