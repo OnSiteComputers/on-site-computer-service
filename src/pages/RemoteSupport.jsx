@@ -30,15 +30,13 @@ export default function RemoteSupport() {
 
       {/* ── NAV (matches homepage) ── */}
       <nav id="site-nav" className="bg-blue-50 border-b border-blue-100 sticky top-0 z-50 shadow-sm overflow-visible">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-end justify-between gap-4">
-          <a href="/" className="leading-none flex-shrink-0" style={{ fontFamily: "'Archivo Black', sans-serif" }}>
-            <div className="text-lg md:text-xl lg:text-2xl leading-none whitespace-nowrap">
-              <span className="text-[#1a2e5a]">On-Site</span>{" "}
-              <span className="text-orange-500">Computer Service</span>
-            </div>
+        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+          <a href="/" className="leading-none flex-shrink-0 flex items-center">
+            <img src="/hero-logo-no-text.png" alt="On-Site Computer Service — Your Computer's Doctor" className="h-14 md:h-16 lg:h-20 w-auto" />
           </a>
-          <div className="hidden md:flex items-end gap-5 lg:gap-6 text-sm lg:text-[15px] font-semibold text-gray-700 whitespace-nowrap">
+          <div className="hidden md:flex items-end gap-4 lg:gap-5 text-sm lg:text-[15px] font-semibold text-gray-700 whitespace-nowrap">
             <a href="/" className="hover:text-orange-500 transition-colors">Home</a>
+            <a href="/#why-us" className="hover:text-orange-500 transition-colors">Why Us?</a>
             <a href="/#about" className="hover:text-orange-500 transition-colors">About Us</a>
             <a href="/#services" className="hover:text-orange-500 transition-colors">Services</a>
             <a href="/#server-setups" className="hover:text-orange-500 transition-colors">Server Setups</a>
@@ -65,6 +63,7 @@ export default function RemoteSupport() {
           <div className="md:hidden bg-blue-50 border-t border-blue-100 px-4 pb-4">
             <div className="flex flex-col text-base font-semibold text-gray-700">
               <a href="/" className="py-3 border-b border-blue-100 hover:text-orange-500">Home</a>
+              <a href="/#why-us" className="py-3 border-b border-blue-100 hover:text-orange-500">Why Us?</a>
               <a href="/#about" className="py-3 border-b border-blue-100 hover:text-orange-500">About Us</a>
               <a href="/#services" className="py-3 border-b border-blue-100 hover:text-orange-500">Services</a>
               <a href="/#server-setups" className="py-3 border-b border-blue-100 hover:text-orange-500">Server Setups</a>
