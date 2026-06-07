@@ -565,9 +565,9 @@ export default function OnSite() {
               <path d="M362.7,404.5 L346.1,402.7 L293.3,399.5 L292.5,399.4 L282.7,399.0 L261.9,398.0 L264.2,355.9 L248.8,333.7 L216.4,286.6 L271.7,288.8 L393.9,294.8 L374.9,362.2 L373.1,373.1 L375.9,377.6 L376.3,386.5 L376.0,401.0 L362.9,405.5 L362.7,404.5 Z" fill="#dbe7fa" stroke="#2563eb" strokeWidth="1.5" />
               <path d="M464.1,201.1 L459.0,175.6 L481.6,98.2 L508.5,101.3 L569.8,146.1 L585.7,154.9 L593.6,155.0 L601.3,157.6 L612.1,155.4 L614.7,156.4 L616.7,175.3 L658.6,216.7 L667.6,249.8 L627.8,250.4 L533.1,250.3 L503.5,249.1 L502.4,249.1 L501.9,249.0 L499.4,249.0 L488.5,248.8 L471.2,248.5 L464.1,201.1 Z" fill="#dbe7fa" stroke="#2563eb" strokeWidth="1.5" />
               <path d="M261.9,398.0 L248.2,397.3 L248.2,397.3 L217.8,395.9 L214.6,395.7 L203.3,395.1 L203.0,395.2 L106.0,390.7 L129.1,313.7 L132.8,216.9 L187.6,223.6 L216.4,286.6 L248.8,333.7 L264.2,355.9 L261.9,398.0 Z" fill="#dbe7fa" stroke="#2563eb" strokeWidth="1.5" />
-              <path d="M339.3,131.4 L344.9,123.8 L350.1,120.0 L351.3,114.7 L355.1,110.6 L359.6,101.7 L376.2,52.4 L367.8,14.3 L419.8,10.0 L486.8,12.0 L481.6,98.2 L459.0,175.6 L464.1,201.1 L471.2,248.5 L471.2,249.2 L454.5,249.1 L396.8,257.0 L392.2,230.8 L404.8,198.7 L339.3,131.4 Z" fill="#f3f4f6" stroke="#cbd5e1" strokeWidth="1" />
-              <path d="M393.9,294.8 L271.7,288.8 L216.4,286.6 L187.6,223.6 L188.2,222.7 L188.3,222.5 L188.3,222.4 L188.8,221.7 L391.6,230.7 L392.2,230.8 L396.8,257.0 L393.9,294.8 Z" fill="#f3f4f6" stroke="#cbd5e1" strokeWidth="1" />
-              <path d="M533.4,548.4 L533.4,548.4 L512.3,548.1 L510.6,548.1 L510.6,548.1 L504.0,547.9 L503.3,547.9 L458.9,547.5 L456.8,547.4 L450.1,545.0 L455.3,497.0 L446.6,485.2 L446.5,485.0 L434.6,468.4 L459.4,454.2 L537.4,378.4 L552.9,388.5 L553.3,389.0 L561.4,390.7 L566.5,396.5 L576.9,398.7 L580.6,396.3 L634.2,383.8 L618.8,550.0 L590.7,549.4 L584.6,549.3 L584.1,549.2 L583.7,549.2 L581.5,549.1 L578.3,549.1 L573.4,548.9 L572.3,548.9 L560.3,548.7 L533.4,548.4 Z" fill="#f3f4f6" stroke="#cbd5e1" strokeWidth="1" />
+              <path d="M339.3,131.4 L344.9,123.8 L350.1,120.0 L351.3,114.7 L355.1,110.6 L359.6,101.7 L376.2,52.4 L367.8,14.3 L419.8,10.0 L486.8,12.0 L481.6,98.2 L459.0,175.6 L464.1,201.1 L471.2,248.5 L471.2,249.2 L454.5,249.1 L396.8,257.0 L392.2,230.8 L404.8,198.7 L339.3,131.4 Z" fill="#dbe7fa" stroke="#2563eb" strokeWidth="1.5" />
+              <path d="M393.9,294.8 L271.7,288.8 L216.4,286.6 L187.6,223.6 L188.2,222.7 L188.3,222.5 L188.3,222.4 L188.8,221.7 L391.6,230.7 L392.2,230.8 L396.8,257.0 L393.9,294.8 Z" fill="#dbe7fa" stroke="#2563eb" strokeWidth="1.5" />
+              <path d="M533.4,548.4 L533.4,548.4 L512.3,548.1 L510.6,548.1 L510.6,548.1 L504.0,547.9 L503.3,547.9 L458.9,547.5 L456.8,547.4 L450.1,545.0 L455.3,497.0 L446.6,485.2 L446.5,485.0 L434.6,468.4 L459.4,454.2 L537.4,378.4 L552.9,388.5 L553.3,389.0 L561.4,390.7 L566.5,396.5 L576.9,398.7 L580.6,396.3 L634.2,383.8 L618.8,550.0 L590.7,549.4 L584.6,549.3 L584.1,549.2 L583.7,549.2 L581.5,549.1 L578.3,549.1 L573.4,548.9 L572.3,548.9 L560.3,548.7 L533.4,548.4 Z" fill="#dbe7fa" stroke="#2563eb" strokeWidth="1.5" />
               <path d="M411.2,435.7 L411.2,435.7 L401.1,422.3 L393.0,428.8 L363.4,449.6 L357.7,442.1 L357.5,437.2 L357.8,431.6 L359.6,427.2 L361.6,425.3 L365.3,424.2 L366.6,421.6 L362.9,405.5 L376.0,401.0 L376.3,386.5 L375.9,377.6 L373.1,373.1 L374.9,362.2 L393.9,294.8 L396.8,257.0 L454.5,249.1 L461.6,295.0 L464.8,297.3 L468.7,303.5 L477.4,311.3 L481.3,314.6 L486.6,318.2 L496.0,352.1 L496.5,352.4 L537.4,378.4 L459.4,454.2 L434.6,468.4 L411.2,435.7 Z" fill="#dbe7fa" stroke="#2563eb" strokeWidth="1.5" />
               {/* county labels */}
               <text x="626" y="364" textAnchor="middle" fill="#1e3a8a" fontSize="11" className="uppercase tracking-wide" opacity="0.7">Stanly</text>
@@ -575,9 +575,9 @@ export default function OnSite() {
               <text x="324" y="371" textAnchor="middle" fill="#1e3a8a" fontSize="11" className="uppercase tracking-wide" opacity="0.7">Gaston</text>
               <text x="547" y="197" textAnchor="middle" fill="#1e3a8a" fontSize="11" className="uppercase tracking-wide" opacity="0.7">Rowan</text>
               <text x="210" y="353" textAnchor="middle" fill="#1e3a8a" fontSize="11" className="uppercase tracking-wide" opacity="0.7">Cleveland</text>
-              <text x="404" y="142" textAnchor="middle" fill="#94a3b8" fontSize="11" className="uppercase tracking-wide" opacity="0.7">Iredell</text>
-              <text x="283" y="250" textAnchor="middle" fill="#94a3b8" fontSize="11" className="uppercase tracking-wide" opacity="0.7">Lincoln</text>
-              <text x="534" y="501" textAnchor="middle" fill="#94a3b8" fontSize="11" className="uppercase tracking-wide" opacity="0.7">Union</text>
+              <text x="404" y="142" textAnchor="middle" fill="#1e3a8a" fontSize="11" className="uppercase tracking-wide" opacity="0.7">Iredell</text>
+              <text x="283" y="250" textAnchor="middle" fill="#1e3a8a" fontSize="11" className="uppercase tracking-wide" opacity="0.7">Lincoln</text>
+              <text x="534" y="501" textAnchor="middle" fill="#1e3a8a" fontSize="11" className="uppercase tracking-wide" opacity="0.7">Union</text>
               <text x="414" y="381" textAnchor="middle" fill="#1e3a8a" fontSize="11" className="uppercase tracking-wide" opacity="0.7">Mecklenburg</text>
               {/* city pins */}
               <g>
@@ -620,7 +620,7 @@ export default function OnSite() {
             </svg>
             <div className="flex items-center justify-center gap-6 mt-4 text-sm text-gray-600">
               <span className="flex items-center gap-2"><span className="inline-block w-3 h-3 rounded-full bg-orange-500"></span> Home base</span>
-              <span className="flex items-center gap-2"><span className="inline-block w-3 h-3 rounded-sm" style={{ backgroundColor: "#dbe7fa", border: "1.5px solid #2563eb" }}></span> Primary service counties</span>
+              <span className="flex items-center gap-2"><span className="inline-block w-3 h-3 rounded-sm" style={{ backgroundColor: "#dbe7fa", border: "1.5px solid #2563eb" }}></span> Service counties</span>
             </div>
             </div>
 
