@@ -322,7 +322,7 @@ export default function OnSite() {
       </section>
 
       {/* ── WHY PEOPLE CALL GREG ── */}
-      <section id="why-us" className="min-h-screen flex items-center py-16 md:py-20 bg-[#002868]">
+      <section id="why-us" className="min-h-[calc(100vh-140px)] flex items-start py-16 md:py-20 bg-[#002868]">
         <div className="max-w-6xl mx-auto px-4 w-full">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">Why Us?</h2>
@@ -377,7 +377,7 @@ export default function OnSite() {
       </section>
 
       {/* ── SERVICES ── */}
-      <section id="services" className="min-h-screen flex items-start py-16 md:py-20 bg-[#002868]">
+      <section id="services" className="min-h-[calc(100vh-140px)] flex items-start py-16 md:py-20 bg-[#002868]">
         <div className="max-w-6xl mx-auto px-4 w-full">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">What We Fix</h2>
@@ -403,7 +403,7 @@ export default function OnSite() {
       </section>
 
       {/* ── SERVER SETUPS ── */}
-      <section id="server-setups" className="min-h-screen flex items-start py-16 md:py-20 bg-white">
+      <section id="server-setups" className="min-h-[calc(100vh-140px)] flex items-start py-16 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 w-full">
           <div className="text-center mb-12">
             <p className="text-orange-500 uppercase tracking-widest text-sm font-semibold mb-3">Servers · Storage · Networking</p>
@@ -456,7 +456,7 @@ export default function OnSite() {
       </section>
 
       {/* ── GOOGLE REVIEWS ── */}
-      <section id="reviews" className="min-h-screen flex items-center py-16 md:py-20 bg-[#002868]">
+      <section id="reviews" className="min-h-[calc(100vh-140px)] flex items-start py-16 md:py-20 bg-[#002868]">
         <div className="max-w-6xl mx-auto px-4 w-full">
           <div className="text-center mb-8">
             <div className="flex justify-center gap-1 mb-3">
@@ -571,7 +571,7 @@ export default function OnSite() {
       </section>
 
       {/* ── CONTACT / CTA ── */}
-      <section id="contact" className="min-h-screen flex items-start py-16 md:py-24 bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white">
+      <section id="contact" className="min-h-[calc(100vh-140px)] flex items-start py-16 md:py-24 bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white">
         <div className="max-w-6xl mx-auto px-4 w-full">
           <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-start">
 

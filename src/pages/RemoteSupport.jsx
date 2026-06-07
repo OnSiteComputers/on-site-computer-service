@@ -30,22 +30,20 @@ export default function RemoteSupport() {
 
       {/* ── NAV (matches homepage) ── */}
       <nav id="site-nav" className="bg-blue-50 border-b border-blue-100 sticky top-0 z-50 shadow-sm overflow-visible">
-        <div className="max-w-6xl mx-auto px-4 py-3">
-          {/* top row: stacked logo (centered) + phone/menu */}
+        <div className="max-w-6xl mx-auto px-4 py-2.5">
+          {/* top row: wordmark on the LEFT, phone/menu on the RIGHT */}
           <div className="flex items-center justify-between gap-4">
-            <div className="w-10 md:w-32 flex-shrink-0" />
-            <a href="/" className="flex flex-col items-center leading-none text-center" style={{ fontFamily: "'Archivo Black', sans-serif" }}>
-              <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="h-10 md:h-14 w-auto mb-1" />
-              <div className="text-base md:text-2xl leading-none whitespace-nowrap">
+            <a href="/" className="flex flex-col leading-none" style={{ fontFamily: "'Archivo Black', sans-serif" }}>
+              <div className="text-xl md:text-3xl leading-none whitespace-nowrap">
                 <span className="text-[#1a2e5a]">On-Site</span>{" "}
                 <span className="text-orange-500">Computer Service</span>
               </div>
-              <div className="text-orange-500 italic text-xs md:text-sm mt-0.5" style={{ fontFamily: "inherit" }}>
+              <div className="text-orange-500 italic font-bold text-xs md:text-base mt-1 whitespace-nowrap" style={{ fontFamily: "inherit" }}>
                 Your Computer's Doctor
               </div>
             </a>
-            <div className="flex items-center justify-end w-10 md:w-32 flex-shrink-0">
-              <a href={`tel:${PHONE}`} className="hidden md:inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-3 lg:px-4 py-2 rounded-lg transition-colors font-bold shadow-sm whitespace-nowrap text-sm">
+            <div className="flex items-center justify-end flex-shrink-0">
+              <a href={`tel:${PHONE}`} className="hidden md:inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-4 lg:px-5 py-2.5 rounded-lg transition-colors font-bold shadow-sm whitespace-nowrap text-sm lg:text-base">
                 <Phone className="w-4 h-4" /> {PHONE}
               </a>
               <button
@@ -59,8 +57,8 @@ export default function RemoteSupport() {
             </div>
           </div>
 
-          {/* bottom row: centered nav links */}
-          <div className="hidden md:flex items-center justify-center gap-5 lg:gap-7 text-sm lg:text-[15px] font-semibold text-gray-700 whitespace-nowrap mt-3">
+          {/* bottom row: nav links spread across the full width */}
+          <div className="hidden md:flex items-center justify-between text-sm lg:text-[15px] font-semibold text-gray-700 whitespace-nowrap mt-3">
             <a href="/" className="hover:text-orange-500 transition-colors">Home</a>
             <a href="/#why-us" className="hover:text-orange-500 transition-colors">Why Us?</a>
             <a href="/#about" className="hover:text-orange-500 transition-colors">About Us</a>
@@ -95,7 +93,7 @@ export default function RemoteSupport() {
       </nav>
 
       {/* ── HERO + PAY (fits one screen below the header) ── */}
-      <div className="min-h-[calc(100vh-112px)] flex flex-col">
+      <div className="min-h-[calc(100vh-140px)] flex flex-col">
 
       {/* ── HERO BAND ── */}
       <section className="bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white py-8 md:py-10">
@@ -104,7 +102,7 @@ export default function RemoteSupport() {
             <Monitor className="w-6 h-6 text-white" />
           </div>
           <p className="text-blue-200 uppercase tracking-widest text-sm font-semibold mb-2">Remote Support</p>
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-3">Fast Help, Without Leaving Home</h1>
+          <h1 className="text-2xl md:text-4xl font-extrabold mb-3">Fast Help, Without Leaving Home</h1>
           <p className="text-blue-100 text-base md:text-lg max-w-2xl mx-auto">
             Greg connects to your computer securely over the internet to diagnose and fix problems —
             no house call required. Pay first, then we get you connected.
@@ -113,7 +111,7 @@ export default function RemoteSupport() {
       </section>
 
       {/* ── HOW IT WORKS (compact) ── */}
-      <section id="how-it-works" className="py-4 md:py-5 bg-white">
+      <section id="how-it-works" className="py-6 md:py-8 bg-white">
         <div className="max-w-5xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6">
             {[
@@ -126,8 +124,8 @@ export default function RemoteSupport() {
                   <s.icon className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-base text-[#1a2e5a] md:mb-1">{s.title}</h3>
-                  <p className="text-gray-600 text-xs leading-snug">{s.desc}</p>
+                  <h3 className="font-bold text-lg text-[#1a2e5a] md:mb-1">{s.title}</h3>
+                  <p className="text-gray-600 text-sm leading-snug">{s.desc}</p>
                 </div>
               </div>
             ))}
@@ -135,7 +133,7 @@ export default function RemoteSupport() {
         </div>
       </section>
 
-      <section id="pricing" className="flex-1 flex flex-col justify-center py-4 md:py-6 bg-gray-50">
+      <section id="pricing" className="flex-1 flex flex-col justify-start py-4 md:py-6 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-extrabold text-[#1a2e5a] text-center mb-2">Choose Your Support</h2>
           <p className="text-gray-500 text-center mb-6 max-w-xl mx-auto">One-hour minimum per session. Additional time is billed in 30-minute increments.</p>
@@ -199,7 +197,7 @@ export default function RemoteSupport() {
 
           {/* scroll-down cue */}
           <div className="flex justify-center mt-8">
-            <a href="#after-you-pay" className="inline-flex flex-col items-center text-[#1a2e5a] hover:text-orange-500 transition-colors group">
+            <a href="#after-you-pay" onClick={(e) => { e.preventDefault(); document.getElementById("after-you-pay")?.scrollIntoView({ behavior: "smooth" }); }} className="inline-flex flex-col items-center text-[#1a2e5a] hover:text-orange-500 transition-colors group">
               <span className="text-sm font-semibold uppercase tracking-wide mb-1">What Happens Next</span>
               <ChevronDown className="w-6 h-6 animate-bounce" />
             </a>
