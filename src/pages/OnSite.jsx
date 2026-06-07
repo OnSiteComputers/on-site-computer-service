@@ -6,7 +6,7 @@
 // ============================================================
 
 import { useEffect, useState } from "react";
-import { Phone, MapPin, Star, Shield, Clock, Monitor, Wifi, HardDrive, Lock, Users, Wrench, Laptop, CheckCircle, ChevronRight, Menu, X, Server, Database, Network } from "lucide-react";
+import { Phone, MapPin, Star, Shield, Clock, Monitor, Wifi, HardDrive, Lock, Users, Wrench, Laptop, CheckCircle, ChevronRight, Menu, X } from "lucide-react";
 
 // ── LOGO ── Replace src with your hosted logo URL if needed
 const ONSITE_LOGO = "/logo.png";
@@ -27,16 +27,6 @@ const SERVICES = [
   { icon: Wifi, title: "Networking", desc: "Home or office — routers, switches, Wi-Fi setup, and wired network installations." },
   { icon: Shield, title: "Remote Support", desc: "Many issues solved remotely without you leaving home — fast, secure, and convenient. See our Remote Support page to get started." },
   { icon: Wrench, title: "On-Site Service", desc: "We come to you — home or office visits available throughout Concord and surrounding areas." },
-];
-
-// ── SERVER SETUPS ──
-const SERVER_SERVICES = [
-  { icon: Server, title: "Small-Business & Office Servers", desc: "From a first file server to a full domain — we spec, build, and install the right server for how your business actually works." },
-  { icon: Database, title: "File Sharing & User Management", desc: "Shared drives that just work. Centralized files, user accounts, permissions, and printer sharing so your whole team is on the same page." },
-  { icon: HardDrive, title: "NAS & File Storage", desc: "Network-attached storage sized to your needs. Documents, project files, and archives in one reliable place reachable from any machine." },
-  { icon: Shield, title: "Backups & Data Protection", desc: "On-site and off-site backups that run automatically and actually get tested. If a drive dies or ransomware hits, your data is safe." },
-  { icon: Network, title: "Networking & Wi-Fi", desc: "Routers, switches, business-grade Wi-Fi, and clean wired runs. A network that stays fast and stable as you add people and devices." },
-  { icon: Lock, title: "VPN & Secure Remote Access", desc: "Reach your office files and systems securely from home, the road, or a second location. Locked-down remote access done right." },
 ];
 
 // ── SERVICE AREAS ──
@@ -84,57 +74,26 @@ export default function OnSite() {
     document.body.appendChild(s);
   }, []);
 
-  // Smooth-scroll for in-page anchor links. The reviews section loads a tall
-  // third-party widget asynchronously; if we scroll while it's still expanding,
-  // the layout shifts and the jump can strand at the top. So we scroll, then
-  // re-assert the position twice after short delays to settle on the target.
+  // Smooth-scroll for in-page anchor links, offset by the REAL header height
+  // so each section lands just below the sticky nav instead of underneath it.
   useEffect(() => {
     const handleClick = (e) => {
       const link = e.target.closest('a[href^="#"]');
       if (!link) return;
       const id = link.getAttribute("href").slice(1);
-      if (!document.getElementById(id)) return;
+      const target = document.getElementById(id);
+      if (!target) return;
       e.preventDefault();
+      // scrollIntoView finds whatever container is actually scrolling
+      // (Base44 wraps the app in its own scroll container), so this works
+      // where window.scrollTo does not. scroll-margin-top in the CSS handles
+      // the sticky-nav offset so the section isn't hidden under the header.
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
       setMenuOpen(false);
-
-      const scrollToTarget = (smooth) => {
-        const el = document.getElementById(id);
-        if (!el) return;
-        const nav = document.getElementById("site-nav");
-        const offset = (nav ? nav.offsetHeight : 72) - 16;
-        const y = el.getBoundingClientRect().top + window.pageYOffset - offset;
-        window.scrollTo({ top: y, behavior: smooth ? "smooth" : "auto" });
-      };
-
-      scrollToTarget(true);
-      // re-assert after the layout (and any lazy widget) settles
-      setTimeout(() => scrollToTarget(false), 350);
-      setTimeout(() => scrollToTarget(false), 800);
-
       if (history.replaceState) history.replaceState(null, "", `#${id}`);
     };
     document.addEventListener("click", handleClick);
     return () => document.removeEventListener("click", handleClick);
-  }, []);
-
-  // When arriving at the homepage with a #section in the URL (e.g. clicking
-  // "About Us" from the Remote Support page lands at /#about), scroll to that
-  // section once the page has rendered. Uses the same measured-header offset.
-  useEffect(() => {
-    const id = window.location.hash.slice(1);
-    if (!id) return;
-    const scrollToHash = () => {
-      const el = document.getElementById(id);
-      if (!el) return;
-      const nav = document.getElementById("site-nav");
-      const offset = (nav ? nav.offsetHeight : 72) - 16;
-      const y = el.getBoundingClientRect().top + window.pageYOffset - offset;
-      window.scrollTo({ top: y, behavior: "auto" });
-    };
-    // wait for layout (and lazy widgets) before measuring
-    setTimeout(scrollToHash, 100);
-    setTimeout(scrollToHash, 500);
-    setTimeout(scrollToHash, 1000);
   }, []);
 
   return (
@@ -149,11 +108,10 @@ export default function OnSite() {
               <span className="text-orange-500">Computer Service</span>
             </div>
           </a>
-          <div className="hidden md:flex items-end gap-5 lg:gap-6 text-sm lg:text-[15px] font-semibold text-gray-700 whitespace-nowrap">
+          <div className="hidden md:flex items-center gap-5 lg:gap-6 text-sm lg:text-[15px] font-semibold text-gray-700 whitespace-nowrap">
             <a href="#top" className="hover:text-orange-500 transition-colors">Home</a>
             <a href="#about" className="hover:text-orange-500 transition-colors">About Us</a>
             <a href="#services" className="hover:text-orange-500 transition-colors">Services</a>
-            <a href="#server-setups" className="hover:text-orange-500 transition-colors">Server Setups</a>
             <a href="/remote-support" className="hover:text-orange-500 transition-colors">Remote Support</a>
             <a href="#reviews" className="hover:text-orange-500 transition-colors">Reviews</a>
             <a href="#areas" className="hover:text-orange-500 transition-colors">Service Areas</a>
@@ -179,7 +137,6 @@ export default function OnSite() {
               <a href="#top" className="py-3 border-b border-blue-100 hover:text-blue-700">Home</a>
               <a href="#about" className="py-3 border-b border-blue-100 hover:text-blue-700">About Us</a>
               <a href="#services" className="py-3 border-b border-blue-100 hover:text-blue-700">Services</a>
-              <a href="#server-setups" className="py-3 border-b border-blue-100 hover:text-blue-700">Server Setups</a>
               <a href="/remote-support" className="py-3 border-b border-blue-100 hover:text-blue-700">Remote Support</a>
               <a href="#reviews" className="py-3 border-b border-blue-100 hover:text-blue-700">Reviews</a>
               <a href="#areas" className="py-3 border-b border-blue-100 hover:text-blue-700">Service Areas</a>
@@ -193,8 +150,8 @@ export default function OnSite() {
       </nav>
 
       {/* ── HERO ── */}
-      <section id="top" className="bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white pt-2 pb-3 md:pt-4 md:pb-5">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-10">
+      <section id="top" className="bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white pt-2 pb-8 md:pt-4 md:pb-10">
+        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
           <div className="flex-1 text-center md:text-left">
             <p className="text-blue-200 uppercase tracking-widest text-sm font-semibold mb-3">House Calls for Technology Since 2000</p>
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
@@ -215,12 +172,12 @@ export default function OnSite() {
           </div>
           {/* Logo + Trust Card */}
           <div className="flex-shrink-0 w-full md:w-auto">
-            <div className="p-2 md:p-8">
+            <div className="p-6 md:p-8">
 
               <img
                 src={HERO_IMAGE}
                 alt="On-Site Computer Service"
-                className="w-[180px] md:w-[460px] h-auto mx-auto"
+                className="w-[380px] md:w-[460px] h-auto mx-auto"
               />
 
             </div>
@@ -233,10 +190,10 @@ export default function OnSite() {
         <div className="max-w-6xl mx-auto px-3">
           <div className="grid grid-cols-4 gap-x-2 md:gap-x-4 text-center">
             {[
-              { number: "26", label: "Years of Expertise" },
-              { number: "16", label: "Years Serving Downtown Concord" },
-              { number: "177+", label: "Five-Star Reviews & Counting" },
-              { number: "100%", label: "Locally Owned & Operated" },
+              { number: "26", label: "Years of Experience" },
+              { number: "16", label: "Years in Downtown Concord" },
+              { number: "176+", label: "Five-Star Google Reviews" },
+              { number: "100%", label: "Locally Owned and Operated" },
             ].map((stat, i) => (
               <div key={i} className="px-1">
                 <div
@@ -266,7 +223,7 @@ export default function OnSite() {
             {[
               { icon: "🩺", title: "He diagnoses first, bills second", desc: "Greg tells you exactly what is wrong and what it will cost before he does anything. No surprises, no hidden fees." },
               { icon: "🤝", title: "He treats you like a neighbor", desc: "Same location for 16 years. Same phone number. Same face. He knows his customers and they know him." },
-              { icon: "⭐", title: "177+ five-star reviews speak for themselves", desc: "Not paid ads or gimmicks — just hundreds of real customers who came back and sent their families." },
+              { icon: "⭐", title: "176+ five-star reviews speak for themselves", desc: "Not paid ads or gimmicks — just hundreds of real customers who came back and sent their families." },
               { icon: "🏠", title: "He comes to you", desc: "Can not bring it in? No problem. Greg offers on-site service — home visits or office calls in the Concord area." },
               { icon: "💻", title: "Windows AND Mac", desc: "Most shops pick one. Greg fixes both. PCs and Macs treated with equal care and expertise." },
               { icon: "💛", title: "Core philosophy: treat people right", desc: "Treat people like you want to be treated. That is the whole business model — and it has worked for 26 years." },
@@ -282,8 +239,8 @@ export default function OnSite() {
       </section>
 
       {/* ── MEET GREG & LINDA ── */}
-      <section id="about" className="min-h-screen flex items-start py-16 md:py-20 bg-white">
-        <div className="max-w-3xl mx-auto px-4 w-full">
+      <section id="about" className="py-16 md:py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-4">
           <div className="flex-1">
             <p className="text-orange-500 font-semibold uppercase tracking-widest text-sm mb-2">The People Behind the Business</p>
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a2e5a] mb-5">Meet Greg and Linda Blair</h2>
@@ -294,9 +251,6 @@ export default function OnSite() {
               Linda runs the front of house, handles communications, and makes sure every customer leaves feeling heard and taken care of. Together, they have built a business that has become part of the Concord community — not just a shop, but a trusted resource.
             </p>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
-              Greg grew up learning a lesson from his grandmother that shaped everything: "Greg, whatever you do for a living, make sure you love it — because you are going to do it a long time." Twenty-six years later, it still holds true. "I can do this stuff all day long and never feel like I worked a day in my life. That is not a sales line — that is just the truth."
-            </p>
-            <p className="text-gray-600 text-lg leading-relaxed mb-6">
               "We have never been about volume. We are about doing right by each person who walks through that door or calls us for help. That has not changed in 26 years."
               <span className="block mt-2 text-[#1a2e5a] font-semibold not-italic">— Greg Blair</span>
             </p>
@@ -304,48 +258,21 @@ export default function OnSite() {
               <div className="flex">
                 {[1,2,3,4,5].map(s => <Star key={s} className="w-5 h-5 fill-yellow-400 text-yellow-400" />)}
               </div>
-              <span className="text-gray-500 font-medium">177+ five-star Google reviews</span>
+              <span className="text-gray-500 font-medium">176+ five-star Google reviews</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* ── SERVICES ── */}
-      <section id="services" className="min-h-screen flex items-start py-16 md:py-20 bg-[#002868]">
-        <div className="max-w-6xl mx-auto px-4 w-full">
+      <section id="services" className="py-16 md:py-20 bg-[#002868]">
+        <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">What We Fix</h2>
             <p className="text-blue-200 max-w-xl mx-auto text-lg">From a slow laptop to a crashed server, Greg has seen it all — and fixed most of it.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICES.map((svc, i) => (
-              <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md hover:border-blue-200 transition-all group">
-                <div className="w-12 h-12 bg-blue-50 group-hover:bg-blue-100 rounded-xl flex items-center justify-center mb-4 transition-colors">
-                  <svc.icon className="w-6 h-6 text-blue-600" />
-                </div>
-                <h3 className="text-base font-bold text-[#1a2e5a] mb-2">{svc.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{svc.desc}</p>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-10">
-            <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-10 rounded-xl text-lg transition-all shadow-lg">
-              <Phone className="w-5 h-5" /> Contact Us
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ── SERVER SETUPS ── */}
-      <section id="server-setups" className="min-h-screen flex items-start py-16 md:py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 w-full">
-          <div className="text-center mb-12">
-            <p className="text-orange-500 uppercase tracking-widest text-sm font-semibold mb-3">Servers · Storage · Networking</p>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a2e5a] mb-3">Server Setups</h2>
-            <p className="text-gray-500 max-w-xl mx-auto text-lg">Built right the first time — servers, storage, backups, and networks sized to how your business actually works.</p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SERVER_SERVICES.map((svc, i) => (
               <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md hover:border-blue-200 transition-all group">
                 <div className="w-12 h-12 bg-blue-50 group-hover:bg-blue-100 rounded-xl flex items-center justify-center mb-4 transition-colors">
                   <svc.icon className="w-6 h-6 text-blue-600" />
@@ -390,13 +317,13 @@ export default function OnSite() {
       </section>
 
       {/* ── GOOGLE REVIEWS ── */}
-      <section id="reviews" className="min-h-screen flex items-start py-16 md:py-20 bg-[#002868]">
-        <div className="max-w-6xl mx-auto px-4 w-full">
+      <section id="reviews" className="py-16 md:py-20 bg-[#002868]">
+        <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
             <div className="flex justify-center gap-1 mb-3">
               {[1,2,3,4,5].map(s => <Star key={s} className="w-7 h-7 fill-yellow-400 text-yellow-400" />)}
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">177+ Five-Star Reviews</h2>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">176+ Five-Star Reviews</h2>
             <p className="text-blue-200 text-lg">Real customers. Real words. No scripts.</p>
           </div>
           <div
@@ -417,8 +344,8 @@ export default function OnSite() {
       </section>
 
       {/* ── SERVICE AREAS ── */}
-      <section id="areas" className="min-h-screen flex items-start py-16 md:py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-4 text-center w-full">
+      <section id="areas" className="py-16 md:py-20 bg-white">
+        <div className="max-w-5xl mx-auto px-4 text-center">
           <MapPin className="w-10 h-10 text-orange-500 mx-auto mb-4" />
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a2e5a] mb-3">Where We Serve</h2>
           <p className="text-gray-500 text-lg mb-10">Based in downtown Concord — serving communities across the region.</p>
@@ -433,8 +360,8 @@ export default function OnSite() {
       </section>
 
       {/* ── CONTACT / CTA ── */}
-      <section id="contact" className="min-h-screen flex items-start py-16 md:py-24 bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white">
-        <div className="max-w-6xl mx-auto px-4 w-full">
+      <section id="contact" className="py-16 md:py-24 bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white">
+        <div className="max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-start">
 
             {/* LEFT: contact info */}
@@ -569,7 +496,6 @@ export default function OnSite() {
                     <li><a href="#top" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">Home</a></li>
                     <li><a href="#about" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">About Us</a></li>
                     <li><a href="#services" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">Services</a></li>
-                    <li><a href="#server-setups" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">Server Setups</a></li>
                     <li><a href="/remote-support" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">Remote Support</a></li>
                     <li><a href="#reviews" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">Reviews</a></li>
                     <li><a href="#contact" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors">Contact</a></li>
