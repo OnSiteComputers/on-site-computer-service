@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import { Phone, MapPin, Star, Shield, Clock, Monitor, Wifi, HardDrive, Lock, Users, Wrench, Laptop, CheckCircle, ChevronRight, Menu, X, Server, Database, Network } from "lucide-react";
 
 // ── LOGO ── Replace src with your hosted logo URL if needed
-const ONSITE_LOGO = "/logo.png";
+const ONSITE_LOGO = "/hero-logo-no-text.png";
 const HERO_IMAGE = "/hero-logo.png";
 
 // ── CONTACT INFO ── Easy to edit
@@ -188,14 +188,16 @@ export default function OnSite() {
 
       {/* ── NAVIGATION ── */}
       <nav id="site-nav" className="bg-blue-50 border-b border-blue-100 sticky top-0 z-50 shadow-sm overflow-visible">
-        <div className="max-w-6xl mx-auto px-4 py-3">
-          {/* top row: logo image + wordmark on the LEFT, phone/menu on the RIGHT */}
+        <div className="max-w-6xl mx-auto px-4 py-2.5">
+          {/* top row: wordmark on the LEFT, phone/menu on the RIGHT */}
           <div className="flex items-center justify-between gap-4">
-            <a href="#top" className="flex items-center gap-3 leading-none" style={{ fontFamily: "'Archivo Black', sans-serif" }}>
-              <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="h-14 md:h-20 w-auto flex-shrink-0" />
+            <a href="#top" className="flex flex-col leading-none" style={{ fontFamily: "'Archivo Black', sans-serif" }}>
               <div className="text-xl md:text-3xl leading-none whitespace-nowrap">
                 <span className="text-[#1a2e5a]">On-Site</span>{" "}
                 <span className="text-orange-500">Computer Service</span>
+              </div>
+              <div className="text-orange-500 italic font-bold text-xs md:text-base mt-1 whitespace-nowrap" style={{ fontFamily: "inherit" }}>
+                Your Computer's Doctor
               </div>
             </a>
             <div className="flex items-center justify-end flex-shrink-0">
@@ -271,13 +273,23 @@ export default function OnSite() {
           </div>
           {/* Logo + Trust Card */}
           <div className="flex-shrink-0 w-full md:w-auto">
-            <div className="p-2 md:p-8">
+            <div className="p-2 md:p-8 flex flex-col items-center">
 
               <img
-                src={HERO_IMAGE}
+                src="/hero-logo-no-text.png"
                 alt="On-Site Computer Service"
-                className="w-[180px] md:w-[460px] h-auto mx-auto"
+                className="w-[180px] md:w-[420px] h-auto mx-auto"
               />
+
+              <div className="mt-3 md:mt-4 text-center leading-none" style={{ fontFamily: "'Archivo Black', sans-serif" }}>
+                <div className="text-2xl md:text-4xl leading-none whitespace-nowrap">
+                  <span className="text-white">On-Site</span>{" "}
+                  <span className="text-orange-400">Computer Service</span>
+                </div>
+                <div className="text-orange-400 italic font-bold text-base md:text-2xl mt-1.5 whitespace-nowrap" style={{ fontFamily: "inherit" }}>
+                  Your Computer's Doctor
+                </div>
+              </div>
 
             </div>
           </div>
