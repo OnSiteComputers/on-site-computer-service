@@ -549,15 +549,16 @@ export default function OnSite() {
       </section>
 
       {/* ── SERVICE AREAS ── */}
-      <section id="areas" className="min-h-screen flex items-center py-16 md:py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-4 text-center w-full">
+      <section id="areas" className="min-h-[calc(100vh-140px)] flex items-center py-16 md:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 text-center w-full">
           <MapPin className="w-10 h-10 text-orange-500 mx-auto mb-4" />
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a2e5a] mb-3">Where We Serve</h2>
-          <p className="text-gray-500 text-lg mb-10">Based in downtown Concord — serving communities across the region.</p>
+          <p className="text-gray-500 text-lg mb-6 md:mb-8">Based in downtown Concord — serving communities across the region.</p>
 
-          {/* ── CHARLOTTE METRO MAP (desktop only) ── */}
-          <div className="hidden md:block mb-12">
-            <svg viewBox="0 0 820 560" className="w-full max-w-2xl mx-auto h-auto" role="img" aria-label="Map of the Charlotte metro service area with county outlines and cities">
+          {/* ── DESKTOP: map left + tiles right (one screen) ── */}
+          <div className="hidden md:grid md:grid-cols-[1.3fr_1fr] gap-8 items-center mb-4">
+            <div>
+            <svg viewBox="0 0 820 560" className="w-full h-auto" role="img" aria-label="Map of the Charlotte metro service area with county outlines and cities">
               {/* counties */}
               <path d="M580.6,396.3 L576.9,398.7 L566.5,396.5 L561.4,390.7 L553.3,389.0 L627.8,250.4 L667.6,249.8 L714.0,307.0 L697.6,358.1 L705.6,406.8 L670.6,404.7 L634.2,383.8 L580.6,396.3 Z" fill="#dbe7fa" stroke="#2563eb" strokeWidth="1.5" />
               <path d="M477.4,311.3 L468.7,303.5 L464.8,297.3 L461.6,295.0 L454.5,249.1 L471.2,249.2 L471.2,248.5 L488.5,248.8 L499.4,249.0 L501.9,249.0 L502.4,249.1 L503.5,249.1 L533.1,250.3 L627.8,250.4 L553.3,389.0 L552.9,388.5 L537.4,378.4 L496.5,352.4 L496.0,352.1 L486.6,318.2 L481.3,314.6 L477.4,311.3 Z" fill="#dbe7fa" stroke="#2563eb" strokeWidth="1.5" />
@@ -621,9 +622,26 @@ export default function OnSite() {
               <span className="flex items-center gap-2"><span className="inline-block w-3 h-3 rounded-full bg-orange-500"></span> Home base</span>
               <span className="flex items-center gap-2"><span className="inline-block w-3 h-3 rounded-sm" style={{ backgroundColor: "#dbe7fa", border: "1.5px solid #2563eb" }}></span> Primary service counties</span>
             </div>
+            </div>
+
+            {/* right column: city tiles */}
+            <div className="grid grid-cols-2 gap-3 content-center">
+              {SERVICE_AREAS.map((area, i) => (
+                <div
+                  key={i}
+                  className="group bg-white border border-gray-200 rounded-xl px-3 py-3 shadow-sm hover:shadow-md hover:border-orange-300 hover:-translate-y-0.5 transition-all flex items-center gap-2 text-left"
+                >
+                  <div className="w-8 h-8 rounded-full bg-blue-50 group-hover:bg-orange-50 flex items-center justify-center transition-colors flex-shrink-0">
+                    <MapPin className="w-4 h-4 text-[#2563eb] group-hover:text-orange-500 transition-colors" />
+                  </div>
+                  <span className="text-[#1a2e5a] font-semibold text-sm leading-tight">{area}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+          {/* ── MOBILE: full-width tile grid (map hidden) ── */}
+          <div className="grid md:hidden grid-cols-2 sm:grid-cols-3 gap-4">
             {SERVICE_AREAS.map((area, i) => (
               <div
                 key={i}
