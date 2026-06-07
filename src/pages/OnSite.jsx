@@ -108,7 +108,7 @@ export default function OnSite() {
               <span className="text-orange-500">Computer Service</span>
             </div>
           </a>
-          <div className="hidden md:flex items-center gap-5 lg:gap-6 text-sm lg:text-[15px] font-semibold text-gray-700 whitespace-nowrap">
+          <div className="hidden md:flex items-end gap-5 lg:gap-6 text-sm lg:text-[15px] font-semibold text-gray-700 whitespace-nowrap">
             <a href="#top" className="hover:text-orange-500 transition-colors">Home</a>
             <a href="#about" className="hover:text-orange-500 transition-colors">About Us</a>
             <a href="#services" className="hover:text-orange-500 transition-colors">Services</a>
