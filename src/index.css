@@ -25,9 +25,15 @@ h1, h2, h3, h4,
 }
 /* keep the nav brand wordmark on Archivo Black (set inline), don't override it */
 
-/* Smooth anchor scrolling with offset for the sticky header */
+/* Anchor scrolling with offset for the sticky header.
+   Desktop SNAPS instantly; only MOBILE (<=768px) scrolls smoothly. */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
+}
+@media (max-width: 768px) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 /* Sections that are jumped to via #anchor links land below the sticky nav
