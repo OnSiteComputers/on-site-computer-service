@@ -251,7 +251,7 @@ export default function OnSite() {
       </nav>
 
       {/* ── HERO ── */}
-      <section id="top" className="min-h-screen flex flex-col justify-center bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white pt-4 pb-6 md:pt-6 md:pb-8">
+      <section id="top" className="min-h-[calc(100vh-140px)] flex flex-col justify-start bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white pt-8 pb-6 md:pt-10 md:pb-8">
         <div className="max-w-6xl mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-10 w-full">
           <div className="flex-1 text-center md:text-left">
             <p className="text-blue-200 uppercase tracking-widest text-sm font-semibold mb-3">House Calls for Technology Since 2000</p>
@@ -664,10 +664,10 @@ export default function OnSite() {
       {/* ── CONTACT / CTA ── */}
       <section id="contact" className="min-h-[calc(100vh-140px)] flex items-start py-16 md:py-24 bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white">
         <div className="max-w-6xl mx-auto px-4 w-full">
-          <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-start">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-stretch">
 
             {/* LEFT: contact info */}
-            <div className="text-center md:text-left">
+            <div className="text-center md:text-left flex flex-col">
               <h2 className="text-3xl md:text-5xl font-extrabold mb-4">
                 Computer Problems? <br className="hidden md:block" />
                 <span className="text-orange-400">Let us Talk.</span>
@@ -687,9 +687,21 @@ export default function OnSite() {
                 <MapPin className="w-5 h-5 flex-shrink-0" />
                 <span className="text-lg">{ADDRESS}</span>
               </div>
-              <div className="flex items-center justify-center md:justify-start gap-2 text-blue-200">
+              <div className="flex items-center justify-center md:justify-start gap-2 text-blue-200 mb-6">
                 <Clock className="w-5 h-5 flex-shrink-0" />
                 <span className="text-lg">Mon–Fri, 10:00 AM – 6:00 PM EST</span>
+              </div>
+              <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 flex-1 min-h-[260px]">
+                <iframe
+                  title="On-Site Computer Service location"
+                  src="https://www.google.com/maps?q=53%20Cabarrus%20Ave%20W%2C%20Concord%2C%20NC%2028025&output=embed"
+                  width="100%"
+                  className="block w-full h-full min-h-[260px]"
+                  style={{ border: 0, display: "block" }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
 
@@ -758,20 +770,6 @@ export default function OnSite() {
               )}
             </div>
 
-          </div>
-
-          {/* full-width map */}
-          <div className="mt-10 md:mt-12 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
-            <iframe
-              title="On-Site Computer Service location"
-              src="https://www.google.com/maps?q=53%20Cabarrus%20Ave%20W%2C%20Concord%2C%20NC%2028025&output=embed"
-              width="100%"
-              className="block w-full h-[280px] md:h-[360px]"
-              style={{ border: 0, display: "block" }}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            ></iframe>
           </div>
         </div>
       </section>
