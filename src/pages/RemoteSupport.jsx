@@ -95,21 +95,6 @@ export default function RemoteSupport() {
       {/* ── HERO + PAY (fits one screen below the header) ── */}
       <div className="min-h-[calc(100vh-140px)] flex flex-col">
 
-      {/* ── HERO BAND ── */}
-      <section className="bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white py-8 md:py-10">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <div className="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mx-auto mb-3">
-            <Monitor className="w-6 h-6 text-white" />
-          </div>
-          <p className="text-blue-200 uppercase tracking-widest text-sm font-semibold mb-2">Remote Support</p>
-          <h1 className="text-2xl md:text-4xl font-extrabold mb-3">Fast Help, Without Leaving Home</h1>
-          <p className="text-blue-100 text-base md:text-lg max-w-2xl mx-auto">
-            Greg connects to your computer securely over the internet to diagnose and fix problems —
-            no house call required. Pay first, then we get you connected.
-          </p>
-        </div>
-      </section>
-
       {/* ── HOW IT WORKS (compact) ── */}
       <section id="how-it-works" className="py-6 md:py-8 bg-white">
         <div className="max-w-5xl mx-auto px-4">
