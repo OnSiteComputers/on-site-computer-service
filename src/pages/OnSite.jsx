@@ -17,19 +17,6 @@ const PHONE = "980-236-0810";
 const EMAIL = "greg@onsitecomputerservice.net";
 const ADDRESS = "53 Cabarrus Ave. W, Concord, NC 28025";
 
-// ── GOOGLE REVIEWS ── Add new ones here as they come in (newest first looks best).
-// Keep "text" reasonably short so all 8 cards fit on screen; full text optional.
-const REVIEWS = [
-  { name: "Marlo James", when: "20 days ago", text: "We've been working with Onsite Computer Services for several years; recently we needed to upgrade our security and they handled it start to finish." },
-  { name: "Puro Dano", when: "12 days ago", text: "I first met Greg when I had a PC emergency about 20 years ago. He fixed it and helped improve our office network. Still my go-to." },
-  { name: "Liam Custer", when: "25 days ago", text: "I needed a quick part to get a PC working, and Greg helped me out super quick and with a great price. Highly recommend." },
-  { name: "Anon Ymous", when: "1 month ago", text: "Took my non-bootable laptop to his shop about 10 a.m. He fixed it and delivered it back to my home about 8 p.m. Can't ask for better." },
-  { name: "Bryce Rogers", when: "1 month ago", text: "Greg is thorough and honest; the Lord bless this place!" },
-  { name: "Garen Kalender", when: "1 month ago", text: "Brought in my gaming PC that was shot after a power outage. Greg solved a multitude of problems and I couldn't be more thankful." },
-  { name: "Max Williams", when: "1 month ago", text: "Had an issue with my PC for 1.5 years and finally took it in. Nobody else could diagnose it — Greg did. Outstanding." },
-  { name: "von gab", when: "2 months ago", text: "I'd like to commend Greg Blair of On-Site Computer Service. Extremely efficient, knowledgeable, and an expert at troubleshooting." },
-];
-
 // ── SERVICES ── Edit labels and descriptions freely
 const SERVICES = [
   { icon: Monitor, title: "Computer Repair", desc: "Windows PCs running slow, crashing, or acting up? We diagnose and fix it right the first time." },
@@ -62,37 +49,6 @@ const SERVICE_AREAS = [
 export default function OnSite() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [footerNavOpen, setFooterNavOpen] = useState(false);
-
-  // ── REVIEWS ROTATION ── shows 8 at a time (2 rows × 4), auto-fades to the next set
-  const REVIEWS_PER_PAGE = 8;
-  const reviewPages = Math.max(1, Math.ceil(REVIEWS.length / REVIEWS_PER_PAGE));
-  const [reviewPage, setReviewPage] = useState(0);
-  const [reviewFading, setReviewFading] = useState(false);
-
-  const goToReviewPage = (next) => {
-    setReviewFading(true);
-    setTimeout(() => {
-      setReviewPage((p) => (next + reviewPages) % reviewPages);
-      setReviewFading(false);
-    }, 350);
-  };
-
-  useEffect(() => {
-    if (reviewPages <= 1) return;
-    const id = setInterval(() => {
-      setReviewFading(true);
-      setTimeout(() => {
-        setReviewPage((p) => (p + 1) % reviewPages);
-        setReviewFading(false);
-      }, 350);
-    }, 6000);
-    return () => clearInterval(id);
-  }, [reviewPages]);
-
-  const visibleReviews = REVIEWS.slice(
-    reviewPage * REVIEWS_PER_PAGE,
-    reviewPage * REVIEWS_PER_PAGE + REVIEWS_PER_PAGE
-  );
 
   // ── CONTACT FORM ──
   const FORMSPREE_ENDPOINT = "https://formspree.io/f/xaqkgykp";
@@ -186,13 +142,15 @@ export default function OnSite() {
 
       {/* ── NAVIGATION ── */}
       <nav id="site-nav" className="bg-blue-50 border-b border-blue-100 sticky top-0 z-50 shadow-sm overflow-visible">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-          <a href="#top" className="leading-none flex-shrink-0 flex items-center">
-            <img src="/hero-logo-no-text.png" alt="On-Site Computer Service — Your Computer's Doctor" className="h-14 md:h-16 lg:h-20 w-auto" />
+        <div className="max-w-6xl mx-auto px-4 py-3 flex items-end justify-between gap-4">
+          <a href="#top" className="leading-none flex-shrink-0" style={{ fontFamily: "'Archivo Black', sans-serif" }}>
+            <div className="text-lg md:text-xl lg:text-2xl leading-none whitespace-nowrap">
+              <span className="text-[#1a2e5a]">On-Site</span>{" "}
+              <span className="text-orange-500">Computer Service</span>
+            </div>
           </a>
-          <div className="hidden md:flex items-end gap-4 lg:gap-5 text-sm lg:text-[15px] font-semibold text-gray-700 whitespace-nowrap">
+          <div className="hidden md:flex items-end gap-5 lg:gap-6 text-sm lg:text-[15px] font-semibold text-gray-700 whitespace-nowrap">
             <a href="#top" className="hover:text-orange-500 transition-colors">Home</a>
-            <a href="#why-us" className="hover:text-orange-500 transition-colors">Why Us?</a>
             <a href="#about" className="hover:text-orange-500 transition-colors">About Us</a>
             <a href="#services" className="hover:text-orange-500 transition-colors">Services</a>
             <a href="#server-setups" className="hover:text-orange-500 transition-colors">Server Setups</a>
@@ -219,7 +177,6 @@ export default function OnSite() {
           <div className="md:hidden bg-blue-50 border-t border-blue-100 px-4 pb-4">
             <div className="flex flex-col text-base font-semibold text-gray-700">
               <a href="#top" className="py-3 border-b border-blue-100 hover:text-blue-700">Home</a>
-              <a href="#why-us" className="py-3 border-b border-blue-100 hover:text-blue-700">Why Us?</a>
               <a href="#about" className="py-3 border-b border-blue-100 hover:text-blue-700">About Us</a>
               <a href="#services" className="py-3 border-b border-blue-100 hover:text-blue-700">Services</a>
               <a href="#server-setups" className="py-3 border-b border-blue-100 hover:text-blue-700">Server Setups</a>
@@ -236,7 +193,7 @@ export default function OnSite() {
       </nav>
 
       {/* ── HERO ── */}
-      <section id="top" className="bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white pt-2 pb-8 md:pt-4 md:pb-10">
+      <section id="top" className="bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white pt-2 pb-3 md:pt-4 md:pb-5">
         <div className="max-w-6xl mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-10">
           <div className="flex-1 text-center md:text-left">
             <p className="text-blue-200 uppercase tracking-widest text-sm font-semibold mb-3">House Calls for Technology Since 2000</p>
@@ -269,22 +226,21 @@ export default function OnSite() {
             </div>
           </div>
         </div>
+      </section>
 
-        {/* ── TRUST BAR (bottom of hero) ── */}
-        <div className="max-w-6xl mx-auto px-3 mt-6 md:mt-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+      {/* ── TRUST BAR ── */}
+      <section className="bg-[#1a2e5a] text-white py-3 md:py-4">
+        <div className="max-w-6xl mx-auto px-3">
+          <div className="grid grid-cols-4 gap-x-2 md:gap-x-4 text-center">
             {[
               { number: "26", label: "Years of Expertise" },
               { number: "16", label: "Years Serving Downtown Concord" },
               { number: "177+", label: "Five-Star Reviews & Counting" },
               { number: "100%", label: "Locally Owned & Operated" },
             ].map((stat, i) => (
-              <div
-                key={i}
-                className="bg-white/[0.06] border border-white/10 rounded-2xl px-3 py-4 md:px-4 md:py-5 text-center backdrop-blur-sm shadow-lg hover:bg-white/[0.09] transition-colors"
-              >
+              <div key={i} className="px-1">
                 <div
-                  className="glimmer-gold text-3xl sm:text-4xl md:text-5xl font-black leading-none mb-1.5"
+                  className="glimmer-gold text-3xl sm:text-4xl md:text-5xl font-black leading-none mb-0.5"
                   style={{
                     color: "#f6c453",
                     textShadow: "0 0 14px rgba(246,196,83,0.5)",
@@ -292,7 +248,7 @@ export default function OnSite() {
                 >
                   {stat.number}
                 </div>
-                <div className="text-blue-100 text-[10px] sm:text-xs font-semibold uppercase tracking-widest leading-tight">{stat.label}</div>
+                <div className="text-blue-200 text-[10px] sm:text-xs font-semibold uppercase tracking-wide leading-tight">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -300,13 +256,13 @@ export default function OnSite() {
       </section>
 
       {/* ── WHY PEOPLE CALL GREG ── */}
-      <section id="why-us" className="py-10 md:py-12 bg-[#002868] scroll-mt-24">
+      <section className="py-16 md:py-20 bg-[#002868]">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-7">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-2">Why Us?</h2>
-            <p className="text-blue-200 max-w-xl mx-auto text-base md:text-lg">No runaround. No upsells. Just honest answers and real fixes — the same way since 2000.</p>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">Why Us?</h2>
+            <p className="text-blue-200 max-w-xl mx-auto text-lg">No runaround. No upsells. Just honest answers and real fixes — the same way since 2000.</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-5">
+          <div className="grid md:grid-cols-3 gap-8">
             {[
               { icon: "🩺", title: "He diagnoses first, bills second", desc: "Greg tells you exactly what is wrong and what it will cost before he does anything. No surprises, no hidden fees." },
               { icon: "🤝", title: "He treats you like a neighbor", desc: "Same location for 16 years. Same phone number. Same face. He knows his customers and they know him." },
@@ -315,9 +271,9 @@ export default function OnSite() {
               { icon: "💻", title: "Windows AND Mac", desc: "Most shops pick one. Greg fixes both. PCs and Macs treated with equal care and expertise." },
               { icon: "💛", title: "Core philosophy: treat people right", desc: "Treat people like you want to be treated. That is the whole business model — and it has worked for 26 years." },
             ].map((item, i) => (
-              <div key={i} className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                <div className="text-3xl mb-2">{item.icon}</div>
-                <h3 className="text-base md:text-lg font-bold text-[#1a2e5a] mb-1.5">{item.title}</h3>
+              <div key={i} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <h3 className="text-lg font-bold text-[#1a2e5a] mb-2">{item.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -434,91 +390,25 @@ export default function OnSite() {
       </section>
 
       {/* ── GOOGLE REVIEWS ── */}
-      <section id="reviews" className="flex items-start py-16 md:py-20 bg-[#002868]">
+      <section id="reviews" className="min-h-screen flex items-start py-16 md:py-20 bg-[#002868]">
         <div className="max-w-6xl mx-auto px-4 w-full">
-          <div className="text-center mb-8">
+          <div className="text-center mb-12">
             <div className="flex justify-center gap-1 mb-3">
               {[1,2,3,4,5].map(s => <Star key={s} className="w-7 h-7 fill-yellow-400 text-yellow-400" />)}
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-2">177+ Five-Star Reviews</h2>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">177+ Five-Star Reviews</h2>
             <p className="text-blue-200 text-lg">Real customers. Real words. No scripts.</p>
           </div>
-          {/* ── ROTATING REVIEW GRID (2 rows × 4) ── */}
-          <div className="relative">
-            <div
-              className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 transition-opacity duration-300 ${reviewFading ? "opacity-0" : "opacity-100"}`}
-            >
-              {visibleReviews.map((r, i) => (
-                <div
-                  key={`${reviewPage}-${i}`}
-                  className="bg-white/[0.07] border border-white/12 rounded-2xl p-5 backdrop-blur-sm shadow-lg flex flex-col"
-                >
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-9 h-9 rounded-full bg-orange-500 text-white font-bold flex items-center justify-center text-sm flex-shrink-0">
-                      {r.name.charAt(0).toUpperCase()}
-                    </div>
-                    <div className="min-w-0">
-                      <div className="text-white font-semibold text-sm leading-tight truncate">{r.name}</div>
-                      <div className="text-blue-300 text-xs">{r.when}</div>
-                    </div>
-                  </div>
-                  <div className="flex gap-0.5 mb-2">
-                    {[1,2,3,4,5].map(s => <Star key={s} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />)}
-                  </div>
-                  <p className="text-blue-100 text-sm leading-snug">{r.text}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* arrows (only when there's more than one page) */}
-            {reviewPages > 1 && (
-              <>
-                <button
-                  onClick={() => goToReviewPage(reviewPage - 1)}
-                  aria-label="Previous reviews"
-                  className="absolute -left-3 md:-left-5 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-[#1a2e5a] hover:bg-orange-500 text-white border border-white/20 flex items-center justify-center shadow-lg transition-colors"
-                >
-                  <ChevronRight className="w-6 h-6 rotate-180" />
-                </button>
-                <button
-                  onClick={() => goToReviewPage(reviewPage + 1)}
-                  aria-label="Next reviews"
-                  className="absolute -right-3 md:-right-5 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-[#1a2e5a] hover:bg-orange-500 text-white border border-white/20 flex items-center justify-center shadow-lg transition-colors"
-                >
-                  <ChevronRight className="w-6 h-6" />
-                </button>
-              </>
-            )}
-
-            {/* dots */}
-            {reviewPages > 1 && (
-              <div className="flex justify-center gap-2 mt-6">
-                {Array.from({ length: reviewPages }).map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => goToReviewPage(i)}
-                    aria-label={`Go to review set ${i + 1}`}
-                    className={`h-2.5 rounded-full transition-all ${i === reviewPage ? "w-6 bg-orange-500" : "w-2.5 bg-white/30 hover:bg-white/50"}`}
-                  />
-                ))}
-              </div>
-            )}
-          </div>
-
-          <div className="text-center mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href="https://www.google.com/search?q=On-Site+Computer+Service+Concord+reviews"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 border-2 border-white/70 text-white hover:bg-white hover:text-[#1a2e5a] font-bold py-3 px-8 rounded-xl transition-all"
-            >
-              See All Reviews on Google
-            </a>
+          <div
+            className="elfsight-app-f007186e-c528-4a57-9e16-f74cf7c7f3d7"
+            data-elfsight-app-lazy
+          ></div>
+          <div className="text-center mt-10">
             <a
               href="https://g.page/r/CSYE1297nyoJEAE/review"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-all shadow-lg"
+              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-all shadow-lg"
             >
               <Star className="w-5 h-5 fill-white text-white" /> Leave Us a Review
             </a>
@@ -577,7 +467,7 @@ export default function OnSite() {
                   title="On-Site Computer Service location"
                   src="https://www.google.com/maps?q=53%20Cabarrus%20Ave%20W%2C%20Concord%2C%20NC%2028025&output=embed"
                   width="100%"
-                  className="block w-full h-[240px] md:h-[420px]"
+                  height="240"
                   style={{ border: 0, display: "block" }}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
@@ -634,7 +524,7 @@ export default function OnSite() {
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-1">Message</label>
                     <textarea name="message" rows="4" required
-                      className="w-full border border-gray-300 rounded-lg px-4 py-2.5 md:min-h-[180px] focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
                   </div>
 
                   {formStatus === "error" && (
