@@ -25,23 +25,16 @@ h1, h2, h3, h4,
 }
 /* keep the nav brand wordmark on Archivo Black (set inline), don't override it */
 
-/* Anchor scrolling is handled in JS (see OnSite.jsx handleClick), which measures
-   the REAL header height live so jumps land just below the sticky bar on every
-   screen size. We deliberately do NOT set scroll-padding-top / scroll-margin-top
-   here — fixed-pixel guesses fought the JS and landed too low on desktop / too
-   high on mobile. Keep smooth behavior only. */
+/* Smooth anchor scrolling with offset for the sticky header */
 html {
   scroll-behavior: smooth;
 }
 
-/* ── STICKY-NAV OVERLAP FIX ──
-   Inside the Base44 mobile app and preview ("BC") site, the whole app is wrapped
-   in its own scroll container. Forcing the sticky nav to a known stacking position
-   keeps content from hiding behind the bar — on the live domain AND in Base44. */
-#site-nav {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
+/* Sections that are jumped to via #anchor links land below the sticky nav
+   instead of being hidden underneath it. Nav is ~88px tall; 96px gives breathing room. */
+section[id],
+[id="top"] {
+  scroll-margin-top: 96px;
 }
 
 @media (prefers-reduced-motion: reduce) {

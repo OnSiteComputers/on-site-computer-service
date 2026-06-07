@@ -8,7 +8,6 @@ import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
 // Add page imports here
 import OnSite from './pages/OnSite';
-import ServerSetups from './pages/ServerSetups';
 import RemoteSupport from './pages/RemoteSupport';
 import LogoConcepts from './pages/LogoConcepts';
 import GNL from './pages/GNL';
@@ -41,7 +40,6 @@ const AuthenticatedApp = () => {
     <Routes>
       {/* Add your page Route elements here */}
       <Route path="/" element={<OnSite />} />
-      <Route path="/server-setups" element={<ServerSetups />} />
       <Route path="/remote-support" element={<RemoteSupport />} />
       <Route path="/gnl" element={<GNL />} />
       <Route path="/logo-concepts" element={<LogoConcepts />} />
