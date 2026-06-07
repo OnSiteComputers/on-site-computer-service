@@ -150,7 +150,9 @@ export default function OnSite() {
         window.scrollTo({ top: y, behavior: smooth ? "smooth" : "auto" });
       };
 
-      scrollToTarget(true);
+      // Mobile (<=768px) scrolls smoothly; desktop snaps instantly.
+      const isMobile = window.matchMedia("(max-width: 768px)").matches;
+      scrollToTarget(isMobile);
       // re-assert after the layout (and any lazy widget) settles
       setTimeout(() => scrollToTarget(false), 350);
       setTimeout(() => scrollToTarget(false), 800);
@@ -187,21 +189,17 @@ export default function OnSite() {
       {/* ── NAVIGATION ── */}
       <nav id="site-nav" className="bg-blue-50 border-b border-blue-100 sticky top-0 z-50 shadow-sm overflow-visible">
         <div className="max-w-6xl mx-auto px-4 py-3">
-          {/* top row: stacked logo (centered) + phone/menu */}
+          {/* top row: logo image + wordmark on the LEFT, phone/menu on the RIGHT */}
           <div className="flex items-center justify-between gap-4">
-            <div className="w-10 md:w-32 flex-shrink-0" />
-            <a href="#top" className="flex flex-col items-center leading-none text-center" style={{ fontFamily: "'Archivo Black', sans-serif" }}>
-              <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="h-10 md:h-14 w-auto mb-1" />
-              <div className="text-base md:text-2xl leading-none whitespace-nowrap">
+            <a href="#top" className="flex items-center gap-3 leading-none" style={{ fontFamily: "'Archivo Black', sans-serif" }}>
+              <img src={ONSITE_LOGO} alt="On-Site Computer Service" className="h-14 md:h-20 w-auto flex-shrink-0" />
+              <div className="text-xl md:text-3xl leading-none whitespace-nowrap">
                 <span className="text-[#1a2e5a]">On-Site</span>{" "}
                 <span className="text-orange-500">Computer Service</span>
               </div>
-              <div className="text-orange-500 italic text-xs md:text-sm mt-0.5" style={{ fontFamily: "inherit" }}>
-                Your Computer's Doctor
-              </div>
             </a>
-            <div className="flex items-center justify-end w-10 md:w-32 flex-shrink-0">
-              <a href={`tel:${PHONE}`} className="hidden md:inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-3 lg:px-4 py-2 rounded-lg transition-colors font-bold shadow-sm whitespace-nowrap text-sm">
+            <div className="flex items-center justify-end flex-shrink-0">
+              <a href={`tel:${PHONE}`} className="hidden md:inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-4 lg:px-5 py-2.5 rounded-lg transition-colors font-bold shadow-sm whitespace-nowrap text-sm lg:text-base">
                 <Phone className="w-4 h-4" /> {PHONE}
               </a>
               <button
@@ -215,8 +213,8 @@ export default function OnSite() {
             </div>
           </div>
 
-          {/* bottom row: centered nav links */}
-          <div className="hidden md:flex items-center justify-center gap-5 lg:gap-7 text-sm lg:text-[15px] font-semibold text-gray-700 whitespace-nowrap mt-3">
+          {/* bottom row: nav links spread across the full width */}
+          <div className="hidden md:flex items-center justify-between text-sm lg:text-[15px] font-semibold text-gray-700 whitespace-nowrap mt-3">
             <a href="#top" className="hover:text-orange-500 transition-colors">Home</a>
             <a href="#why-us" className="hover:text-orange-500 transition-colors">Why Us?</a>
             <a href="#about" className="hover:text-orange-500 transition-colors">About Us</a>
