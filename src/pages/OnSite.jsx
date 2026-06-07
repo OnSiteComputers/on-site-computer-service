@@ -6,7 +6,7 @@
 // ============================================================
 
 import { useEffect, useState } from "react";
-import { Phone, MapPin, Star, Shield, Clock, Monitor, Wifi, HardDrive, Lock, Users, Wrench, Laptop, CheckCircle, ChevronRight, Menu, X, Server, Database, Network } from "lucide-react";
+import { Phone, MapPin, Star, Shield, Clock, Monitor, Wifi, HardDrive, Lock, Users, Wrench, Laptop, CheckCircle, ChevronRight, Menu, X, Server, Database, Network, Award, Home } from "lucide-react";
 
 // ── LOGO ── Replace src with your hosted logo URL if needed
 const ONSITE_LOGO = "/hero-logo-no-text.png";
@@ -297,20 +297,24 @@ export default function OnSite() {
 
         {/* ── TRUST BAR (bottom of hero) ── */}
         <div className="max-w-5xl mx-auto px-4 mt-10 md:mt-12 w-full">
-          <div className="bg-white/[0.08] border border-white/15 rounded-2xl backdrop-blur-sm shadow-xl grid grid-cols-2 md:grid-cols-4 divide-y divide-white/10 md:divide-y-0 md:divide-x">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5">
             {[
-              { number: "26", label: "Years of Expertise" },
-              { number: "16", label: "Years Serving Downtown Concord" },
-              { number: "177+", label: "Five-Star Reviews & Counting" },
-              { number: "100%", label: "Locally Owned & Operated" },
+              { icon: Award, number: "26", label: "Years of Expertise" },
+              { icon: MapPin, number: "16", label: "Years Serving Downtown Concord" },
+              { icon: Star, number: "177+", label: "Five-Star Reviews & Counting" },
+              { icon: Home, number: "100%", label: "Locally Owned & Operated" },
             ].map((stat, i) => (
-              <div key={i} className="px-4 py-5 md:py-6 text-center">
+              <div
+                key={i}
+                className="group relative bg-white/[0.07] hover:bg-white/[0.12] border border-white/15 hover:border-[#f6c453]/50 rounded-2xl backdrop-blur-sm shadow-xl px-4 py-6 md:py-7 text-center transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+              >
+                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-[#f6c453] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="w-11 h-11 md:w-12 md:h-12 mx-auto mb-3 rounded-full bg-[#f6c453]/15 border border-[#f6c453]/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <stat.icon className="w-5 h-5 md:w-6 md:h-6 text-[#f6c453]" />
+                </div>
                 <div
                   className="text-4xl md:text-5xl font-black leading-none mb-1.5"
-                  style={{
-                    color: "#f6c453",
-                    textShadow: "0 0 16px rgba(246,196,83,0.55)",
-                  }}
+                  style={{ color: "#f6c453", textShadow: "0 0 18px rgba(246,196,83,0.5)" }}
                 >
                   {stat.number}
                 </div>
@@ -683,21 +687,9 @@ export default function OnSite() {
                 <MapPin className="w-5 h-5 flex-shrink-0" />
                 <span className="text-lg">{ADDRESS}</span>
               </div>
-              <div className="flex items-center justify-center md:justify-start gap-2 text-blue-200 mb-6">
+              <div className="flex items-center justify-center md:justify-start gap-2 text-blue-200">
                 <Clock className="w-5 h-5 flex-shrink-0" />
                 <span className="text-lg">Mon–Fri, 10:00 AM – 6:00 PM EST</span>
-              </div>
-              <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
-                <iframe
-                  title="On-Site Computer Service location"
-                  src="https://www.google.com/maps?q=53%20Cabarrus%20Ave%20W%2C%20Concord%2C%20NC%2028025&output=embed"
-                  width="100%"
-                  className="block w-full h-[240px] md:h-[420px]"
-                  style={{ border: 0, display: "block" }}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  allowFullScreen
-                ></iframe>
               </div>
             </div>
 
@@ -766,6 +758,20 @@ export default function OnSite() {
               )}
             </div>
 
+          </div>
+
+          {/* full-width map */}
+          <div className="mt-10 md:mt-12 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
+            <iframe
+              title="On-Site Computer Service location"
+              src="https://www.google.com/maps?q=53%20Cabarrus%20Ave%20W%2C%20Concord%2C%20NC%2028025&output=embed"
+              width="100%"
+              className="block w-full h-[280px] md:h-[360px]"
+              style={{ border: 0, display: "block" }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
       </section>
