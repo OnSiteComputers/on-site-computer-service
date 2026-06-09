@@ -11,12 +11,12 @@ const PHONE = "980-236-0810";
 const PAY_REGULAR = "https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=fdc8610a-5e1c-11f1-a8e1-12a0879a85b1";   // $199 regular remote support
 const PAY_EMERGENCY = "https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=16545ed3-5e1d-11f1-a8e1-12a0879a85b1"; // $299 emergency remote support
 
-// ── SCHEDULING ── Google Calendar booking page (live)
-const BOOKING_LINK = "https://calendar.app.google/yYRnBHKE5EL12QZE9";
+// ── SCHEDULING ── Calendly booking page (live)
+const BOOKING_LINK = "https://calendly.com/greg-gnldigitalgroup/remote-support-callback";
 
-// ── REMOTE TOOL ── TODO: replace REMOTE_TOOL_LINK with your TeamViewer QuickSupport download link
+// ── REMOTE TOOL ── Branded TeamViewer QuickSupport (Business license)
 const REMOTE_TOOL_NAME = "TeamViewer QuickSupport";
-const REMOTE_TOOL_LINK = "https://download.teamviewer.com/download/TeamViewerQS_x64.exe";
+const REMOTE_TOOL_LINK = "https://get.teamviewer.com/6mfcqdq";
 
 export default function RemoteSupport() {
   const [menuOpen, setMenuOpen] = useState(false);
