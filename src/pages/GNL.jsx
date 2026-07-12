@@ -44,7 +44,7 @@ const DIFFERENCES = [
 ];
 
 export default function GNL() {
-  console.log("GNL build: 2026-07-12 v2 ✅");
+  console.log("GNL build: 2026-07-12 v4 ✅");
   return (
     <div className="font-sans bg-[#0a0a0a] text-white">
 

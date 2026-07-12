@@ -26,7 +26,7 @@ const REMOTE_TOOL_NAME = "TeamViewer QuickSupport";
 const REMOTE_TOOL_LINK = "https://get.teamviewer.com/6mfcqdq";
 
 export default function RemoteSupport() {
-  console.log("RemoteSupport build: 2026-07-12 v2 ✅");
+  console.log("RemoteSupport build: 2026-07-12 v4 ✅");
   const [menuOpen, setMenuOpen] = useState(false);
   const [footerNavOpen, setFooterNavOpen] = useState(false);
   useEffect(() => {

@@ -47,7 +47,7 @@ const NAVY = "#1a2e5a";
 const ORANGE = "#f97316";
 
 export default function LomarProposal() {
-  console.log("LomarProposal build: 2026-07-12 v2 ✅");
+  console.log("LomarProposal build: 2026-07-12 v4 ✅");
   return (
     <div style={{ background: "#f7f8fa", minHeight: "100vh", color: NAVY }}>
       <style>{`
