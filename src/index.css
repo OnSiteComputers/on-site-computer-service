@@ -169,3 +169,56 @@ section[id],
 .btn-pop:active {
   transform: translateY(0);
 }
+
+/* ── SILVER METALLIC ACCENTS ──
+   Echoes the chrome/silver in the GNL + On-Site logos. Used as thin edges,
+   sheens, and dividers on DARK sections only — never as a full background,
+   which would kill contrast with the white cards and silver wordmark. */
+
+/* Brushed-silver gradient bar (for section top-borders + nav underline) */
+.silver-edge {
+  background: linear-gradient(90deg,
+    transparent 0%,
+    #6f7175 12%,
+    #c7cace 32%,
+    #eef0f2 50%,
+    #c7cace 68%,
+    #6f7175 88%,
+    transparent 100%);
+}
+
+/* Silver-into-gold accent (metallic sheen that warms into brand gold) */
+.silver-gold-edge {
+  background: linear-gradient(90deg,
+    transparent 0%,
+    #c7cace 22%,
+    #eef0f2 40%,
+    #C8A85A 65%,
+    #a9863f 85%,
+    transparent 100%);
+}
+
+/* Subtle metallic sheen overlay for dark hero corners (very low opacity) */
+.silver-sheen {
+  background:
+    radial-gradient(120% 90% at 85% 8%, rgba(224,228,232,0.10) 0%, rgba(224,228,232,0.04) 30%, transparent 60%),
+    radial-gradient(80% 70% at 10% 100%, rgba(199,202,206,0.07) 0%, transparent 55%);
+}
+
+/* Chrome text treatment for the On-Site wordmark on dark (optional accent) */
+.chrome-text {
+  background: linear-gradient(180deg, #ffffff 0%, #d4d7db 45%, #9ea3a7 55%, #eef0f2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Silver hover glow for cards on dark sections */
+.silver-card-hover {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.silver-card-hover:hover {
+  border-color: rgba(224,228,232,0.45) !important;
+  box-shadow: 0 8px 26px -8px rgba(199,202,206,0.25);
+}

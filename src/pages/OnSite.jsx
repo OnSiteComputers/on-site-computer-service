@@ -192,13 +192,14 @@ export default function OnSite() {
     <div className="font-sans text-gray-800 bg-white">
 
       {/* ── NAVIGATION ── */}
-      <nav id="site-nav" className="bg-[#1A1A1D] border-b border-[#2A2A30] sticky top-0 z-50 shadow-sm overflow-visible">
+      <nav id="site-nav" className="bg-[#1A1A1D] sticky top-0 z-50 shadow-sm overflow-visible relative">
+        <div className="silver-edge absolute bottom-0 left-0 right-0 h-[2px] pointer-events-none" />
         <div className="max-w-6xl mx-auto px-4 py-2.5">
           {/* top row: wordmark on the LEFT, phone/menu on the RIGHT */}
           <div className="flex items-center justify-between gap-4">
             <a href="#top" className="flex flex-col leading-none" style={{ fontFamily: "'Archivo Black', sans-serif" }}>
               <div className="text-xl md:text-3xl leading-none whitespace-nowrap">
-                <span className="text-[#1A1A1D]">On-Site</span>{" "}
+                <span className="chrome-text">On-Site</span>{" "}
                 <span className="text-[#C8A85A]">Computer Service</span>
               </div>
               <div className="text-[#C8A85A] italic font-bold text-xs md:text-base mt-1 whitespace-nowrap" style={{ fontFamily: "inherit" }}>
@@ -211,7 +212,7 @@ export default function OnSite() {
               </a>
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="md:hidden text-[#1A1A1D] p-2 -mr-2"
+                className="md:hidden text-[#E7DDCF] p-2 -mr-2"
                 aria-label="Toggle navigation menu"
                 aria-expanded={menuOpen}
               >
@@ -221,7 +222,7 @@ export default function OnSite() {
           </div>
 
           {/* bottom row: nav links spread across the full width */}
-          <div className="hidden md:flex items-center justify-between text-sm lg:text-[15px] font-semibold text-gray-700 whitespace-nowrap mt-3">
+          <div className="hidden md:flex items-center justify-between text-sm lg:text-[15px] font-semibold text-[#E7DDCF] whitespace-nowrap mt-3">
             <a href="#top" className="hover:text-[#C8A85A] transition-colors">Home</a>
             <a href="#why-us" className="hover:text-[#C8A85A] transition-colors">Why Us?</a>
             <a href="#about" className="hover:text-[#C8A85A] transition-colors">About Us</a>
@@ -258,7 +259,8 @@ export default function OnSite() {
       </nav>
 
       {/* ── HERO ── */}
-      <section id="top" className="min-h-[calc(100vh-140px)] flex flex-col justify-start bg-gradient-to-br from-[#1A1A1D] to-[#C8A85A] text-white pt-8 pb-6 md:pt-10 md:pb-8">
+      <section id="top" className="relative overflow-hidden min-h-[calc(100vh-140px)] flex flex-col justify-start bg-gradient-to-br from-[#1A1A1D] to-[#0B0B0D] text-white pt-8 pb-6 md:pt-10 md:pb-8">
+        <div className="silver-sheen absolute inset-0 pointer-events-none" />
         <div className="max-w-6xl mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-10 w-full">
           <div className="flex-1 text-center md:text-left">
             <p className="text-[#D8C6AD] uppercase tracking-widest text-sm font-semibold mb-3">House Calls for Technology Since 2000</p>
@@ -293,7 +295,7 @@ export default function OnSite() {
 
               <div className="mt-3 md:mt-4 text-center leading-none" style={{ fontFamily: "'Archivo Black', sans-serif" }}>
                 <div className="text-2xl md:text-4xl leading-none whitespace-nowrap">
-                  <span className="text-white">On-Site</span>{" "}
+                  <span className="chrome-text">On-Site</span>{" "}
                   <span className="text-[#C8A85A]">Computer Service</span>
                 </div>
                 <div className="text-[#C8A85A] italic font-bold text-base md:text-2xl mt-1.5 whitespace-nowrap" style={{ fontFamily: "inherit" }}>
@@ -318,7 +320,7 @@ export default function OnSite() {
                 key={i}
                 className="group relative bg-white/[0.07] hover:bg-white/[0.12] border border-white/15 hover:border-[#f6c453]/50 rounded-2xl backdrop-blur-sm shadow-xl px-4 py-6 md:py-7 text-center transition-all duration-300 hover:-translate-y-1 overflow-hidden"
               >
-                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-[#f6c453] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="silver-gold-edge absolute inset-x-0 top-0 h-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="w-11 h-11 md:w-12 md:h-12 mx-auto mb-3 rounded-full bg-[#f6c453]/15 border border-[#f6c453]/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <stat.icon className="w-5 h-5 md:w-6 md:h-6 text-[#f6c453]" />
                 </div>
@@ -344,7 +346,8 @@ export default function OnSite() {
       </section>
 
       {/* ── WHY PEOPLE CALL GREG ── */}
-      <section id="why-us" className="min-h-[calc(100vh-140px)] flex items-start py-16 md:py-20 bg-[#C8A85A]">
+      <section id="why-us" className="relative min-h-[calc(100vh-140px)] flex items-start py-16 md:py-20 bg-[#1A1A1D]">
+        <div className="silver-edge absolute top-0 left-0 right-0 h-px opacity-60 pointer-events-none" />
         <div className="max-w-6xl mx-auto px-4 w-full">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">Why Us?</h2>
@@ -399,7 +402,8 @@ export default function OnSite() {
       </section>
 
       {/* ── SERVICES ── */}
-      <section id="services" className="min-h-[calc(100vh-140px)] flex items-start py-16 md:py-20 bg-[#C8A85A]">
+      <section id="services" className="relative min-h-[calc(100vh-140px)] flex items-start py-16 md:py-20 bg-[#1A1A1D]">
+        <div className="silver-edge absolute top-0 left-0 right-0 h-px opacity-60 pointer-events-none" />
         <div className="max-w-6xl mx-auto px-4 w-full">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">What We Fix</h2>
@@ -478,7 +482,7 @@ export default function OnSite() {
       </section>
 
       {/* ── ALWAYS CALL AHEAD ── */}
-      <section id="appointments" className="py-10 md:py-14 bg-gradient-to-br from-[#1A1A1D] to-[#C8A85A] text-white">
+      <section id="appointments" className="py-10 md:py-14 bg-gradient-to-br from-[#1A1A1D] to-[#0B0B0D] text-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-6">
             <p className="text-[#D8C6AD] uppercase tracking-widest text-sm font-semibold mb-2">Planning a Visit?</p>
@@ -556,7 +560,8 @@ export default function OnSite() {
       </section>
 
       {/* ── GOOGLE REVIEWS ── */}
-      <section id="reviews" className="min-h-[calc(100vh-140px)] flex items-start py-16 md:py-20 bg-[#C8A85A]">
+      <section id="reviews" className="relative min-h-[calc(100vh-140px)] flex items-start py-16 md:py-20 bg-[#1A1A1D]">
+        <div className="silver-edge absolute top-0 left-0 right-0 h-px opacity-60 pointer-events-none" />
         <div className="max-w-6xl mx-auto px-4 w-full">
           <div className="text-center mb-8">
             <div className="flex justify-center gap-1 mb-3">
@@ -758,7 +763,7 @@ export default function OnSite() {
       </section>
 
       {/* ── CONTACT / CTA ── */}
-      <section id="contact" className="min-h-[calc(100vh-140px)] flex items-start py-16 md:py-24 bg-gradient-to-br from-[#1A1A1D] to-[#C8A85A] text-white">
+      <section id="contact" className="min-h-[calc(100vh-140px)] flex items-start py-16 md:py-24 bg-gradient-to-br from-[#1A1A1D] to-[#0B0B0D] text-white">
         <div className="max-w-6xl mx-auto px-4 w-full">
           <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-stretch">
 
