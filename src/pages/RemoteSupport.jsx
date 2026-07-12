@@ -43,7 +43,7 @@ export default function RemoteSupport() {
           <div className="flex items-center justify-between gap-4">
             <a href="/" className="flex flex-col leading-none" style={{ fontFamily: "'Archivo Black', sans-serif" }}>
               <div className="text-xl md:text-3xl leading-none whitespace-nowrap">
-                <span className="text-[#1A1A1D]">On-Site</span>{" "}
+                <span className="chrome-text">On-Site</span>{" "}
                 <span className="text-[#C8A85A]">Computer Service</span>
               </div>
               <div className="text-[#C8A85A] italic font-bold text-xs md:text-base mt-1 whitespace-nowrap" style={{ fontFamily: "inherit" }}>
@@ -56,7 +56,7 @@ export default function RemoteSupport() {
               </a>
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="md:hidden text-[#1A1A1D] p-2 -mr-2"
+                className="md:hidden text-[#E7DDCF] p-2 -mr-2"
                 aria-label="Toggle navigation menu"
                 aria-expanded={menuOpen}
               >
@@ -66,7 +66,7 @@ export default function RemoteSupport() {
           </div>
 
           {/* bottom row: nav links spread across the full width */}
-          <div className="hidden md:flex items-center justify-between text-sm lg:text-[15px] font-semibold text-gray-700 whitespace-nowrap mt-3">
+          <div className="hidden md:flex items-center justify-between text-sm lg:text-[15px] font-semibold text-[#E7DDCF] whitespace-nowrap mt-3">
             <a href="/" className="hover:text-[#C8A85A] transition-colors">Home</a>
             <a href="/#why-us" className="hover:text-[#C8A85A] transition-colors">Why Us?</a>
             <a href="/#about" className="hover:text-[#C8A85A] transition-colors">About Us</a>
@@ -82,7 +82,7 @@ export default function RemoteSupport() {
         {/* ── MOBILE DROPDOWN MENU ── */}
         {menuOpen && (
           <div className="md:hidden bg-[#1A1A1D] border-t border-[#2A2A30] px-4 pb-4">
-            <div className="flex flex-col text-base font-semibold text-gray-700">
+            <div className="flex flex-col text-base font-semibold text-[#E7DDCF]">
               <a href="/" className="py-3 border-b border-[#2A2A30] hover:text-[#C8A85A]">Home</a>
               <a href="/#why-us" className="py-3 border-b border-[#2A2A30] hover:text-[#C8A85A]">Why Us?</a>
               <a href="/#about" className="py-3 border-b border-[#2A2A30] hover:text-[#C8A85A]">About Us</a>
