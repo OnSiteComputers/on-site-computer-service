@@ -2,7 +2,10 @@
 // ON-SITE COMPUTER SERVICE — Website
 // Domain: www.onsitecomputerservice.net
 // Brand: Warm, trusted, local, personal
-// Colors: White background, navy (#1a2e5a) + blue (#2563eb) accents, orange CTA
+// Colors: Brand refresh — charcoal (#1A1A1D) + GNL Gold (#C8A85A). Zero blue/orange.
+//         Gold buttons use charcoal text for legibility.
+// CHANGED: Recolored entire page from navy/blue/orange to charcoal/gold.
+//          Swapped On-Site hero + footer imagery to new doctor mascot (/mascot-doctor.png).
 // Build: 2026-07-05 v1 ✅
 // ============================================================
 
@@ -10,8 +13,8 @@ import { useEffect, useState } from "react";
 import { Phone, MapPin, Star, Shield, Clock, Monitor, Wifi, HardDrive, Lock, Users, Wrench, Laptop, CheckCircle, ChevronRight, Menu, X, Server, Database, Network, Award, Home } from "lucide-react";
 
 // ── LOGO ── Replace src with your hosted logo URL if needed
-const ONSITE_LOGO = "/hero-logo-no-text.png";
-const HERO_IMAGE = "/hero-logo.png";
+const ONSITE_LOGO = "/mascot-doctor.png";
+const HERO_IMAGE = "/mascot-doctor.png";
 
 // ── CONTACT INFO ── Easy to edit
 const PHONE = "980-236-0810";
@@ -189,26 +192,26 @@ export default function OnSite() {
     <div className="font-sans text-gray-800 bg-white">
 
       {/* ── NAVIGATION ── */}
-      <nav id="site-nav" className="bg-blue-50 border-b border-blue-100 sticky top-0 z-50 shadow-sm overflow-visible">
+      <nav id="site-nav" className="bg-[#1A1A1D] border-b border-[#2A2A30] sticky top-0 z-50 shadow-sm overflow-visible">
         <div className="max-w-6xl mx-auto px-4 py-2.5">
           {/* top row: wordmark on the LEFT, phone/menu on the RIGHT */}
           <div className="flex items-center justify-between gap-4">
             <a href="#top" className="flex flex-col leading-none" style={{ fontFamily: "'Archivo Black', sans-serif" }}>
               <div className="text-xl md:text-3xl leading-none whitespace-nowrap">
-                <span className="text-[#1a2e5a]">On-Site</span>{" "}
-                <span className="text-orange-500">Computer Service</span>
+                <span className="text-[#1A1A1D]">On-Site</span>{" "}
+                <span className="text-[#C8A85A]">Computer Service</span>
               </div>
-              <div className="text-orange-500 italic font-bold text-xs md:text-base mt-1 whitespace-nowrap" style={{ fontFamily: "inherit" }}>
+              <div className="text-[#C8A85A] italic font-bold text-xs md:text-base mt-1 whitespace-nowrap" style={{ fontFamily: "inherit" }}>
                 Your Computer's Doctor
               </div>
             </a>
             <div className="flex items-center justify-end flex-shrink-0">
-              <a href={`tel:${PHONE}`} className="hidden md:inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-4 lg:px-5 py-2.5 rounded-lg transition-colors font-bold shadow-sm whitespace-nowrap text-sm lg:text-base btn-pop">
+              <a href={`tel:${PHONE}`} className="hidden md:inline-flex items-center gap-2 bg-[#C8A85A] hover:bg-[#B8965A] text-[#1A1A1D] px-4 lg:px-5 py-2.5 rounded-lg transition-colors font-bold shadow-sm whitespace-nowrap text-sm lg:text-base btn-pop">
                 <Phone className="w-4 h-4" /> {PHONE}
               </a>
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="md:hidden text-[#1a2e5a] p-2 -mr-2"
+                className="md:hidden text-[#1A1A1D] p-2 -mr-2"
                 aria-label="Toggle navigation menu"
                 aria-expanded={menuOpen}
               >
@@ -219,34 +222,34 @@ export default function OnSite() {
 
           {/* bottom row: nav links spread across the full width */}
           <div className="hidden md:flex items-center justify-between text-sm lg:text-[15px] font-semibold text-gray-700 whitespace-nowrap mt-3">
-            <a href="#top" className="hover:text-orange-500 transition-colors">Home</a>
-            <a href="#why-us" className="hover:text-orange-500 transition-colors">Why Us?</a>
-            <a href="#about" className="hover:text-orange-500 transition-colors">About Us</a>
-            <a href="#services" className="hover:text-orange-500 transition-colors">Services</a>
-            <a href="#server-setups" className="hover:text-orange-500 transition-colors">Server Setups</a>
-            <a href="#appointments" className="hover:text-orange-500 transition-colors">Visit Us</a>
-            <a href="/remote-support" className="hover:text-orange-500 transition-colors">Remote Support</a>
-            <a href="#reviews" className="hover:text-orange-500 transition-colors">Reviews</a>
-            <a href="#areas" className="hover:text-orange-500 transition-colors">Service Areas</a>
-            <a href="#contact" className="hover:text-orange-500 transition-colors">Contact</a>
+            <a href="#top" className="hover:text-[#C8A85A] transition-colors">Home</a>
+            <a href="#why-us" className="hover:text-[#C8A85A] transition-colors">Why Us?</a>
+            <a href="#about" className="hover:text-[#C8A85A] transition-colors">About Us</a>
+            <a href="#services" className="hover:text-[#C8A85A] transition-colors">Services</a>
+            <a href="#server-setups" className="hover:text-[#C8A85A] transition-colors">Server Setups</a>
+            <a href="#appointments" className="hover:text-[#C8A85A] transition-colors">Visit Us</a>
+            <a href="/remote-support" className="hover:text-[#C8A85A] transition-colors">Remote Support</a>
+            <a href="#reviews" className="hover:text-[#C8A85A] transition-colors">Reviews</a>
+            <a href="#areas" className="hover:text-[#C8A85A] transition-colors">Service Areas</a>
+            <a href="#contact" className="hover:text-[#C8A85A] transition-colors">Contact</a>
           </div>
         </div>
 
         {/* ── MOBILE DROPDOWN MENU ── */}
         {menuOpen && (
-          <div className="md:hidden bg-blue-50 border-t border-blue-100 px-4 pb-4">
+          <div className="md:hidden bg-[#1A1A1D] border-t border-[#2A2A30] px-4 pb-4">
             <div className="flex flex-col text-base font-semibold text-gray-700">
-              <a href="#top" className="py-3 border-b border-blue-100 hover:text-blue-700">Home</a>
-              <a href="#why-us" className="py-3 border-b border-blue-100 hover:text-blue-700">Why Us?</a>
-              <a href="#about" className="py-3 border-b border-blue-100 hover:text-blue-700">About Us</a>
-              <a href="#services" className="py-3 border-b border-blue-100 hover:text-blue-700">Services</a>
-              <a href="#server-setups" className="py-3 border-b border-blue-100 hover:text-blue-700">Server Setups</a>
-              <a href="#appointments" className="py-3 border-b border-blue-100 hover:text-blue-700">Visit Us</a>
-              <a href="/remote-support" className="py-3 border-b border-blue-100 hover:text-blue-700">Remote Support</a>
-              <a href="#reviews" className="py-3 border-b border-blue-100 hover:text-blue-700">Reviews</a>
-              <a href="#areas" className="py-3 border-b border-blue-100 hover:text-blue-700">Service Areas</a>
-              <a href="#contact" className="py-3 border-b border-blue-100 hover:text-blue-700">Contact</a>
-              <a href={`tel:${PHONE}`} className="mt-4 bg-orange-500 hover:bg-orange-600 text-white px-5 py-3 rounded-lg text-center font-bold flex items-center justify-center gap-2 btn-pop">
+              <a href="#top" className="py-3 border-b border-[#2A2A30] hover:text-[#C8A85A]">Home</a>
+              <a href="#why-us" className="py-3 border-b border-[#2A2A30] hover:text-[#C8A85A]">Why Us?</a>
+              <a href="#about" className="py-3 border-b border-[#2A2A30] hover:text-[#C8A85A]">About Us</a>
+              <a href="#services" className="py-3 border-b border-[#2A2A30] hover:text-[#C8A85A]">Services</a>
+              <a href="#server-setups" className="py-3 border-b border-[#2A2A30] hover:text-[#C8A85A]">Server Setups</a>
+              <a href="#appointments" className="py-3 border-b border-[#2A2A30] hover:text-[#C8A85A]">Visit Us</a>
+              <a href="/remote-support" className="py-3 border-b border-[#2A2A30] hover:text-[#C8A85A]">Remote Support</a>
+              <a href="#reviews" className="py-3 border-b border-[#2A2A30] hover:text-[#C8A85A]">Reviews</a>
+              <a href="#areas" className="py-3 border-b border-[#2A2A30] hover:text-[#C8A85A]">Service Areas</a>
+              <a href="#contact" className="py-3 border-b border-[#2A2A30] hover:text-[#C8A85A]">Contact</a>
+              <a href={`tel:${PHONE}`} className="mt-4 bg-[#C8A85A] hover:bg-[#B8965A] text-[#1A1A1D] px-5 py-3 rounded-lg text-center font-bold flex items-center justify-center gap-2 btn-pop">
                 <Phone className="w-4 h-4" /> {PHONE}
               </a>
             </div>
@@ -255,25 +258,25 @@ export default function OnSite() {
       </nav>
 
       {/* ── HERO ── */}
-      <section id="top" className="min-h-[calc(100vh-140px)] flex flex-col justify-start bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white pt-8 pb-6 md:pt-10 md:pb-8">
+      <section id="top" className="min-h-[calc(100vh-140px)] flex flex-col justify-start bg-gradient-to-br from-[#1A1A1D] to-[#C8A85A] text-white pt-8 pb-6 md:pt-10 md:pb-8">
         <div className="max-w-6xl mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-10 w-full">
           <div className="flex-1 text-center md:text-left">
-            <p className="text-blue-200 uppercase tracking-widest text-sm font-semibold mb-3">House Calls for Technology Since 2000</p>
+            <p className="text-[#D8C6AD] uppercase tracking-widest text-sm font-semibold mb-3">House Calls for Technology Since 2000</p>
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
-              Trusted for <span className="text-orange-400">26 Years.</span><br />
+              Trusted for <span className="text-[#C8A85A]">26 Years.</span><br />
               Serving Downtown<br className="hidden md:block" /> Concord for 16.
             </h1>
-            <p className="text-xl text-blue-100 mb-8 max-w-xl">
+            <p className="text-xl text-[#E7DDCF] mb-8 max-w-xl">
               Technology Changes. <strong className="text-white">Trust Does Not.</strong>
             </p>
             <div className="flex flex-wrap gap-3 justify-center md:justify-start">
-              <a href={`tel:${PHONE}`} className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg text-base transition-all duration-200 shadow-md flex items-center justify-center gap-2 btn-pop">
+              <a href={`tel:${PHONE}`} className="bg-[#C8A85A] hover:bg-[#B8965A] text-[#1A1A1D] font-bold py-3 px-6 rounded-lg text-base transition-all duration-200 shadow-md flex items-center justify-center gap-2 btn-pop">
                 <Phone className="w-4 h-4" /> Contact Us
               </a>
-              <a href="#services" className="border-2 border-white text-white hover:bg-white hover:text-blue-800 font-bold py-3 px-6 rounded-lg text-base transition-all duration-200 flex items-center justify-center gap-2 btn-pop">
+              <a href="#services" className="border-2 border-white text-white hover:bg-white hover:text-[#C8A85A] font-bold py-3 px-6 rounded-lg text-base transition-all duration-200 flex items-center justify-center gap-2 btn-pop">
                 View Services <ChevronRight className="w-4 h-4" />
               </a>
-              <a href={`tel:${PHONE}`} className="bg-white text-blue-800 hover:bg-blue-50 font-bold py-3 px-6 rounded-lg text-base transition-all duration-200 shadow-md flex items-center justify-center gap-2 btn-pop">
+              <a href={`tel:${PHONE}`} className="bg-white text-[#1A1A1D] hover:bg-[#232327] font-bold py-3 px-6 rounded-lg text-base transition-all duration-200 shadow-md flex items-center justify-center gap-2 btn-pop">
                 <Phone className="w-4 h-4" /> Call Ahead
               </a>
             </div>
@@ -283,7 +286,7 @@ export default function OnSite() {
             <div className="p-2 md:p-8 flex flex-col items-center">
 
               <img
-                src="/hero-logo-no-text.png"
+                src="/mascot-doctor.png"
                 alt="On-Site Computer Service"
                 className="w-[180px] md:w-[420px] h-auto mx-auto"
               />
@@ -291,9 +294,9 @@ export default function OnSite() {
               <div className="mt-3 md:mt-4 text-center leading-none" style={{ fontFamily: "'Archivo Black', sans-serif" }}>
                 <div className="text-2xl md:text-4xl leading-none whitespace-nowrap">
                   <span className="text-white">On-Site</span>{" "}
-                  <span className="text-orange-400">Computer Service</span>
+                  <span className="text-[#C8A85A]">Computer Service</span>
                 </div>
-                <div className="text-orange-400 italic font-bold text-base md:text-2xl mt-1.5 whitespace-nowrap" style={{ fontFamily: "inherit" }}>
+                <div className="text-[#C8A85A] italic font-bold text-base md:text-2xl mt-1.5 whitespace-nowrap" style={{ fontFamily: "inherit" }}>
                   Your Computer's Doctor
                 </div>
               </div>
@@ -325,14 +328,14 @@ export default function OnSite() {
                 >
                   {stat.number}
                 </div>
-                <div className="text-blue-100 text-[10px] sm:text-xs font-semibold uppercase tracking-widest leading-tight">{stat.label}</div>
+                <div className="text-[#E7DDCF] text-[10px] sm:text-xs font-semibold uppercase tracking-widest leading-tight">{stat.label}</div>
               </div>
             ))}
           </div>
 
           {/* Diagnostic + call-ahead line */}
           <div className="mt-6 md:mt-8 bg-white/[0.07] border border-[#f6c453]/40 rounded-2xl px-5 py-4 text-center backdrop-blur-sm">
-            <p className="text-blue-50 text-sm md:text-base leading-relaxed">
+            <p className="text-[#F5F3EE] text-sm md:text-base leading-relaxed">
               <span className="font-bold text-[#f6c453]">Please call before you drop off or stop by.</span> Greg is often out on service calls, so a quick call makes sure he's in.
               {" "}Repairs start with a <strong className="text-white">$129.99 diagnostic</strong> — included in your repair quote if we do the work.
             </p>
@@ -341,11 +344,11 @@ export default function OnSite() {
       </section>
 
       {/* ── WHY PEOPLE CALL GREG ── */}
-      <section id="why-us" className="min-h-[calc(100vh-140px)] flex items-start py-16 md:py-20 bg-[#002868]">
+      <section id="why-us" className="min-h-[calc(100vh-140px)] flex items-start py-16 md:py-20 bg-[#C8A85A]">
         <div className="max-w-6xl mx-auto px-4 w-full">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">Why Us?</h2>
-            <p className="text-blue-200 max-w-xl mx-auto text-lg">No runaround. No upsells. Just honest answers and real fixes — the same way since 2000.</p>
+            <p className="text-[#D8C6AD] max-w-xl mx-auto text-lg">No runaround. No upsells. Just honest answers and real fixes — the same way since 2000.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -358,7 +361,7 @@ export default function OnSite() {
             ].map((item, i) => (
               <div key={i} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                 <div className="text-4xl mb-4">{item.icon}</div>
-                <h3 className="text-lg font-bold text-[#1a2e5a] mb-2">{item.title}</h3>
+                <h3 className="text-lg font-bold text-[#1A1A1D] mb-2">{item.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -370,8 +373,8 @@ export default function OnSite() {
       <section id="about" className="min-h-screen flex items-start py-16 md:py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 w-full">
           <div className="flex-1">
-            <p className="text-orange-500 font-semibold uppercase tracking-widest text-sm mb-2">The People Behind the Business</p>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a2e5a] mb-5">Meet Greg and Linda Blair</h2>
+            <p className="text-[#C8A85A] font-semibold uppercase tracking-widest text-sm mb-2">The People Behind the Business</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1D] mb-5">Meet Greg and Linda Blair</h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-4">
               Greg Blair has been repairing computers for 26 years — long before most people had one in their home. For the past 16 years, he has operated On-Site Computer Service from the same location in downtown Concord, building a reputation one honest repair at a time.
             </p>
@@ -383,7 +386,7 @@ export default function OnSite() {
             </p>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
               "We have never been about volume. We are about doing right by each person who walks through that door or calls us for help. That has not changed in 26 years."
-              <span className="block mt-2 text-[#1a2e5a] font-semibold not-italic">— Greg Blair</span>
+              <span className="block mt-2 text-[#1A1A1D] font-semibold not-italic">— Greg Blair</span>
             </p>
             <div className="flex items-center gap-3">
               <div className="flex">
@@ -396,25 +399,25 @@ export default function OnSite() {
       </section>
 
       {/* ── SERVICES ── */}
-      <section id="services" className="min-h-[calc(100vh-140px)] flex items-start py-16 md:py-20 bg-[#002868]">
+      <section id="services" className="min-h-[calc(100vh-140px)] flex items-start py-16 md:py-20 bg-[#C8A85A]">
         <div className="max-w-6xl mx-auto px-4 w-full">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">What We Fix</h2>
-            <p className="text-blue-200 max-w-xl mx-auto text-lg">From a slow laptop to a crashed server, Greg has seen it all — and fixed most of it.</p>
+            <p className="text-[#D8C6AD] max-w-xl mx-auto text-lg">From a slow laptop to a crashed server, Greg has seen it all — and fixed most of it.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICES.map((svc, i) => (
-              <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md hover:border-blue-200 transition-all group">
-                <div className="w-12 h-12 bg-blue-50 group-hover:bg-blue-100 rounded-xl flex items-center justify-center mb-4 transition-colors">
-                  <svc.icon className="w-6 h-6 text-blue-600" />
+              <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md hover:border-[#C8A85A]/50 transition-all group">
+                <div className="w-12 h-12 bg-[#1A1A1D] group-hover:bg-[#232327] rounded-xl flex items-center justify-center mb-4 transition-colors">
+                  <svc.icon className="w-6 h-6 text-[#C8A85A]" />
                 </div>
-                <h3 className="text-base font-bold text-[#1a2e5a] mb-2">{svc.title}</h3>
+                <h3 className="text-base font-bold text-[#1A1A1D] mb-2">{svc.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{svc.desc}</p>
               </div>
             ))}
           </div>
           <div className="text-center mt-10">
-            <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-10 rounded-xl text-lg transition-all shadow-lg btn-pop">
+            <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 bg-[#C8A85A] hover:bg-[#B8965A] text-[#1A1A1D] font-bold py-4 px-10 rounded-xl text-lg transition-all shadow-lg btn-pop">
               <Phone className="w-5 h-5" /> Contact Us
             </a>
           </div>
@@ -425,23 +428,23 @@ export default function OnSite() {
       <section id="server-setups" className="min-h-[calc(100vh-140px)] flex items-start py-16 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 w-full">
           <div className="text-center mb-12">
-            <p className="text-orange-500 uppercase tracking-widest text-sm font-semibold mb-3">Servers · Storage · Networking</p>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a2e5a] mb-3">Server Setups</h2>
+            <p className="text-[#C8A85A] uppercase tracking-widest text-sm font-semibold mb-3">Servers · Storage · Networking</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1D] mb-3">Server Setups</h2>
             <p className="text-gray-500 max-w-xl mx-auto text-lg">Built right the first time — servers, storage, backups, and networks sized to how your business actually works.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVER_SERVICES.map((svc, i) => (
-              <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md hover:border-blue-200 transition-all group">
-                <div className="w-12 h-12 bg-blue-50 group-hover:bg-blue-100 rounded-xl flex items-center justify-center mb-4 transition-colors">
-                  <svc.icon className="w-6 h-6 text-blue-600" />
+              <div key={i} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md hover:border-[#C8A85A]/50 transition-all group">
+                <div className="w-12 h-12 bg-[#1A1A1D] group-hover:bg-[#232327] rounded-xl flex items-center justify-center mb-4 transition-colors">
+                  <svc.icon className="w-6 h-6 text-[#C8A85A]" />
                 </div>
-                <h3 className="text-base font-bold text-[#1a2e5a] mb-2">{svc.title}</h3>
+                <h3 className="text-base font-bold text-[#1A1A1D] mb-2">{svc.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{svc.desc}</p>
               </div>
             ))}
           </div>
           <div className="text-center mt-10">
-            <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-10 rounded-xl text-lg transition-all shadow-lg btn-pop">
+            <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 bg-[#C8A85A] hover:bg-[#B8965A] text-[#1A1A1D] font-bold py-4 px-10 rounded-xl text-lg transition-all shadow-lg btn-pop">
               <Phone className="w-5 h-5" /> Contact Us
             </a>
           </div>
@@ -452,7 +455,7 @@ export default function OnSite() {
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-5xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a2e5a] mb-3">How We Work</h2>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1D] mb-3">How We Work</h2>
             <p className="text-gray-500 max-w-xl mx-auto text-lg">No guessing. No surprises. Just a straightforward process that respects your time and your wallet.</p>
           </div>
           <div className="grid md:grid-cols-4 gap-6">
@@ -463,10 +466,10 @@ export default function OnSite() {
               { step: "4", title: "We Fix It Right", desc: "Quality repair with the right parts. We do not cut corners, and we stand behind our work." },
             ].map((step, i) => (
               <div key={i} className="text-center">
-                <div className="w-14 h-14 rounded-full bg-[#1a2e5a] text-white text-xl font-extrabold flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <div className="w-14 h-14 rounded-full bg-[#1A1A1D] text-white text-xl font-extrabold flex items-center justify-center mx-auto mb-4 shadow-lg">
                   {step.step}
                 </div>
-                <h3 className="font-bold text-[#1a2e5a] mb-2">{step.title}</h3>
+                <h3 className="font-bold text-[#1A1A1D] mb-2">{step.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{step.desc}</p>
               </div>
             ))}
@@ -475,40 +478,40 @@ export default function OnSite() {
       </section>
 
       {/* ── ALWAYS CALL AHEAD ── */}
-      <section id="appointments" className="py-10 md:py-14 bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white">
+      <section id="appointments" className="py-10 md:py-14 bg-gradient-to-br from-[#1A1A1D] to-[#C8A85A] text-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-6">
-            <p className="text-blue-200 uppercase tracking-widest text-sm font-semibold mb-2">Planning a Visit?</p>
+            <p className="text-[#D8C6AD] uppercase tracking-widest text-sm font-semibold mb-2">Planning a Visit?</p>
             <h2 className="text-3xl md:text-4xl font-extrabold mb-3">Always Call Ahead</h2>
-            <p className="text-base md:text-lg text-blue-100 max-w-3xl mx-auto">
+            <p className="text-base md:text-lg text-[#E7DDCF] max-w-3xl mx-auto">
               We're called <strong className="text-white">On-Site</strong> for a reason — Greg is often out helping customers at their home or business. A quick call makes sure he's at the shop when you arrive, so you're never making the trip for nothing.
             </p>
           </div>
 
-          <div className="bg-white text-[#1a2e5a] rounded-2xl shadow-2xl p-6 md:p-8">
+          <div className="bg-white text-[#1A1A1D] rounded-2xl shadow-2xl p-6 md:p-8">
             <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-start">
 
               {/* LEFT COLUMN — Call CTA + Address */}
               <div className="flex flex-col">
                 <div className="text-center lg:text-left border-b lg:border-b-0 border-gray-200 pb-5 lg:pb-0">
                   <p className="text-gray-500 uppercase tracking-wide text-sm font-semibold mb-1">Call Before You Come In</p>
-                  <a href={`tel:${PHONE}`} className="block text-4xl md:text-5xl font-extrabold text-[#1a2e5a] hover:text-blue-700 transition-colors">
+                  <a href={`tel:${PHONE}`} className="block text-4xl md:text-5xl font-extrabold text-[#1A1A1D] hover:text-[#C8A85A] transition-colors">
                     {PHONE}
                   </a>
                   <p className="text-gray-500 mt-2 text-sm">Linda will confirm Greg's in and let you know the best time to stop by.</p>
                   <a
                     href={`tel:${PHONE}`}
-                    className="inline-flex items-center justify-center gap-2 mt-4 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3.5 px-8 rounded-xl text-lg transition-all shadow-lg btn-pop"
+                    className="inline-flex items-center justify-center gap-2 mt-4 bg-[#C8A85A] hover:bg-[#B8965A] text-[#1A1A1D] font-bold py-3.5 px-8 rounded-xl text-lg transition-all shadow-lg btn-pop"
                   >
                     <Phone className="w-5 h-5" /> Call the Shop
                   </a>
                 </div>
 
                 {/* Address */}
-                <div className="bg-blue-50 rounded-xl p-4 flex items-start gap-3 mt-5">
-                  <MapPin className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                <div className="bg-[#1A1A1D] rounded-xl p-4 flex items-start gap-3 mt-5">
+                  <MapPin className="w-6 h-6 text-[#C8A85A] flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-bold text-[#1a2e5a]">{ADDRESS}</p>
+                    <p className="font-bold text-[#1A1A1D]">{ADDRESS}</p>
                     <p className="text-sm text-gray-600 mt-1">Downtown Concord — call ahead and we'll make sure Greg's here to meet you.</p>
                   </div>
                 </div>
@@ -517,10 +520,10 @@ export default function OnSite() {
               {/* RIGHT COLUMN — Diagnostic banner + What to expect */}
               <div className="flex flex-col">
                 {/* Diagnostic price banner */}
-                <div className="bg-[#1a2e5a] text-white rounded-xl px-5 py-4 mb-5 text-center">
-                  <p className="text-blue-200 uppercase tracking-wide text-xs font-semibold mb-1">Before You Drop It Off</p>
+                <div className="bg-[#1A1A1D] text-white rounded-xl px-5 py-4 mb-5 text-center">
+                  <p className="text-[#D8C6AD] uppercase tracking-wide text-xs font-semibold mb-1">Before You Drop It Off</p>
                   <p className="text-3xl font-extrabold text-white">$129.99 Diagnostic</p>
-                  <p className="text-blue-100 text-sm mt-2 leading-relaxed">
+                  <p className="text-[#E7DDCF] text-sm mt-2 leading-relaxed">
                     This is included in your repair quote if you have us do the work — so the diagnostic costs you nothing extra. If you decide not to repair, the $129.99 covers the diagnosis. <strong className="text-white">Either way, you'll always know the price before you commit.</strong>
                   </p>
                 </div>
@@ -528,15 +531,15 @@ export default function OnSite() {
                 {/* What to expect */}
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-6 h-6 text-[#C8A85A] flex-shrink-0 mt-0.5" />
                     <p className="text-gray-700 text-sm"><strong>No appointment fee, ever.</strong> There's no charge to call, and nothing to pay just to stop by. Simple as that.</p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-6 h-6 text-[#C8A85A] flex-shrink-0 mt-0.5" />
                     <p className="text-gray-700 text-sm"><strong>$129.99 flat diagnostic.</strong> Greg finds the exact problem and quotes your repair <em>before</em> any work begins. <strong>If you go ahead with the repair, the diagnostic is included in your quote.</strong> If you decide not to repair, the $129.99 covers the diagnosis.</p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-6 h-6 text-[#C8A85A] flex-shrink-0 mt-0.5" />
                     <p className="text-gray-700 text-sm"><strong>Prefer to just drop it off?</strong> Give us a call first, then bring your device to our downtown Concord shop and we'll take it from there.</p>
                   </div>
                 </div>
@@ -546,21 +549,21 @@ export default function OnSite() {
           </div>
 
           {/* Honest note from Greg */}
-          <p className="text-center text-blue-100 text-sm mt-5 max-w-3xl mx-auto italic">
+          <p className="text-center text-[#E7DDCF] text-sm mt-5 max-w-3xl mx-auto italic">
             A note from Greg: In 26 years, I've never charged a dime just to schedule an appointment — and I never will. The one thing I ask is a quick phone call before you drive over. I'm frequently out on service calls, and a call ahead means you'll never show up to a locked door. Linda answers the phone and she'll get you squared away.
           </p>
         </div>
       </section>
 
       {/* ── GOOGLE REVIEWS ── */}
-      <section id="reviews" className="min-h-[calc(100vh-140px)] flex items-start py-16 md:py-20 bg-[#002868]">
+      <section id="reviews" className="min-h-[calc(100vh-140px)] flex items-start py-16 md:py-20 bg-[#C8A85A]">
         <div className="max-w-6xl mx-auto px-4 w-full">
           <div className="text-center mb-8">
             <div className="flex justify-center gap-1 mb-3">
               {[1,2,3,4,5].map(s => <Star key={s} className="w-7 h-7 fill-yellow-400 text-yellow-400" />)}
             </div>
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-2">177+ Five-Star Reviews</h2>
-            <p className="text-blue-200 text-lg">Real customers. Real words. No scripts.</p>
+            <p className="text-[#D8C6AD] text-lg">Real customers. Real words. No scripts.</p>
           </div>
           {/* ── ROTATING REVIEW GRID (2 rows × 4) ── */}
           <div className="relative">
@@ -573,18 +576,18 @@ export default function OnSite() {
                   className="bg-white/[0.07] border border-white/12 rounded-2xl p-6 backdrop-blur-sm shadow-lg flex flex-col min-h-[260px]"
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-full bg-orange-500 text-white font-bold flex items-center justify-center text-base flex-shrink-0 btn-pop">
+                    <div className="w-10 h-10 rounded-full bg-[#C8A85A] text-[#1A1A1D] font-bold flex items-center justify-center text-base flex-shrink-0 btn-pop">
                       {r.name.charAt(0).toUpperCase()}
                     </div>
                     <div className="min-w-0">
                       <div className="text-white font-semibold text-sm leading-tight truncate">{r.name}</div>
-                      <div className="text-blue-300 text-xs">{r.when}</div>
+                      <div className="text-[#C8A85A] text-xs">{r.when}</div>
                     </div>
                   </div>
                   <div className="flex gap-0.5 mb-3">
                     {[1,2,3,4,5].map(s => <Star key={s} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
                   </div>
-                  <p className="text-blue-100 text-sm leading-relaxed">{r.text}</p>
+                  <p className="text-[#E7DDCF] text-sm leading-relaxed">{r.text}</p>
                 </div>
               ))}
             </div>
@@ -595,14 +598,14 @@ export default function OnSite() {
                 <button
                   onClick={() => goToReviewPage(reviewPage - 1)}
                   aria-label="Previous reviews"
-                  className="absolute -left-3 md:-left-5 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-[#1a2e5a] hover:bg-orange-500 text-white border border-white/20 flex items-center justify-center shadow-lg transition-colors"
+                  className="absolute -left-3 md:-left-5 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-[#1A1A1D] hover:bg-[#C8A85A] text-[#1A1A1D] border border-white/20 flex items-center justify-center shadow-lg transition-colors"
                 >
                   <ChevronRight className="w-6 h-6 rotate-180" />
                 </button>
                 <button
                   onClick={() => goToReviewPage(reviewPage + 1)}
                   aria-label="Next reviews"
-                  className="absolute -right-3 md:-right-5 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-[#1a2e5a] hover:bg-orange-500 text-white border border-white/20 flex items-center justify-center shadow-lg transition-colors"
+                  className="absolute -right-3 md:-right-5 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-[#1A1A1D] hover:bg-[#C8A85A] text-[#1A1A1D] border border-white/20 flex items-center justify-center shadow-lg transition-colors"
                 >
                   <ChevronRight className="w-6 h-6" />
                 </button>
@@ -617,7 +620,7 @@ export default function OnSite() {
                     key={i}
                     onClick={() => goToReviewPage(i)}
                     aria-label={`Go to review set ${i + 1}`}
-                    className={`h-2.5 rounded-full transition-all ${i === reviewPage ? "w-6 bg-orange-500" : "w-2.5 bg-white/30 hover:bg-white/50"}`}
+                    className={`h-2.5 rounded-full transition-all ${i === reviewPage ? "w-6 bg-[#C8A85A]" : "w-2.5 bg-white/30 hover:bg-white/50"}`}
                   />
                 ))}
               </div>
@@ -629,7 +632,7 @@ export default function OnSite() {
               href="https://www.google.com/search?q=On-Site+Computer+Service+Concord+reviews"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 border-2 border-white/70 text-white hover:bg-white hover:text-[#1a2e5a] font-bold py-3 px-8 rounded-xl transition-all btn-pop"
+              className="inline-flex items-center justify-center gap-2 border-2 border-white/70 text-white hover:bg-white hover:text-[#1A1A1D] font-bold py-3 px-8 rounded-xl transition-all btn-pop"
             >
               See All Reviews on Google
             </a>
@@ -637,7 +640,7 @@ export default function OnSite() {
               href="https://g.page/r/CSYE1297nyoJEAE/review"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-all shadow-lg btn-pop"
+              className="inline-flex items-center justify-center gap-2 bg-[#C8A85A] hover:bg-[#B8965A] text-[#1A1A1D] font-bold py-3 px-8 rounded-xl transition-all shadow-lg btn-pop"
             >
               <Star className="w-5 h-5 fill-white text-white" /> Leave Us a Review
             </a>
@@ -648,8 +651,8 @@ export default function OnSite() {
       {/* ── SERVICE AREAS ── */}
       <section id="areas" className="min-h-[calc(100vh-140px)] flex items-center py-16 md:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 text-center w-full">
-          <MapPin className="w-10 h-10 text-orange-500 mx-auto mb-4" />
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a2e5a] mb-3">Where We Serve</h2>
+          <MapPin className="w-10 h-10 text-[#C8A85A] mx-auto mb-4" />
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#1A1A1D] mb-3">Where We Serve</h2>
           <p className="text-gray-500 text-lg mb-6 md:mb-8">Based in downtown Concord — serving communities across the region.</p>
 
           {/* ── DESKTOP: map left + tiles right (one screen) ── */}
@@ -657,67 +660,67 @@ export default function OnSite() {
             <div>
             <svg viewBox="0 0 820 560" className="w-full h-auto" role="img" aria-label="Map of the Charlotte metro service area with county outlines and cities">
               {/* counties */}
-              <path d="M580.6,396.3 L576.9,398.7 L566.5,396.5 L561.4,390.7 L553.3,389.0 L627.8,250.4 L667.6,249.8 L714.0,307.0 L697.6,358.1 L705.6,406.8 L670.6,404.7 L634.2,383.8 L580.6,396.3 Z" fill="#dbe7fa" stroke="#2563eb" strokeWidth="1.5" />
-              <path d="M477.4,311.3 L468.7,303.5 L464.8,297.3 L461.6,295.0 L454.5,249.1 L471.2,249.2 L471.2,248.5 L488.5,248.8 L499.4,249.0 L501.9,249.0 L502.4,249.1 L503.5,249.1 L533.1,250.3 L627.8,250.4 L553.3,389.0 L552.9,388.5 L537.4,378.4 L496.5,352.4 L496.0,352.1 L486.6,318.2 L481.3,314.6 L477.4,311.3 Z" fill="#dbe7fa" stroke="#2563eb" strokeWidth="1.5" />
-              <path d="M362.7,404.5 L346.1,402.7 L293.3,399.5 L292.5,399.4 L282.7,399.0 L261.9,398.0 L264.2,355.9 L248.8,333.7 L216.4,286.6 L271.7,288.8 L393.9,294.8 L374.9,362.2 L373.1,373.1 L375.9,377.6 L376.3,386.5 L376.0,401.0 L362.9,405.5 L362.7,404.5 Z" fill="#dbe7fa" stroke="#2563eb" strokeWidth="1.5" />
-              <path d="M464.1,201.1 L459.0,175.6 L481.6,98.2 L508.5,101.3 L569.8,146.1 L585.7,154.9 L593.6,155.0 L601.3,157.6 L612.1,155.4 L614.7,156.4 L616.7,175.3 L658.6,216.7 L667.6,249.8 L627.8,250.4 L533.1,250.3 L503.5,249.1 L502.4,249.1 L501.9,249.0 L499.4,249.0 L488.5,248.8 L471.2,248.5 L464.1,201.1 Z" fill="#dbe7fa" stroke="#2563eb" strokeWidth="1.5" />
-              <path d="M261.9,398.0 L248.2,397.3 L248.2,397.3 L217.8,395.9 L214.6,395.7 L203.3,395.1 L203.0,395.2 L106.0,390.7 L129.1,313.7 L132.8,216.9 L187.6,223.6 L216.4,286.6 L248.8,333.7 L264.2,355.9 L261.9,398.0 Z" fill="#dbe7fa" stroke="#2563eb" strokeWidth="1.5" />
-              <path d="M339.3,131.4 L344.9,123.8 L350.1,120.0 L351.3,114.7 L355.1,110.6 L359.6,101.7 L376.2,52.4 L367.8,14.3 L419.8,10.0 L486.8,12.0 L481.6,98.2 L459.0,175.6 L464.1,201.1 L471.2,248.5 L471.2,249.2 L454.5,249.1 L396.8,257.0 L392.2,230.8 L404.8,198.7 L339.3,131.4 Z" fill="#dbe7fa" stroke="#2563eb" strokeWidth="1.5" />
-              <path d="M393.9,294.8 L271.7,288.8 L216.4,286.6 L187.6,223.6 L188.2,222.7 L188.3,222.5 L188.3,222.4 L188.8,221.7 L391.6,230.7 L392.2,230.8 L396.8,257.0 L393.9,294.8 Z" fill="#dbe7fa" stroke="#2563eb" strokeWidth="1.5" />
-              <path d="M533.4,548.4 L533.4,548.4 L512.3,548.1 L510.6,548.1 L510.6,548.1 L504.0,547.9 L503.3,547.9 L458.9,547.5 L456.8,547.4 L450.1,545.0 L455.3,497.0 L446.6,485.2 L446.5,485.0 L434.6,468.4 L459.4,454.2 L537.4,378.4 L552.9,388.5 L553.3,389.0 L561.4,390.7 L566.5,396.5 L576.9,398.7 L580.6,396.3 L634.2,383.8 L618.8,550.0 L590.7,549.4 L584.6,549.3 L584.1,549.2 L583.7,549.2 L581.5,549.1 L578.3,549.1 L573.4,548.9 L572.3,548.9 L560.3,548.7 L533.4,548.4 Z" fill="#dbe7fa" stroke="#2563eb" strokeWidth="1.5" />
-              <path d="M411.2,435.7 L411.2,435.7 L401.1,422.3 L393.0,428.8 L363.4,449.6 L357.7,442.1 L357.5,437.2 L357.8,431.6 L359.6,427.2 L361.6,425.3 L365.3,424.2 L366.6,421.6 L362.9,405.5 L376.0,401.0 L376.3,386.5 L375.9,377.6 L373.1,373.1 L374.9,362.2 L393.9,294.8 L396.8,257.0 L454.5,249.1 L461.6,295.0 L464.8,297.3 L468.7,303.5 L477.4,311.3 L481.3,314.6 L486.6,318.2 L496.0,352.1 L496.5,352.4 L537.4,378.4 L459.4,454.2 L434.6,468.4 L411.2,435.7 Z" fill="#dbe7fa" stroke="#2563eb" strokeWidth="1.5" />
+              <path d="M580.6,396.3 L576.9,398.7 L566.5,396.5 L561.4,390.7 L553.3,389.0 L627.8,250.4 L667.6,249.8 L714.0,307.0 L697.6,358.1 L705.6,406.8 L670.6,404.7 L634.2,383.8 L580.6,396.3 Z" fill="#efe3d0" stroke="#C8A85A" strokeWidth="1.5" />
+              <path d="M477.4,311.3 L468.7,303.5 L464.8,297.3 L461.6,295.0 L454.5,249.1 L471.2,249.2 L471.2,248.5 L488.5,248.8 L499.4,249.0 L501.9,249.0 L502.4,249.1 L503.5,249.1 L533.1,250.3 L627.8,250.4 L553.3,389.0 L552.9,388.5 L537.4,378.4 L496.5,352.4 L496.0,352.1 L486.6,318.2 L481.3,314.6 L477.4,311.3 Z" fill="#efe3d0" stroke="#C8A85A" strokeWidth="1.5" />
+              <path d="M362.7,404.5 L346.1,402.7 L293.3,399.5 L292.5,399.4 L282.7,399.0 L261.9,398.0 L264.2,355.9 L248.8,333.7 L216.4,286.6 L271.7,288.8 L393.9,294.8 L374.9,362.2 L373.1,373.1 L375.9,377.6 L376.3,386.5 L376.0,401.0 L362.9,405.5 L362.7,404.5 Z" fill="#efe3d0" stroke="#C8A85A" strokeWidth="1.5" />
+              <path d="M464.1,201.1 L459.0,175.6 L481.6,98.2 L508.5,101.3 L569.8,146.1 L585.7,154.9 L593.6,155.0 L601.3,157.6 L612.1,155.4 L614.7,156.4 L616.7,175.3 L658.6,216.7 L667.6,249.8 L627.8,250.4 L533.1,250.3 L503.5,249.1 L502.4,249.1 L501.9,249.0 L499.4,249.0 L488.5,248.8 L471.2,248.5 L464.1,201.1 Z" fill="#efe3d0" stroke="#C8A85A" strokeWidth="1.5" />
+              <path d="M261.9,398.0 L248.2,397.3 L248.2,397.3 L217.8,395.9 L214.6,395.7 L203.3,395.1 L203.0,395.2 L106.0,390.7 L129.1,313.7 L132.8,216.9 L187.6,223.6 L216.4,286.6 L248.8,333.7 L264.2,355.9 L261.9,398.0 Z" fill="#efe3d0" stroke="#C8A85A" strokeWidth="1.5" />
+              <path d="M339.3,131.4 L344.9,123.8 L350.1,120.0 L351.3,114.7 L355.1,110.6 L359.6,101.7 L376.2,52.4 L367.8,14.3 L419.8,10.0 L486.8,12.0 L481.6,98.2 L459.0,175.6 L464.1,201.1 L471.2,248.5 L471.2,249.2 L454.5,249.1 L396.8,257.0 L392.2,230.8 L404.8,198.7 L339.3,131.4 Z" fill="#efe3d0" stroke="#C8A85A" strokeWidth="1.5" />
+              <path d="M393.9,294.8 L271.7,288.8 L216.4,286.6 L187.6,223.6 L188.2,222.7 L188.3,222.5 L188.3,222.4 L188.8,221.7 L391.6,230.7 L392.2,230.8 L396.8,257.0 L393.9,294.8 Z" fill="#efe3d0" stroke="#C8A85A" strokeWidth="1.5" />
+              <path d="M533.4,548.4 L533.4,548.4 L512.3,548.1 L510.6,548.1 L510.6,548.1 L504.0,547.9 L503.3,547.9 L458.9,547.5 L456.8,547.4 L450.1,545.0 L455.3,497.0 L446.6,485.2 L446.5,485.0 L434.6,468.4 L459.4,454.2 L537.4,378.4 L552.9,388.5 L553.3,389.0 L561.4,390.7 L566.5,396.5 L576.9,398.7 L580.6,396.3 L634.2,383.8 L618.8,550.0 L590.7,549.4 L584.6,549.3 L584.1,549.2 L583.7,549.2 L581.5,549.1 L578.3,549.1 L573.4,548.9 L572.3,548.9 L560.3,548.7 L533.4,548.4 Z" fill="#efe3d0" stroke="#C8A85A" strokeWidth="1.5" />
+              <path d="M411.2,435.7 L411.2,435.7 L401.1,422.3 L393.0,428.8 L363.4,449.6 L357.7,442.1 L357.5,437.2 L357.8,431.6 L359.6,427.2 L361.6,425.3 L365.3,424.2 L366.6,421.6 L362.9,405.5 L376.0,401.0 L376.3,386.5 L375.9,377.6 L373.1,373.1 L374.9,362.2 L393.9,294.8 L396.8,257.0 L454.5,249.1 L461.6,295.0 L464.8,297.3 L468.7,303.5 L477.4,311.3 L481.3,314.6 L486.6,318.2 L496.0,352.1 L496.5,352.4 L537.4,378.4 L459.4,454.2 L434.6,468.4 L411.2,435.7 Z" fill="#efe3d0" stroke="#C8A85A" strokeWidth="1.5" />
               {/* county labels */}
-              <text x="626" y="364" textAnchor="middle" fill="#1e3a8a" fontSize="11" className="uppercase tracking-wide" opacity="0.7">Stanly</text>
-              <text x="500" y="296" textAnchor="middle" fill="#1e3a8a" fontSize="11" className="uppercase tracking-wide" opacity="0.7">Cabarrus</text>
-              <text x="324" y="371" textAnchor="middle" fill="#1e3a8a" fontSize="11" className="uppercase tracking-wide" opacity="0.7">Gaston</text>
-              <text x="547" y="197" textAnchor="middle" fill="#1e3a8a" fontSize="11" className="uppercase tracking-wide" opacity="0.7">Rowan</text>
-              <text x="210" y="353" textAnchor="middle" fill="#1e3a8a" fontSize="11" className="uppercase tracking-wide" opacity="0.7">Cleveland</text>
-              <text x="404" y="142" textAnchor="middle" fill="#1e3a8a" fontSize="11" className="uppercase tracking-wide" opacity="0.7">Iredell</text>
-              <text x="283" y="250" textAnchor="middle" fill="#1e3a8a" fontSize="11" className="uppercase tracking-wide" opacity="0.7">Lincoln</text>
-              <text x="534" y="501" textAnchor="middle" fill="#1e3a8a" fontSize="11" className="uppercase tracking-wide" opacity="0.7">Union</text>
-              <text x="414" y="381" textAnchor="middle" fill="#1e3a8a" fontSize="11" className="uppercase tracking-wide" opacity="0.7">Mecklenburg</text>
+              <text x="626" y="364" textAnchor="middle" fill="#C8A85A" fontSize="11" className="uppercase tracking-wide" opacity="0.7">Stanly</text>
+              <text x="500" y="296" textAnchor="middle" fill="#C8A85A" fontSize="11" className="uppercase tracking-wide" opacity="0.7">Cabarrus</text>
+              <text x="324" y="371" textAnchor="middle" fill="#C8A85A" fontSize="11" className="uppercase tracking-wide" opacity="0.7">Gaston</text>
+              <text x="547" y="197" textAnchor="middle" fill="#C8A85A" fontSize="11" className="uppercase tracking-wide" opacity="0.7">Rowan</text>
+              <text x="210" y="353" textAnchor="middle" fill="#C8A85A" fontSize="11" className="uppercase tracking-wide" opacity="0.7">Cleveland</text>
+              <text x="404" y="142" textAnchor="middle" fill="#C8A85A" fontSize="11" className="uppercase tracking-wide" opacity="0.7">Iredell</text>
+              <text x="283" y="250" textAnchor="middle" fill="#C8A85A" fontSize="11" className="uppercase tracking-wide" opacity="0.7">Lincoln</text>
+              <text x="534" y="501" textAnchor="middle" fill="#C8A85A" fontSize="11" className="uppercase tracking-wide" opacity="0.7">Union</text>
+              <text x="414" y="381" textAnchor="middle" fill="#C8A85A" fontSize="11" className="uppercase tracking-wide" opacity="0.7">Mecklenburg</text>
               {/* city pins */}
               <g>
-                <circle cx="527.1" cy="291.3" r="16" fill="none" stroke="#f97316" strokeWidth="1.5" opacity="0.5" />
-                <circle cx="527.1" cy="291.3" r="9" fill="#f97316" stroke="#fff" strokeWidth="2" />
-                <text x="527" y="279" textAnchor="middle" fill="#c2410c" fontSize="15" className="font-bold">Concord</text>
+                <circle cx="527.1" cy="291.3" r="16" fill="none" stroke="#C8A85A" strokeWidth="1.5" opacity="0.5" />
+                <circle cx="527.1" cy="291.3" r="9" fill="#C8A85A" stroke="#fff" strokeWidth="2" />
+                <text x="527" y="279" textAnchor="middle" fill="#a9863f" fontSize="15" className="font-bold">Concord</text>
               </g>
               <g>
-                <circle cx="578.3" cy="295.0" r="6" fill="#1d4ed8" stroke="#fff" strokeWidth="2" />
-                <text x="586" y="283" textAnchor="start" fill="#0f172a" fontSize="13" className="font-bold">Mount Pleasant</text>
+                <circle cx="578.3" cy="295.0" r="6" fill="#a9863f" stroke="#fff" strokeWidth="2" />
+                <text x="586" y="283" textAnchor="start" fill="#0B0B0D" fontSize="13" className="font-bold">Mount Pleasant</text>
               </g>
               <g>
-                <circle cx="433.7" cy="370.3" r="6" fill="#1d4ed8" stroke="#fff" strokeWidth="2" />
-                <text x="434" y="388" textAnchor="middle" fill="#0f172a" fontSize="13" className="font-bold">Charlotte</text>
+                <circle cx="433.7" cy="370.3" r="6" fill="#a9863f" stroke="#fff" strokeWidth="2" />
+                <text x="434" y="388" textAnchor="middle" fill="#0B0B0D" fontSize="13" className="font-bold">Charlotte</text>
               </g>
               <g>
-                <circle cx="311.7" cy="355.1" r="6" fill="#1d4ed8" stroke="#fff" strokeWidth="2" />
-                <text x="312" y="373" textAnchor="middle" fill="#0f172a" fontSize="13" className="font-bold">Gastonia</text>
+                <circle cx="311.7" cy="355.1" r="6" fill="#a9863f" stroke="#fff" strokeWidth="2" />
+                <text x="312" y="373" textAnchor="middle" fill="#0B0B0D" fontSize="13" className="font-bold">Gastonia</text>
               </g>
               <g>
-                <circle cx="186.5" cy="341.9" r="6" fill="#1d4ed8" stroke="#fff" strokeWidth="2" />
-                <text x="186" y="360" textAnchor="middle" fill="#0f172a" fontSize="13" className="font-bold">Shelby</text>
+                <circle cx="186.5" cy="341.9" r="6" fill="#a9863f" stroke="#fff" strokeWidth="2" />
+                <text x="186" y="360" textAnchor="middle" fill="#0B0B0D" fontSize="13" className="font-bold">Shelby</text>
               </g>
               <g>
-                <circle cx="512.1" cy="257.1" r="6" fill="#1d4ed8" stroke="#fff" strokeWidth="2" />
-                <text x="512" y="245" textAnchor="middle" fill="#0f172a" fontSize="13" className="font-bold">Kannapolis</text>
+                <circle cx="512.1" cy="257.1" r="6" fill="#a9863f" stroke="#fff" strokeWidth="2" />
+                <text x="512" y="245" textAnchor="middle" fill="#0B0B0D" fontSize="13" className="font-bold">Kannapolis</text>
               </g>
               <g>
-                <circle cx="499.1" cy="328.4" r="6" fill="#1d4ed8" stroke="#fff" strokeWidth="2" />
-                <text x="507" y="316" textAnchor="start" fill="#0f172a" fontSize="13" className="font-bold">Harrisburg</text>
+                <circle cx="499.1" cy="328.4" r="6" fill="#a9863f" stroke="#fff" strokeWidth="2" />
+                <text x="507" y="316" textAnchor="start" fill="#0B0B0D" fontSize="13" className="font-bold">Harrisburg</text>
               </g>
               <g>
-                <circle cx="661.5" cy="316.8" r="6" fill="#1d4ed8" stroke="#fff" strokeWidth="2" />
-                <text x="661" y="304" textAnchor="middle" fill="#0f172a" fontSize="13" className="font-bold">Albemarle</text>
+                <circle cx="661.5" cy="316.8" r="6" fill="#a9863f" stroke="#fff" strokeWidth="2" />
+                <text x="661" y="304" textAnchor="middle" fill="#0B0B0D" fontSize="13" className="font-bold">Albemarle</text>
               </g>
               <g>
-                <circle cx="564.4" cy="177.3" r="6" fill="#1d4ed8" stroke="#fff" strokeWidth="2" />
-                <text x="564" y="165" textAnchor="middle" fill="#0f172a" fontSize="13" className="font-bold">Salisbury</text>
+                <circle cx="564.4" cy="177.3" r="6" fill="#a9863f" stroke="#fff" strokeWidth="2" />
+                <text x="564" y="165" textAnchor="middle" fill="#0B0B0D" fontSize="13" className="font-bold">Salisbury</text>
               </g>
             </svg>
             <div className="flex items-center justify-center gap-6 mt-4 text-sm text-gray-600">
-              <span className="flex items-center gap-2"><span className="inline-block w-3 h-3 rounded-full bg-orange-500"></span> Home base</span>
-              <span className="flex items-center gap-2"><span className="inline-block w-3 h-3 rounded-sm" style={{ backgroundColor: "#dbe7fa", border: "1.5px solid #2563eb" }}></span> Service counties</span>
+              <span className="flex items-center gap-2"><span className="inline-block w-3 h-3 rounded-full bg-[#C8A85A]"></span> Home base</span>
+              <span className="flex items-center gap-2"><span className="inline-block w-3 h-3 rounded-sm" style={{ backgroundColor: "#efe3d0", border: "1.5px solid #C8A85A" }}></span> Service counties</span>
             </div>
             </div>
 
@@ -726,12 +729,12 @@ export default function OnSite() {
               {SERVICE_AREAS.map((area, i) => (
                 <div
                   key={i}
-                  className="group bg-white border border-gray-200 rounded-xl px-3 py-3 shadow-sm hover:shadow-md hover:border-orange-300 hover:-translate-y-0.5 transition-all flex items-center gap-2 text-left"
+                  className="group bg-white border border-gray-200 rounded-xl px-3 py-3 shadow-sm hover:shadow-md hover:border-[#C8A85A] hover:-translate-y-0.5 transition-all flex items-center gap-2 text-left"
                 >
-                  <div className="w-8 h-8 rounded-full bg-blue-50 group-hover:bg-orange-50 flex items-center justify-center transition-colors flex-shrink-0">
-                    <MapPin className="w-4 h-4 text-[#2563eb] group-hover:text-orange-500 transition-colors" />
+                  <div className="w-8 h-8 rounded-full bg-[#1A1A1D] group-hover:bg-[#C8A85A]/15 flex items-center justify-center transition-colors flex-shrink-0">
+                    <MapPin className="w-4 h-4 text-[#C8A85A] group-hover:text-[#C8A85A] transition-colors" />
                   </div>
-                  <span className="text-[#1a2e5a] font-semibold text-sm leading-tight">{area}</span>
+                  <span className="text-[#1A1A1D] font-semibold text-sm leading-tight">{area}</span>
                 </div>
               ))}
             </div>
@@ -742,12 +745,12 @@ export default function OnSite() {
             {SERVICE_AREAS.map((area, i) => (
               <div
                 key={i}
-                className="group bg-white border border-gray-200 rounded-xl px-3 py-5 shadow-sm hover:shadow-md hover:border-orange-300 hover:-translate-y-0.5 transition-all flex flex-col items-center gap-2"
+                className="group bg-white border border-gray-200 rounded-xl px-3 py-5 shadow-sm hover:shadow-md hover:border-[#C8A85A] hover:-translate-y-0.5 transition-all flex flex-col items-center gap-2"
               >
-                <div className="w-10 h-10 rounded-full bg-blue-50 group-hover:bg-orange-50 flex items-center justify-center transition-colors">
-                  <MapPin className="w-5 h-5 text-[#2563eb] group-hover:text-orange-500 transition-colors" />
+                <div className="w-10 h-10 rounded-full bg-[#1A1A1D] group-hover:bg-[#C8A85A]/15 flex items-center justify-center transition-colors">
+                  <MapPin className="w-5 h-5 text-[#C8A85A] group-hover:text-[#C8A85A] transition-colors" />
                 </div>
-                <span className="text-[#1a2e5a] font-semibold text-sm leading-tight">{area}</span>
+                <span className="text-[#1A1A1D] font-semibold text-sm leading-tight">{area}</span>
               </div>
             ))}
           </div>
@@ -755,7 +758,7 @@ export default function OnSite() {
       </section>
 
       {/* ── CONTACT / CTA ── */}
-      <section id="contact" className="min-h-[calc(100vh-140px)] flex items-start py-16 md:py-24 bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white">
+      <section id="contact" className="min-h-[calc(100vh-140px)] flex items-start py-16 md:py-24 bg-gradient-to-br from-[#1A1A1D] to-[#C8A85A] text-white">
         <div className="max-w-6xl mx-auto px-4 w-full">
           <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-stretch">
 
@@ -763,24 +766,24 @@ export default function OnSite() {
             <div className="text-center md:text-left flex flex-col">
               <h2 className="text-3xl md:text-5xl font-extrabold mb-4">
                 Computer Problems? <br className="hidden md:block" />
-                <span className="text-orange-400">Let us Talk.</span>
+                <span className="text-[#C8A85A]">Let us Talk.</span>
               </h2>
-              <p className="text-blue-100 text-xl mb-8 max-w-xl mx-auto md:mx-0">
+              <p className="text-[#E7DDCF] text-xl mb-8 max-w-xl mx-auto md:mx-0">
                 Call Greg directly. No hold music, no ticket numbers — just a real conversation with someone who can actually help.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8">
-                <a href={`tel:${PHONE}`} className="bg-orange-500 hover:bg-orange-600 text-white font-extrabold py-4 px-8 rounded-xl text-lg transition-all shadow-xl flex items-center justify-center gap-3">
+                <a href={`tel:${PHONE}`} className="bg-[#C8A85A] hover:bg-[#B8965A] text-[#1A1A1D] font-extrabold py-4 px-8 rounded-xl text-lg transition-all shadow-xl flex items-center justify-center gap-3">
                   <Phone className="w-6 h-6" /> {PHONE}
                 </a>
-                <a href={`mailto:${EMAIL}`} className="border-2 border-white text-white hover:bg-white hover:text-blue-800 font-bold py-4 px-8 rounded-xl text-lg transition-all flex items-center justify-center gap-3 btn-pop">
+                <a href={`mailto:${EMAIL}`} className="border-2 border-white text-white hover:bg-white hover:text-[#C8A85A] font-bold py-4 px-8 rounded-xl text-lg transition-all flex items-center justify-center gap-3 btn-pop">
                   Send Email
                 </a>
               </div>
-              <div className="flex items-center justify-center md:justify-start gap-2 text-blue-200 mb-2">
+              <div className="flex items-center justify-center md:justify-start gap-2 text-[#D8C6AD] mb-2">
                 <MapPin className="w-5 h-5 flex-shrink-0" />
                 <span className="text-lg">{ADDRESS}</span>
               </div>
-              <div className="flex items-center justify-center md:justify-start gap-2 text-blue-200 mb-6">
+              <div className="flex items-center justify-center md:justify-start gap-2 text-[#D8C6AD] mb-6">
                 <Clock className="w-5 h-5 flex-shrink-0" />
                 <span className="text-lg">Mon–Fri, 10:00 AM – 6:00 PM EST</span>
               </div>
@@ -800,7 +803,7 @@ export default function OnSite() {
 
             {/* RIGHT: contact form */}
             <div className="bg-white rounded-2xl shadow-2xl p-6 md:p-8 text-gray-800">
-              <h3 className="text-2xl font-extrabold text-[#1a2e5a] mb-1">Send Us a Message</h3>
+              <h3 className="text-2xl font-extrabold text-[#1A1A1D] mb-1">Send Us a Message</h3>
               <p className="text-gray-500 text-sm mb-6">Fill this out and Greg will get back to you.</p>
 
               {formStatus === "success" ? (
@@ -814,24 +817,24 @@ export default function OnSite() {
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-1">Name</label>
                     <input type="text" name="name" required
-                      className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#C8A85A]" />
                   </div>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-1">Email</label>
                       <input type="email" name="email" required
-                        className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                        className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#C8A85A]" />
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-1">Phone</label>
                       <input type="tel" name="phone"
-                        className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                        className="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#C8A85A]" />
                     </div>
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-1">What can we help with?</label>
                     <select name="topic" required defaultValue=""
-                      className="w-full border border-gray-300 rounded-lg px-4 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-[#C8A85A]">
                       <option value="" disabled>Select a problem type…</option>
                       <option>Computer Repair</option>
                       <option>Mac Repair</option>
@@ -846,7 +849,7 @@ export default function OnSite() {
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-1">Message</label>
                     <textarea name="message" rows="4" required
-                      className="w-full border border-gray-300 rounded-lg px-4 py-2.5 md:min-h-[180px] focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2.5 md:min-h-[180px] focus:outline-none focus:ring-2 focus:ring-[#C8A85A]"></textarea>
                   </div>
 
                   {formStatus === "error" && (
@@ -856,7 +859,7 @@ export default function OnSite() {
                   )}
 
                   <button type="submit" disabled={formStatus === "sending"}
-                    className="w-full bg-orange-500 hover:bg-orange-600 disabled:opacity-60 text-white font-bold py-3.5 rounded-lg text-lg transition-all shadow-lg btn-pop">
+                    className="w-full bg-[#C8A85A] hover:bg-[#B8965A] disabled:opacity-60 text-[#1A1A1D] font-bold py-3.5 rounded-lg text-lg transition-all shadow-lg btn-pop">
                     {formStatus === "sending" ? "Sending…" : "Send Message"}
                   </button>
                 </form>
@@ -868,7 +871,7 @@ export default function OnSite() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="bg-[#111827] text-gray-400 text-sm">
+      <footer className="bg-[#0B0B0D] text-gray-400 text-sm">
         <div className="max-w-6xl mx-auto px-4 py-12">
 
           {/* Top: three columns */}
@@ -883,23 +886,23 @@ export default function OnSite() {
 
             {/* Col 2 — navigation (collapsible pancake menu) */}
             <div>
-              <h4 className="text-[#f97316] font-bold tracking-widest uppercase text-xs mb-4" style={{ fontFamily: "'Oswald', sans-serif" }}>Navigation</h4>
+              <h4 className="text-[#C8A85A] font-bold tracking-widest uppercase text-xs mb-4" style={{ fontFamily: "'Oswald', sans-serif" }}>Navigation</h4>
               <div className="relative inline-block">
                 {/* expanding list — sits ABOVE the button, revealed on toggle */}
                 {footerNavOpen && (
-                  <ul className="absolute bottom-full mb-2 left-0 w-48 bg-[#1a2740] border border-white/10 rounded-lg shadow-xl overflow-hidden">
-                    <li><a href="#top" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">Home</a></li>
-                    <li><a href="#about" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">About Us</a></li>
-                    <li><a href="#services" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">Services</a></li>
-                    <li><a href="#server-setups" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">Server Setups</a></li>
-                    <li><a href="/remote-support" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">Remote Support</a></li>
-                    <li><a href="#reviews" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors border-b border-white/5">Reviews</a></li>
-                    <li><a href="#contact" className="block px-4 py-2.5 hover:bg-white/5 hover:text-orange-400 transition-colors">Contact</a></li>
+                  <ul className="absolute bottom-full mb-2 left-0 w-48 bg-[#1A1A1D] border border-white/10 rounded-lg shadow-xl overflow-hidden">
+                    <li><a href="#top" className="block px-4 py-2.5 hover:bg-white/5 hover:text-[#C8A85A] transition-colors border-b border-white/5">Home</a></li>
+                    <li><a href="#about" className="block px-4 py-2.5 hover:bg-white/5 hover:text-[#C8A85A] transition-colors border-b border-white/5">About Us</a></li>
+                    <li><a href="#services" className="block px-4 py-2.5 hover:bg-white/5 hover:text-[#C8A85A] transition-colors border-b border-white/5">Services</a></li>
+                    <li><a href="#server-setups" className="block px-4 py-2.5 hover:bg-white/5 hover:text-[#C8A85A] transition-colors border-b border-white/5">Server Setups</a></li>
+                    <li><a href="/remote-support" className="block px-4 py-2.5 hover:bg-white/5 hover:text-[#C8A85A] transition-colors border-b border-white/5">Remote Support</a></li>
+                    <li><a href="#reviews" className="block px-4 py-2.5 hover:bg-white/5 hover:text-[#C8A85A] transition-colors border-b border-white/5">Reviews</a></li>
+                    <li><a href="#contact" className="block px-4 py-2.5 hover:bg-white/5 hover:text-[#C8A85A] transition-colors">Contact</a></li>
                   </ul>
                 )}
                 <button
                   onClick={() => setFooterNavOpen(!footerNavOpen)}
-                  className="inline-flex items-center gap-2 text-gray-300 hover:text-orange-400 transition-colors font-semibold"
+                  className="inline-flex items-center gap-2 text-gray-300 hover:text-[#C8A85A] transition-colors font-semibold"
                   aria-expanded={footerNavOpen}
                 >
                   {footerNavOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />} Menu
@@ -909,11 +912,11 @@ export default function OnSite() {
 
             {/* Col 3 — contact */}
             <div>
-              <h4 className="text-[#f97316] font-bold tracking-widest uppercase text-xs mb-4" style={{ fontFamily: "'Oswald', sans-serif" }}>Contact</h4>
+              <h4 className="text-[#C8A85A] font-bold tracking-widest uppercase text-xs mb-4" style={{ fontFamily: "'Oswald', sans-serif" }}>Contact</h4>
               <ul className="space-y-3">
                 <li className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-orange-400 flex-shrink-0" />
-                  <a href={`tel:${PHONE}`} className="hover:text-orange-400 transition-colors">{PHONE}</a>
+                  <Phone className="w-4 h-4 text-[#C8A85A] flex-shrink-0" />
+                  <a href={`tel:${PHONE}`} className="hover:text-[#C8A85A] transition-colors">{PHONE}</a>
                 </li>
                 <li className="leading-relaxed text-gray-400">
                   53 Cabarrus Ave. W<br/>Concord, NC 28025
@@ -930,12 +933,12 @@ export default function OnSite() {
             <p className="text-gray-300 mb-6">Local Dominance. Real Results. — Web design &amp; SEO for local businesses.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
               <a href="https://gnldigitalgroup.com" target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#b8965a] hover:bg-[#c9aa6c] text-[#111827] font-bold px-7 py-3 rounded-lg transition-colors">
+                className="inline-flex items-center gap-2 bg-[#b8965a] hover:bg-[#c9aa6c] text-[#0B0B0D] font-bold px-7 py-3 rounded-lg transition-colors">
                 Visit Our Website
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               </a>
               <a href="tel:+17045945826"
-                className="inline-flex items-center gap-2 bg-[#1a2740] hover:bg-[#22335a] text-white font-bold px-7 py-3 rounded-lg border border-white/15 transition-colors">
+                className="inline-flex items-center gap-2 bg-[#1A1A1D] hover:bg-[#1A1A1D] text-white font-bold px-7 py-3 rounded-lg border border-white/15 transition-colors">
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                 Call Us
               </a>
