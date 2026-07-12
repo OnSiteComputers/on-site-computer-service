@@ -266,7 +266,7 @@ export default function OnSite() {
         {/* ── MOBILE DROPDOWN MENU ── */}
         {menuOpen && (
           <div className="md:hidden bg-[#1A1A1D] border-t border-[#2A2A30] px-4 pb-4">
-            <div className="flex flex-col text-base font-semibold text-gray-700">
+            <div className="flex flex-col text-base font-semibold text-[#E7DDCF]">
               <a href="#top" className="py-3 border-b border-[#2A2A30] hover:text-[#C8A85A]">Home</a>
               <a href="#why-us" className="py-3 border-b border-[#2A2A30] hover:text-[#C8A85A]">Why Us?</a>
               <a href="#about" className="py-3 border-b border-[#2A2A30] hover:text-[#C8A85A]">About Us</a>
@@ -542,8 +542,8 @@ export default function OnSite() {
                 <div className="bg-[#1A1A1D] rounded-xl p-4 flex items-start gap-3 mt-5">
                   <MapPin className="w-6 h-6 text-[#C8A85A] flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-bold text-[#1A1A1D]">{ADDRESS}</p>
-                    <p className="text-sm text-gray-600 mt-1">Downtown Concord — call ahead and we'll make sure Greg's here to meet you.</p>
+                    <p className="font-bold text-white">{ADDRESS}</p>
+                    <p className="text-sm text-[#D8C6AD] mt-1">Downtown Concord — call ahead and we'll make sure Greg's here to meet you.</p>
                   </div>
                 </div>
               </div>

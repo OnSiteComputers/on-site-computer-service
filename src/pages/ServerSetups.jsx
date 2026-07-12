@@ -191,7 +191,7 @@ export default function ServerSetups() {
             {SITUATIONS.map((item, i) => (
               <div key={i} className="flex items-start gap-3 bg-[#1A1A1D] border border-[#2A2A30] rounded-xl p-4">
                 <CheckCircle className="w-5 h-5 text-[#C8A85A] flex-shrink-0 mt-0.5" />
-                <span className="text-[#1A1A1D] font-medium">{item}</span>
+                <span className="text-[#E7DDCF] font-medium">{item}</span>
               </div>
             ))}
           </div>

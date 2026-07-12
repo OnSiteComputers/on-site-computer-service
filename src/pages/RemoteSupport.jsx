@@ -113,7 +113,7 @@ export default function RemoteSupport() {
               { icon: Monitor, title: "3. Get Connected", desc: `Greg sends a ${REMOTE_TOOL_NAME} link, connects to your computer, and fixes the problem.` },
             ].map((s, i) => (
               <div key={i} className="flex md:flex-col items-center md:text-center gap-3 md:gap-0">
-                <div className="w-10 h-10 rounded-full bg-[#232327] text-[#1A1A1D] flex items-center justify-center md:mb-2 shrink-0">
+                <div className="w-10 h-10 rounded-full bg-[#232327] text-[#C8A85A] flex items-center justify-center md:mb-2 shrink-0">
                   <s.icon className="w-5 h-5" />
                 </div>
                 <div>
@@ -183,7 +183,7 @@ export default function RemoteSupport() {
 
           {/* card fee note */}
           <div className="max-w-2xl mx-auto mt-6 bg-[#1A1A1D] rounded-xl p-5">
-            <p className="text-sm text-gray-700 font-semibold text-center mb-3">Debit &amp; Credit Card Pricing</p>
+            <p className="text-sm text-[#E7DDCF] font-semibold text-center mb-3">Debit &amp; Credit Card Pricing</p>
             <div className="grid sm:grid-cols-2 gap-4 mb-3">
               <div className="bg-white rounded-lg p-3 text-center border border-[#2A2A30]">
                 <p className="font-bold text-[#1A1A1D] mb-1">Regular Support</p>
@@ -196,16 +196,16 @@ export default function RemoteSupport() {
                 <p className="text-sm text-gray-600">Credit: <strong>$308.98</strong> <span className="text-gray-400">(+$8.99 fee)</span></p>
               </div>
             </div>
-            <p className="text-xs text-gray-500 text-center leading-relaxed">
+            <p className="text-xs text-[#D8C6AD] text-center leading-relaxed">
               Our system automatically detects your card type at checkout. Pay with a <strong>debit card</strong> and you're charged the listed price with no added fee. <strong>Credit cards</strong> include a processing fee, shown above.
             </p>
           </div>
 
           {/* trust note */}
-          <div className="flex flex-wrap items-center justify-center gap-6 mt-6 text-sm text-gray-500">
-            <span className="flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-[#1A1A1D]" /> Secure payment</span>
-            <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-[#1A1A1D]" /> 1-hour minimum</span>
-            <span className="flex items-center gap-2"><Phone className="w-4 h-4 text-[#1A1A1D]" /> Questions? {PHONE}</span>
+          <div className="flex flex-wrap items-center justify-center gap-6 mt-6 text-sm text-[#D8C6AD]">
+            <span className="flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-[#C8A85A]" /> Secure payment</span>
+            <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-[#C8A85A]" /> 1-hour minimum</span>
+            <span className="flex items-center gap-2"><Phone className="w-4 h-4 text-[#C8A85A]" /> Questions? {PHONE}</span>
           </div>
 
           {/* scroll-down cue */}
