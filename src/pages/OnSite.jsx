@@ -365,7 +365,7 @@ export default function OnSite() {
           {/* Diagnostic + call-ahead line */}
           <div className="mt-6 md:mt-8 bg-white/[0.07] border border-[#f6c453]/40 rounded-2xl px-5 py-4 text-center backdrop-blur-sm">
             <p className="text-[#F5F3EE] text-sm md:text-base leading-relaxed">
-              <span className="font-bold text-[#f6c453]">Please call before you drop off or stop by.</span> Greg is often out on service calls, so a quick call makes sure he's in.
+              <span className="font-bold text-[#f6c453]">Please call before you drop off or stop by.</span> Greg does on-site calls too, so call ahead to be sure someone's at the store.
               {" "}Repairs start with a <strong className="text-white">$129.99 diagnostic</strong> — included in your repair quote if we do the work.
             </p>
           </div>
@@ -491,7 +491,7 @@ export default function OnSite() {
           </div>
           <div className="grid md:grid-cols-4 gap-6">
             {[
-              { step: "1", title: "You Call or Bring It In", desc: "Always call ahead — Greg is often out on service calls, and a quick call makes sure he's at the shop when you arrive. Repairs start with a flat $129.99 diagnostic, which is included in your repair quote if you have us do the work." },
+              { step: "1", title: "You Call or Bring It In", desc: "Greg does on-site calls too, so call ahead to be sure someone's at the store when you arrive. Repairs start with a flat $129.99 diagnostic, which is included in your repair quote if you have us do the work." },
               { step: "2", title: "We Diagnose", desc: "Greg personally examines your device and identifies the exact problem — no assumptions, no guesswork." },
               { step: "3", title: "We Quote You First", desc: "Before anything is touched, you get a clear, honest quote. You decide. No pressure, ever." },
               { step: "4", title: "We Fix It Right", desc: "Quality repair with the right parts. We do not cut corners, and we stand behind our work." },
@@ -515,7 +515,7 @@ export default function OnSite() {
             <p className="text-[#D8C6AD] uppercase tracking-widest text-sm font-semibold mb-2">Planning a Visit?</p>
             <h2 className="text-3xl md:text-4xl font-extrabold mb-3">Always Call Ahead</h2>
             <p className="text-base md:text-lg text-[#E7DDCF] max-w-3xl mx-auto">
-              We're called <strong className="text-white">On-Site</strong> for a reason — Greg is often out helping customers at their home or business. A quick call makes sure he's at the shop when you arrive, so you're never making the trip for nothing.
+              We're called <strong className="text-white">On-Site</strong> for a reason — Greg does on-site calls too, so call ahead to be sure someone's at the store when you arrive. That way you're never making the trip for nothing.
             </p>
           </div>
 
@@ -581,7 +581,7 @@ export default function OnSite() {
 
           {/* Honest note from Greg */}
           <p className="text-center text-[#E7DDCF] text-sm mt-5 max-w-3xl mx-auto italic">
-            A note from Greg: In 26 years, I've never charged a dime just to schedule an appointment — and I never will. The one thing I ask is a quick phone call before you drive over. I'm frequently out on service calls, and a call ahead means you'll never show up to a locked door. Linda answers the phone and she'll get you squared away.
+            A note from Greg: In 26 years, I've never charged a dime just to schedule an appointment — and I never will. The one thing I ask is a quick phone call before you drive over. I do on-site calls too, so a call ahead means you'll never show up to a locked door — someone's always here to help. Linda answers the phone and she'll get you squared away.
           </p>
         </div>
       </section>
@@ -661,7 +661,7 @@ export default function OnSite() {
 
           <div className="text-center mt-8 flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="https://www.google.com/search?q=On-Site+Computer+Service+Concord+reviews"
+              href="https://search.google.com/local/reviews?placeid=CSYE1297nyoJEAE"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 border-2 border-white/70 text-white hover:bg-white hover:text-[#1A1A1D] font-bold py-3 px-8 rounded-xl transition-all btn-pop"

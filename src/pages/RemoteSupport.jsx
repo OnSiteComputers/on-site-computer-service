@@ -66,15 +66,43 @@ export default function RemoteSupport() {
           </div>
 
           {/* bottom row: nav links spread across the full width */}
-          <div className="hidden md:flex items-center justify-between text-sm lg:text-[15px] font-semibold text-[#E7DDCF] whitespace-nowrap mt-3">
+          <div className="hidden md:flex items-center justify-center gap-6 lg:gap-8 text-sm lg:text-[15px] font-semibold text-[#E7DDCF] whitespace-nowrap mt-3">
             <a href="/" className="hover:text-[#C8A85A] transition-colors">Home</a>
-            <a href="/#why-us" className="hover:text-[#C8A85A] transition-colors">Why Us?</a>
-            <a href="/#about" className="hover:text-[#C8A85A] transition-colors">About Us</a>
-            <a href="/#services" className="hover:text-[#C8A85A] transition-colors">Services</a>
-            <a href="/#server-setups" className="hover:text-[#C8A85A] transition-colors">Server Setups</a>
-            <a href="/remote-support" className="text-[#C8A85A] transition-colors">Remote Support</a>
-            <a href="/#reviews" className="hover:text-[#C8A85A] transition-colors">Reviews</a>
+
+            {/* About dropdown */}
+            <div className="relative group">
+              <button className="flex items-center gap-1 hover:text-[#C8A85A] transition-colors">
+                About
+                <svg className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" /></svg>
+              </button>
+              <div className="absolute left-0 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+                <div className="w-48 bg-[#1A1A1D] border border-white/10 rounded-lg shadow-xl overflow-hidden">
+                  <div className="silver-edge h-px w-full" />
+                  <a href="/#why-us" className="block px-4 py-2.5 hover:bg-white/5 hover:text-[#C8A85A] transition-colors border-b border-white/5">Why Us?</a>
+                  <a href="/#about" className="block px-4 py-2.5 hover:bg-white/5 hover:text-[#C8A85A] transition-colors">About Us</a>
+                </div>
+              </div>
+            </div>
+
+            {/* Services dropdown */}
+            <div className="relative group">
+              <button className="flex items-center gap-1 hover:text-[#C8A85A] transition-colors">
+                Services
+                <svg className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" /></svg>
+              </button>
+              <div className="absolute left-0 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+                <div className="w-52 bg-[#1A1A1D] border border-white/10 rounded-lg shadow-xl overflow-hidden">
+                  <div className="silver-edge h-px w-full" />
+                  <a href="/#services" className="block px-4 py-2.5 hover:bg-white/5 hover:text-[#C8A85A] transition-colors border-b border-white/5">Services</a>
+                  <a href="/#server-setups" className="block px-4 py-2.5 hover:bg-white/5 hover:text-[#C8A85A] transition-colors border-b border-white/5">Server Setups</a>
+                  <a href="/remote-support" className="block px-4 py-2.5 bg-white/5 text-[#C8A85A] transition-colors">Remote Support</a>
+                </div>
+              </div>
+            </div>
+
+            <a href="/#appointments" className="hover:text-[#C8A85A] transition-colors">Visit Us</a>
             <a href="/#areas" className="hover:text-[#C8A85A] transition-colors">Service Areas</a>
+            <a href="/#reviews" className="hover:text-[#C8A85A] transition-colors">Reviews</a>
             <a href="/#contact" className="hover:text-[#C8A85A] transition-colors">Contact</a>
           </div>
         </div>
