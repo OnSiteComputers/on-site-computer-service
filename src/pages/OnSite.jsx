@@ -661,7 +661,7 @@ export default function OnSite() {
 
           <div className="text-center mt-8 flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="https://search.google.com/local/reviews?placeid=CSYE1297nyoJEAE"
+              href="https://bit.ly/3T0gvQO"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 border-2 border-white/70 text-white hover:bg-white hover:text-[#1A1A1D] font-bold py-3 px-8 rounded-xl transition-all btn-pop"
