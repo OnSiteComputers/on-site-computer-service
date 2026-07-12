@@ -1,3 +1,8 @@
+// ============================================================
+// ON-SITE COMPUTER SERVICE — Remote Support page
+// Build: 2026-07-05 v1 ✅
+// ============================================================
+
 import { useEffect, useState } from "react";
 import { Phone, Monitor, Clock, ShieldCheck, CreditCard, CalendarClock, Zap, CheckCircle, Menu, X, ChevronDown } from "lucide-react";
 
@@ -19,6 +24,7 @@ const REMOTE_TOOL_NAME = "TeamViewer QuickSupport";
 const REMOTE_TOOL_LINK = "https://get.teamviewer.com/6mfcqdq";
 
 export default function RemoteSupport() {
+  console.log("RemoteSupport build: 2026-07-12 v2 ✅");
   const [menuOpen, setMenuOpen] = useState(false);
   const [footerNavOpen, setFooterNavOpen] = useState(false);
   useEffect(() => {
@@ -119,7 +125,7 @@ export default function RemoteSupport() {
       </section>
 
       <section id="pricing" className="flex-1 flex flex-col justify-start py-4 md:py-6 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-4">
+        <div className="max-w-5xl mx-auto px-4 w-full flex flex-col flex-1">
           <h2 className="text-2xl md:text-3xl font-extrabold text-[#1a2e5a] text-center mb-2">Choose Your Support</h2>
           <p className="text-gray-500 text-center mb-6 max-w-xl mx-auto">One-hour minimum per session. Additional time is billed in 30-minute increments.</p>
 
@@ -201,7 +207,7 @@ export default function RemoteSupport() {
           </div>
 
           {/* scroll-down cue */}
-          <div className="flex justify-center mt-8">
+          <div className="flex justify-center mt-auto pt-8">
             <a href="#after-you-pay" onClick={(e) => { e.preventDefault(); document.getElementById("after-you-pay")?.scrollIntoView({ behavior: "smooth" }); }} className="inline-flex flex-col items-center text-[#1a2e5a] hover:text-orange-500 transition-colors group">
               <span className="text-sm font-semibold uppercase tracking-wide mb-1">What Happens Next</span>
               <ChevronDown className="w-6 h-6 animate-bounce" />

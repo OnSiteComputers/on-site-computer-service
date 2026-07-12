@@ -3,6 +3,7 @@
 // Domain: www.onsitecomputerservice.net
 // Brand: Warm, trusted, local, personal
 // Colors: White background, navy (#1a2e5a) + blue (#2563eb) accents, orange CTA
+// Build: 2026-07-05 v1 ✅
 // ============================================================
 
 import { useEffect, useState } from "react";
@@ -60,6 +61,7 @@ const SERVICE_AREAS = [
 ];
 
 export default function OnSite() {
+  console.log("OnSite build: 2026-07-12 v2 ✅");
   const [menuOpen, setMenuOpen] = useState(false);
   const [footerNavOpen, setFooterNavOpen] = useState(false);
 
@@ -95,7 +97,7 @@ export default function OnSite() {
   );
 
   // ── CONTACT FORM ──
-  const FORMSPREE_ENDPOINT = "https://formspree.io/f/xaqkgykp";
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/mdarbzwy";
   const [formStatus, setFormStatus] = useState("idle"); // idle | sending | success | error
 
   const handleSubmit = async (e) => {
@@ -222,7 +224,7 @@ export default function OnSite() {
             <a href="#about" className="hover:text-orange-500 transition-colors">About Us</a>
             <a href="#services" className="hover:text-orange-500 transition-colors">Services</a>
             <a href="#server-setups" className="hover:text-orange-500 transition-colors">Server Setups</a>
-            <a href="#appointments" className="hover:text-orange-500 transition-colors">Appointments</a>
+            <a href="#appointments" className="hover:text-orange-500 transition-colors">Visit Us</a>
             <a href="/remote-support" className="hover:text-orange-500 transition-colors">Remote Support</a>
             <a href="#reviews" className="hover:text-orange-500 transition-colors">Reviews</a>
             <a href="#areas" className="hover:text-orange-500 transition-colors">Service Areas</a>
@@ -239,7 +241,7 @@ export default function OnSite() {
               <a href="#about" className="py-3 border-b border-blue-100 hover:text-blue-700">About Us</a>
               <a href="#services" className="py-3 border-b border-blue-100 hover:text-blue-700">Services</a>
               <a href="#server-setups" className="py-3 border-b border-blue-100 hover:text-blue-700">Server Setups</a>
-              <a href="#appointments" className="py-3 border-b border-blue-100 hover:text-blue-700">Appointments</a>
+              <a href="#appointments" className="py-3 border-b border-blue-100 hover:text-blue-700">Visit Us</a>
               <a href="/remote-support" className="py-3 border-b border-blue-100 hover:text-blue-700">Remote Support</a>
               <a href="#reviews" className="py-3 border-b border-blue-100 hover:text-blue-700">Reviews</a>
               <a href="#areas" className="py-3 border-b border-blue-100 hover:text-blue-700">Service Areas</a>
@@ -271,8 +273,8 @@ export default function OnSite() {
               <a href="#services" className="border-2 border-white text-white hover:bg-white hover:text-blue-800 font-bold py-3 px-6 rounded-lg text-base transition-all duration-200 flex items-center justify-center gap-2 btn-pop">
                 View Services <ChevronRight className="w-4 h-4" />
               </a>
-              <a href="#appointments" className="bg-white text-blue-800 hover:bg-blue-50 font-bold py-3 px-6 rounded-lg text-base transition-all duration-200 shadow-md flex items-center justify-center gap-2 btn-pop">
-                <Clock className="w-4 h-4" /> Schedule Appointment
+              <a href={`tel:${PHONE}`} className="bg-white text-blue-800 hover:bg-blue-50 font-bold py-3 px-6 rounded-lg text-base transition-all duration-200 shadow-md flex items-center justify-center gap-2 btn-pop">
+                <Phone className="w-4 h-4" /> Call Ahead
               </a>
             </div>
           </div>
@@ -326,6 +328,14 @@ export default function OnSite() {
                 <div className="text-blue-100 text-[10px] sm:text-xs font-semibold uppercase tracking-widest leading-tight">{stat.label}</div>
               </div>
             ))}
+          </div>
+
+          {/* Diagnostic + call-ahead line */}
+          <div className="mt-6 md:mt-8 bg-white/[0.07] border border-[#f6c453]/40 rounded-2xl px-5 py-4 text-center backdrop-blur-sm">
+            <p className="text-blue-50 text-sm md:text-base leading-relaxed">
+              <span className="font-bold text-[#f6c453]">Please call before you drop off or stop by.</span> Greg is often out on service calls, so a quick call makes sure he's in.
+              {" "}Repairs start with a <strong className="text-white">$129.99 diagnostic</strong> — included in your repair quote if we do the work.
+            </p>
           </div>
         </div>
       </section>
@@ -447,7 +457,7 @@ export default function OnSite() {
           </div>
           <div className="grid md:grid-cols-4 gap-6">
             {[
-              { step: "1", title: "You Call or Bring It In", desc: "Reach out by phone or drop off your device at our downtown Concord location. Calling ahead is best — Greg is often out on service calls." },
+              { step: "1", title: "You Call or Bring It In", desc: "Always call ahead — Greg is often out on service calls, and a quick call makes sure he's at the shop when you arrive. Repairs start with a flat $129.99 diagnostic, which is included in your repair quote if you have us do the work." },
               { step: "2", title: "We Diagnose", desc: "Greg personally examines your device and identifies the exact problem — no assumptions, no guesswork." },
               { step: "3", title: "We Quote You First", desc: "Before anything is touched, you get a clear, honest quote. You decide. No pressure, ever." },
               { step: "4", title: "We Fix It Right", desc: "Quality repair with the right parts. We do not cut corners, and we stand behind our work." },
@@ -464,111 +474,80 @@ export default function OnSite() {
         </div>
       </section>
 
-      {/* ── SCHEDULE AN APPOINTMENT ── */}
-      <section id="appointments" className="py-16 md:py-24 bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white">
-        <div className="max-w-3xl mx-auto px-4">
-          <div className="text-center mb-10">
-            <p className="text-blue-200 uppercase tracking-widest text-sm font-semibold mb-3">Book Your Spot</p>
-            <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Schedule an Appointment</h2>
-            <p className="text-lg text-blue-100 max-w-2xl mx-auto">
-              Reserve your time with a small <strong className="text-white">$25 scheduling deposit</strong> — and it's not an extra charge. It applies in full toward your diagnostic, so you're simply pre-paying part of the work.
+      {/* ── ALWAYS CALL AHEAD ── */}
+      <section id="appointments" className="py-10 md:py-14 bg-gradient-to-br from-[#1a2e5a] to-[#2563eb] text-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-6">
+            <p className="text-blue-200 uppercase tracking-widest text-sm font-semibold mb-2">Planning a Visit?</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-3">Always Call Ahead</h2>
+            <p className="text-base md:text-lg text-blue-100 max-w-3xl mx-auto">
+              We're called <strong className="text-white">On-Site</strong> for a reason — Greg is often out helping customers at their home or business. A quick call makes sure he's at the shop when you arrive, so you're never making the trip for nothing.
             </p>
           </div>
 
-          <div className="bg-white text-[#1a2e5a] rounded-2xl shadow-2xl p-8 md:p-10">
-            {/* Diagnostic fee callout */}
-            <div className="text-center border-b border-gray-200 pb-6 mb-6">
-              <p className="text-gray-500 uppercase tracking-wide text-sm font-semibold mb-1">Flat Diagnostic Fee</p>
-              <p className="text-5xl font-extrabold text-[#1a2e5a]">$129.99</p>
-              <p className="text-gray-500 mt-2">Your $25 deposit goes straight toward this — you never pay it twice.</p>
-            </div>
+          <div className="bg-white text-[#1a2e5a] rounded-2xl shadow-2xl p-6 md:p-8">
+            <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-start">
 
-            {/* How it works */}
-            <div className="space-y-4 mb-6">
-              <div className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
-                <p className="text-gray-700"><strong>$25 reserves your appointment.</strong> It's credited in full toward your $129.99 diagnostic when you come in.</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
-                <p className="text-gray-700"><strong>Need to cancel?</strong> No problem. Give us at least <strong>24 hours' notice</strong> before your appointment and your $25 is refunded in full.</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
-                <p className="text-gray-700"><strong>Honest, up front.</strong> Greg identifies the exact problem and quotes the repair cost <em>before</em> any work begins. No guesswork, no surprises.</p>
-              </div>
-            </div>
-
-            {/* Payment amounts */}
-            <div className="bg-blue-50 rounded-xl p-5 mb-6">
-              <div className="flex justify-center gap-8 text-center mb-4">
-                <div>
-                  <p className="text-2xl font-extrabold text-[#1a2e5a]">$25.00</p>
-                  <p className="text-sm text-gray-500">debit card</p>
+              {/* LEFT COLUMN — Call CTA + Address */}
+              <div className="flex flex-col">
+                <div className="text-center lg:text-left border-b lg:border-b-0 border-gray-200 pb-5 lg:pb-0">
+                  <p className="text-gray-500 uppercase tracking-wide text-sm font-semibold mb-1">Call Before You Come In</p>
+                  <a href={`tel:${PHONE}`} className="block text-4xl md:text-5xl font-extrabold text-[#1a2e5a] hover:text-blue-700 transition-colors">
+                    {PHONE}
+                  </a>
+                  <p className="text-gray-500 mt-2 text-sm">Linda will confirm Greg's in and let you know the best time to stop by.</p>
+                  <a
+                    href={`tel:${PHONE}`}
+                    className="inline-flex items-center justify-center gap-2 mt-4 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3.5 px-8 rounded-xl text-lg transition-all shadow-lg btn-pop"
+                  >
+                    <Phone className="w-5 h-5" /> Call the Shop
+                  </a>
                 </div>
-                <div className="border-l border-blue-200"></div>
-                <div>
-                  <p className="text-2xl font-extrabold text-[#1a2e5a]">$25.75</p>
-                  <p className="text-sm text-gray-500">credit card</p>
+
+                {/* Address */}
+                <div className="bg-blue-50 rounded-xl p-4 flex items-start gap-3 mt-5">
+                  <MapPin className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-bold text-[#1a2e5a]">{ADDRESS}</p>
+                    <p className="text-sm text-gray-600 mt-1">Downtown Concord — call ahead and we'll make sure Greg's here to meet you.</p>
+                  </div>
                 </div>
               </div>
-              <p className="text-sm text-gray-600 text-center leading-relaxed">
-                <strong>The checkout screen shows the credit card price.</strong> Our system automatically detects your card type — if you pay with a <strong>debit card, you're only charged $25.00</strong>, even though the higher amount may display. Credit cards are charged <strong>$25.75</strong> (the extra $0.75 covers the processing fee).
-              </p>
-            </div>
 
-            {/* STEP 1 — PAY */}
-            <div className="mb-6">
-              <div className="flex items-center gap-3 mb-3">
-                <span className="w-8 h-8 rounded-full bg-[#1a2e5a] text-white font-extrabold flex items-center justify-center flex-shrink-0">1</span>
-                <h3 className="text-lg font-bold text-[#1a2e5a]">Pay Your $25 Deposit</h3>
-              </div>
-              <a
-                href="https://securelink-prod.valorpaytech.com:4430/?redirect=1&uid=5a6e1e64-6b80-11f1-bfa3-0e5b8ebc1287"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full bg-orange-500 hover:bg-orange-600 text-white text-center font-bold py-4 px-8 rounded-xl text-lg transition-all shadow-lg btn-pop"
-              >
-                Pay My $25 Deposit
-              </a>
-            </div>
+              {/* RIGHT COLUMN — Diagnostic banner + What to expect */}
+              <div className="flex flex-col">
+                {/* Diagnostic price banner */}
+                <div className="bg-[#1a2e5a] text-white rounded-xl px-5 py-4 mb-5 text-center">
+                  <p className="text-blue-200 uppercase tracking-wide text-xs font-semibold mb-1">Before You Drop It Off</p>
+                  <p className="text-3xl font-extrabold text-white">$129.99 Diagnostic</p>
+                  <p className="text-blue-100 text-sm mt-2 leading-relaxed">
+                    This is included in your repair quote if you have us do the work — so the diagnostic costs you nothing extra. If you decide not to repair, the $129.99 covers the diagnosis. <strong className="text-white">Either way, you'll always know the price before you commit.</strong>
+                  </p>
+                </div>
 
-            {/* STEP 2 — SCHEDULE */}
-            <div>
-              <div className="flex items-center gap-3 mb-3">
-                <span className="w-8 h-8 rounded-full bg-[#1a2e5a] text-white font-extrabold flex items-center justify-center flex-shrink-0">2</span>
-                <h3 className="text-lg font-bold text-[#1a2e5a]">Schedule Your Appointment</h3>
+                {/* What to expect */}
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-700 text-sm"><strong>No appointment fee, ever.</strong> There's no charge to call, and nothing to pay just to stop by. Simple as that.</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-700 text-sm"><strong>$129.99 flat diagnostic.</strong> Greg finds the exact problem and quotes your repair <em>before</em> any work begins. <strong>If you go ahead with the repair, the diagnostic is included in your quote.</strong> If you decide not to repair, the $129.99 covers the diagnosis.</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-700 text-sm"><strong>Prefer to just drop it off?</strong> Give us a call first, then bring your device to our downtown Concord shop and we'll take it from there.</p>
+                  </div>
+                </div>
               </div>
-              <p className="text-gray-600 text-sm mb-4">Once your deposit is paid, pick whichever is easier for you:</p>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <a
-                  href="https://calendly.com/greg-gnldigitalgroup/in-store-appointment"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center justify-center text-center bg-[#1a2e5a] hover:bg-[#22386e] text-white font-bold py-5 px-4 rounded-xl transition-all btn-pop"
-                >
-                  <Clock className="w-6 h-6 mb-1" />
-                  Book Online
-                  <span className="text-xs font-normal text-blue-200 mt-1">Pick your day &amp; time</span>
-                </a>
-                <a
-                  href={`tel:${PHONE}`}
-                  className="flex flex-col items-center justify-center text-center border-2 border-[#1a2e5a] text-[#1a2e5a] hover:bg-[#1a2e5a] hover:text-white font-bold py-5 px-4 rounded-xl transition-all group btn-pop"
-                >
-                  <Phone className="w-6 h-6 mb-1" />
-                  Call to Schedule
-                  <span className="text-xs font-normal text-gray-500 group-hover:text-blue-200 mt-1">{PHONE} — pay by phone</span>
-                </a>
-              </div>
-              <p className="text-center text-xs text-gray-400 mt-4">
-                Prefer the phone? Call and we'll take your deposit over the phone and book you in one step.
-              </p>
+
             </div>
           </div>
 
           {/* Honest note from Greg */}
-          <p className="text-center text-blue-100 text-sm mt-8 max-w-2xl mx-auto italic">
-            A note from Greg: In 26 years, I never charged a dime just to schedule an appointment — and I never wanted to. But over this past year, a growing number of folks booked time and simply didn't show up, which meant turning away other customers who needed help. So I've reluctantly started requiring a small deposit to hold your spot. It keeps the schedule fair for everyone who does show up — and since it credits in full toward your diagnostic, it costs you nothing extra to book.
+          <p className="text-center text-blue-100 text-sm mt-5 max-w-3xl mx-auto italic">
+            A note from Greg: In 26 years, I've never charged a dime just to schedule an appointment — and I never will. The one thing I ask is a quick phone call before you drive over. I'm frequently out on service calls, and a call ahead means you'll never show up to a locked door. Linda answers the phone and she'll get you squared away.
           </p>
         </div>
       </section>

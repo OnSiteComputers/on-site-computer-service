@@ -1,6 +1,8 @@
 import React from "react";
 
 /* ============================================================
+   LOMAR SPECIALTY ADVERTISING — Proposal page
+   Build: 2026-07-05 v1 ✅
    PER-CLIENT CONSTANTS — edit these, nothing else
    ============================================================ */
 const CLIENT_NAME = "Lomar Specialty Advertising";
@@ -45,6 +47,7 @@ const NAVY = "#1a2e5a";
 const ORANGE = "#f97316";
 
 export default function LomarProposal() {
+  console.log("LomarProposal build: 2026-07-12 v2 ✅");
   return (
     <div style={{ background: "#f7f8fa", minHeight: "100vh", color: NAVY }}>
       <style>{`

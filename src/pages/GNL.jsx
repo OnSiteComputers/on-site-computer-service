@@ -3,12 +3,13 @@
 // Domain: www.gnldigitalgroup.com
 // Brand: Premium, bold, black/gold, growth-focused
 // Colors: Black (#0a0a0a) background, gold (#c9a84c) accents, white text
+// Build: 2026-07-05 v1 ✅
 // ============================================================
 
 import { TrendingUp, Globe, Search, Star, Zap, Settings, BarChart2, MessageSquare, ChevronRight, Phone, ArrowRight, CheckCircle } from "lucide-react";
 
 // ── LOGO ── Replace src with your hosted logo URL if needed
-const GNL_LOGO = "https://media.base44.com/images/public/6a1bc65b7f812ffe372bc401/1b15248aa_Logo_black_roundedwithtagline.png";
+const GNL_LOGO = "/gnl-tagline-logo.png";
 
 // ── CONTACT INFO ── Easy to edit
 const PHONE = "(704) 555-0200"; // TODO: replace with real number
@@ -43,6 +44,7 @@ const DIFFERENCES = [
 ];
 
 export default function GNL() {
+  console.log("GNL build: 2026-07-12 v2 ✅");
   return (
     <div className="font-sans bg-[#0a0a0a] text-white">
 
